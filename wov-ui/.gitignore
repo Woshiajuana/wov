@@ -6,3 +6,8 @@ tools/
 web/
 plugins/
 node_modules/
+android.config.json
+start.bat
+start
+ios.config.json
+config.xml
