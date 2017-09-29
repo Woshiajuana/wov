@@ -1,0 +1,8 @@
+.idea/
+dist/
+hooks/
+platforms/
+tools/
+web/
+plugins/
+node_modules/

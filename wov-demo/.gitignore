@@ -1,0 +1,4 @@
+.idea/
+dist/
+platforms/android/
+node_modules/
