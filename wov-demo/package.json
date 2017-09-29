@@ -7,7 +7,8 @@
     "build": "webpack",
     "build_plugin": "webpack --config ./tools/webpack.config.plugin.js --color",
     "dev": "weex-builder src dist -w",
-    "serve": "webpack-dev-server --config webpack.dev.js -p --open"
+    "server": "webpack-dev-server --config webpack.dev.js -p --open",
+    "serve": "serve -p 13140"
   },
   "keywords": [
     "weex"
@@ -38,7 +39,7 @@
     "webpack-dev-server": "^2.4.2",
     "weex-builder": "^0.2.6",
     "weex-loader": "^0.4.1",
-    "wov": "0.0.1"
+    "wov": "0.0.2"
   },
   "optionalDependencies": {
     "ios-deploy": "^1.9.0"
