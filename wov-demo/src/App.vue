@@ -1,11 +1,15 @@
 <template>
-    <wov-switch
-            :switch_page_arr="switch_page_arr">
-    </wov-switch>
+    <div>
+        <text>333</text>
+        <!--<wov-switch-->
+                <!--:switch_page_arr="switch_page_arr">-->
+        <!--</wov-switch>-->
+    </div>
 </template>
 
 <script>
-    import { WovSwitch } from 'wov'
+    import  WovSwitch  from 'wov'
+//    const WovSwitch = require('./../node_modules/wov/dist/index')
     export default {
         data () {
             return {
@@ -58,7 +62,7 @@
             }
         },
         components: {
-            WovSwitch
+//            WovSwitch
         }
     }
 </script>
