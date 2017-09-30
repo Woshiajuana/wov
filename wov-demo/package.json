@@ -21,7 +21,8 @@
     "vuex": "^2.1.1",
     "vuex-router-sync": "^4.0.1",
     "weex-html5": "^0.4.1",
-    "weex-vue-render": "^0.11.2"
+    "weex-vue-render": "^0.11.2",
+    "wov": "0.0.2"
   },
   "devDependencies": {
     "babel-core": "^6.21.0",

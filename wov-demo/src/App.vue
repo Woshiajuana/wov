@@ -1,7 +1,6 @@
 <template>
     <wov-switch
             :switch_page_arr="switch_page_arr">
-
     </wov-switch>
 </template>
 
@@ -39,6 +38,9 @@
                     checked: false
                 }]
             }
+        },
+        created () {
+            console.log(WovSwitch)
         },
         methods: {
             /**切换导航菜单*/
