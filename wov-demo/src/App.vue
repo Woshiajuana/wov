@@ -1,47 +1,33 @@
 <template>
-    <div>
-        <WovSwitch></WovSwitch>
-    </div>
+    <wov-switch
+            :switch_page_arr="switch_page_arr">
+    </wov-switch>
 </template>
 
 <script>
-    import  WovSwitch  from 'wov'
-//    const WovSwitch = require('./../node_modules/wov/dist/index')
+    import { WovSwitch } from 'wov'
     export default {
         data () {
             return {
                 switch_page_arr: [{
-                    txt: '首页1',
-//                    src: PageUrlConfig['message'],
+                    txt: 'HOME',
                     visibility: 'visible',
                     img_icon_name: 'home-icon',
                     checked: true
                 },
                 {
-                    txt: '发现1',
-//                    src: PageUrlConfig['find'],
+                    txt: 'DEMO',
                     visibility: 'hidden',
                     img_icon_name: 'find-icon',
                     checked: false
                 },
                 {
-                    txt: '留言',
-//                    src: PageUrlConfig['home'],
+                    txt: 'ABOUT',
                     visibility: 'hidden',
                     img_icon_name: 'message-icon',
                     checked: false
-                },
-                {
-                    txt: '关于',
-//                    src: PageUrlConfig['about'],
-                    visibility: 'hidden',
-                    img_icon_name: 'about-icon',
-                    checked: false
                 }]
             }
-        },
-        created () {
-            console.log(WovSwitch)
         },
         methods: {
             /**切换导航菜单*/
@@ -63,9 +49,3 @@
         }
     }
 </script>
-
-<style scoped>
-    .menu-content{
-        flex: 1;
-    }
-</style>
