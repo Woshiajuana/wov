@@ -13,7 +13,7 @@
 </template>
 
 <script>
-    export default {
+    module.exports = {
         props: [ 'background_color', 'header_height', 'left_item_img_src', 'left_item_title', 'left_item_color', 'center_item_title', 'center_item_color', 'right_item_img_src', 'right_item_title', 'right_item_color' ],
         methods: {
             /**右边按钮点击事件*/

@@ -26,9 +26,8 @@
 </template>
 
 <script>
-    import SwitchMenu from './children/switch-menu.vue'
-    import PageUrlConfig from './../../config/page_url_config'
-    export default {
+    const SwitchMenu = require('./children/switch-menu.vue');
+    module.exports = {
         props: {
             /**菜单位置*/
             menu_position: { default: 'bottom' },

@@ -56,10 +56,9 @@
 </template>
 
 <script>
-    import ViewHeader from './children/view-header.vue'
-    import navigator from '../../module/navigator/navigator'
-    import source from '../../assect/lib/source'
-    export default {
+    const ViewHeader = require('./children/view-header.vue');
+    const navigator = require('../../module/navigator/navigator');
+    module.exports = {
         data () {
             return {
                 /**下拉状态*/
@@ -86,7 +85,7 @@
             /**导航条高度*/
             header_height: { default: 90 },
             /**左侧按钮图片*/
-            left_item_img_src: { default: source('return-icon.png') },
+            left_item_img_src: { default: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAYAAACM/rhtAAAAAXNSR0IArs4c6QAAAf1JREFUWAntmL0rRlEcx72EWEjKS0oUKRZZTAZllEUWI4NBmQwmJhkMLAZZGBgMKCv5AwyKEkVKSSjvkffPt/x0O930yNNzTnp+9e2c873POb/P/d3z3HufJyMjHekK/I8KFHAai+gOraJ8FEwIZh19RDSQLLqsPy6Ux/wV1OasI1jvkQvBGopWTv0t5P0S5wChyrlw23jFyGtkk30JuXA7eCVeyUiuPbuAXLg9vFLkNQQ3h1y4A7xyr2Qkz0SzyIU7xKtE3mMaAhfuGK/KOxkAU8iFO8GrCQFuIgbuFK82BLixGLgzvPoQ4EZj4C7wGlINp2+nG4MYk46pPfj25bn7UWOF6yfqRee/MGkT9aMHFBt6ZXKTpXo8bGS6+bpx4xoexoU/5Wzm4DVKddUs3y65Kwwwbg/qWBHaQE0aRGKZfg/SftRcE93v/k+e5bPPWGvzte6lBomE3kx0NnZm1s7jxW2NRNZM+mfKWHEfGZy1M3hWjaQn/e2Cehk4QgZnrR6BwUQ1JHr+Gpy148EQAlKH9KgzOGtHQoJsBEbfMoOzdigkSN16rmIgB0KCbAHm1oF8Z9wbEmQrMHqg22VWqxutbuTBRDskTygK+cq4MxhCQDrQM4pCnocEKJYupMoZ5D19/cAPKrqh0VvQI+oLiiwCo6rpf5t0pCuQaAU+AQjE6XRPS3R6AAAAAElFTkSuQmCC' },
             /**左侧按钮标题*/
             left_item_title: { default: '' },
             /**左侧按钮颜色*/
