@@ -13,36 +13,28 @@
                 switch_page_arr: [{
                     txt: 'HOME',
                     src: PageUrlConfig['home'],
+                    img_src: 'http://192.170.2.151:13140/src/assets/img/home-icon.png',
+                    img_checked_src: 'http://192.170.2.151:13140/src/assets/img/home-checked-icon.png',
                     visibility: 'visible',
                     checked: true
                 },
                 {
                     txt: 'DEMO',
                     visibility: 'hidden',
+                    img_src: 'http://192.170.2.151:13140/src/assets/img/demo-icon.png',
+                    img_checked_src: 'http://192.170.2.151:13140/src/assets/img/demo-checked-icon.png',
                     checked: false
                 },
                 {
                     txt: 'ABOUT',
                     visibility: 'hidden',
+                    img_src: 'http://192.170.2.151:13140/src/assets/img/about-icon.png',
+                    img_checked_src: 'http://192.170.2.151:13140/src/assets/img/about-checked-icon.png',
                     checked: false
                 }]
             }
         },
-        methods: {
-            /**切换导航菜单*/
-            switchMenuHandle (index) {
-                for (var i = 0; i < this.switch_page_arr.length; i++) {
-                    var item = this.switch_page_arr[i];
-                    if (i == index) {
-                        item.visibility = 'visible';
-                        item.checked = true;
-                    } else {
-                        item.visibility = 'hidden';
-                        item.checked = false;
-                    }
-                }
-            }
-        },
+        methods: {},
         components: {
             WovSwitch
         }
