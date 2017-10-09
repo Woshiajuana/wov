@@ -102,12 +102,7 @@
 	    "left": 0,
 	    "width": 750,
 	    "flexDirection": "row",
-	    "alignItems": "center",
-	    "borderTopWidth": 1,
-	    "borderTopColor": "#c0bfc4",
-	    "borderTopStyle": "solid",
-	    "borderBottomColor": "#c0bfc4",
-	    "borderBottomStyle": "solid"
+	    "alignItems": "center"
 	  },
 	  "top": {
 	    "top": 0
@@ -118,10 +113,11 @@
 	  "switch-menu-item": {
 	    "flex": 1,
 	    "justifyContent": "center",
-	    "alignItems": "center"
+	    "alignItems": "center",
+	    "borderBottomStyle": "solid",
+	    "borderTopStyle": "solid"
 	  },
 	  "switch-menu-item-txt": {
-	    "fontSize": 28,
 	    "justifyContent": "center",
 	    "alignItems": "center"
 	  },
@@ -158,9 +154,13 @@
 	//
 	//
 	//
+	//
+	//
+	//
+	//
 
 	module.exports = {
-	    props: ['switch_page_arr', 'menu_position', 'menu_height', 'menu_background_color', 'use_menu'],
+	    props: ['menu_arr', 'menu_position', 'menu_height', 'menu_background_color', 'use_menu', 'menu_border_width', 'menu_font_size'],
 	    methods: {
 	        switchMenuHandle: function switchMenuHandle(item, index) {
 	            this.$emit('switchMenu', item, index);
@@ -178,14 +178,19 @@
 	    class: [_vm.menu_position ? 'top' : 'bottom'],
 	    style: {
 	      height: _vm.menu_height,
-	      borderTopWidth: _vm.menu_position ? 0 : 1,
-	      borderBottomWidth: _vm.menu_position ? 1 : 0,
 	      backgroundColor: _vm.menu_background_color
 	    }
-	  }, [(_vm.use_menu) ? _vm._t("default") : _vm._e(), _vm._l((_vm.switch_page_arr), function(item, index) {
+	  }, [(_vm.use_menu) ? _vm._t("default") : _vm._e(), _vm._l((_vm.menu_arr), function(item, index) {
 	    return (!_vm.use_menu) ? _c('div', {
 	      key: index,
 	      staticClass: ["switch-menu-item"],
+	      style: {
+	        height: _vm.menu_height,
+	        borderTopWidth: (_vm.menu_position && !item.img_src) ? 0 : _vm.menu_border_width,
+	        borderBottomWidth: (_vm.menu_position && !item.img_src) ? _vm.menu_border_width : 0,
+	        borderTopColor: item.checked ? 'red' : '#dddddd',
+	        borderBottomColor: item.checked ? 'red' : '#dddddd'
+	      },
 	      on: {
 	        "click": function($event) {
 	          _vm.switchMenuHandle(item, index)
@@ -199,7 +204,8 @@
 	    }) : _vm._e(), _c('text', {
 	      staticClass: ["switch-menu-item-txt"],
 	      style: {
-	        color: item.checked ? '#58B7FF' : '#999999'
+	        color: item.checked ? '#58B7FF' : '#999999',
+	        fontSize: _vm.menu_font_size
 	      }
 	    }, [_vm._v(_vm._s(item.txt))])]) : _vm._e()
 	  })], 2)

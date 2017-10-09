@@ -2,10 +2,12 @@
     <div class="switch-wrap">
         <switch-menu
             :use_menu="use_menu"
-            :switch_page_arr="switch_page_arr"
+            :menu_arr="switch_page_arr"
             :menu_position="menu_position == 'top' ? true : false"
             :menu_height="menu_height"
+            :menu_border_width="menu_border_width"
             :menu_background_color="menu_background_color"
+            :menu_font_size="menu_font_size"
             @switchMenu="switchMenuHandle">
             <slot v-if="use_menu" name="menu"></slot>
         </switch-menu>
@@ -30,7 +32,7 @@
     module.exports = {
         props: {
             /**菜单位置*/
-            menu_position: { default: 'bottom' },
+            menu_position: { default: 'top' },
             /**菜单高度*/
             menu_height: { default: 100 },
             /**菜单颜色*/
@@ -38,7 +40,11 @@
             /**内容*/
             switch_page_arr: { default: [] },
             /**是否有默认*/
-            use_menu: { default: false }
+            use_menu: { default: false },
+            /**菜单响应状态*/
+            menu_border_width: { default: '4px' },
+            /**菜单字体大小*/
+            menu_font_size: { default: '28px' }
         },
         methods: {
             /**切换菜单*/
