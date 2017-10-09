@@ -165,11 +165,11 @@
 	        /**是否有默认*/
 	        use_menu: { default: false },
 	        /**菜单响应状态*/
-	        menu_border_width: { default: '4px' },
+	        menu_border_width: { default: '2px' },
 	        /**菜单字体大小*/
-	        menu_font_size: { default: '28px' },
+	        menu_font_size: { default: '32px' },
 	        /**菜单字体颜色*/
-	        menu_checked_color: { default: 'red' },
+	        menu_checked_color: { default: '#58B7FF' },
 	        /**边框的颜色*/
 	        menu_border_color: { default: '#ddd' },
 	        /**菜单字体颜色*/
