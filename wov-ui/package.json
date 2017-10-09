@@ -1,6 +1,6 @@
 {
   "name": "wov",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "weex ui components",
   "main": "index.js",
   "scripts": {
@@ -8,7 +8,6 @@
     "build_plugin": "webpack --config ./tools/webpack.config.plugin.js --color",
     "dev": "weex-builder src dist -w",
     "server": "webpack-dev-server --config webpack.dev.js -p --open",
-    "babel": "babel src -d lib",
     "serve": "serve -p 13140"
   },
   "keywords": [
