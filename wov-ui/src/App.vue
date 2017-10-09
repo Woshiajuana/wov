@@ -35,21 +35,6 @@
                 }]
             }
         },
-        methods: {
-            /**切换导航菜单*/
-            switchMenuHandle (index) {
-                for (var i = 0; i < this.switch_page_arr.length; i++) {
-                    var item = this.switch_page_arr[i];
-                    if (i == index) {
-                        item.visibility = 'visible';
-                        item.checked = true;
-                    } else {
-                        item.visibility = 'hidden';
-                        item.checked = false;
-                    }
-                }
-            }
-        },
         components: {
             SwitchCom
         }
