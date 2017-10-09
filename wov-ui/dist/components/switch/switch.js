@@ -330,8 +330,8 @@
 	        height: _vm.menu_height,
 	        borderTopWidth: item.img_src ? (_vm.menu_position ? 0 : 2) : (_vm.menu_position ? 0 : _vm.menu_border_width),
 	        borderBottomWidth: item.img_src ? (_vm.menu_position ? 2 : 0) : (_vm.menu_position ? _vm.menu_border_width : 0),
-	        borderTopColor: item.img_src ? '#dddddd' : (item.checked ? _vm.menu_checked_color : '#dddddd'),
-	        borderBottomColor: item.img_src ? '#dddddd' : (item.checked ? _vm.menu_checked_color : '#dddddd')
+	        borderTopColor: item.img_src ? '#ddd' : (item.checked ? _vm.menu_checked_color : '#dddddd'),
+	        borderBottomColor: item.img_src ? '#ddd' : (item.checked ? _vm.menu_checked_color : '#dddddd')
 	      },
 	      on: {
 	        "click": function($event) {

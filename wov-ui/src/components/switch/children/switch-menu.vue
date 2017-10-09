@@ -8,8 +8,8 @@
              :style="{ height: menu_height,
              borderTopWidth: item.img_src ? (menu_position ? 0 : 2) : (menu_position ? 0 : menu_border_width),
              borderBottomWidth: item.img_src ? (menu_position ? 2 : 0) : (menu_position ? menu_border_width : 0),
-             borderTopColor: item.img_src ? '#dddddd' : (item.checked ? menu_checked_color : '#dddddd'),
-             borderBottomColor: item.img_src ? '#dddddd' : (item.checked ? menu_checked_color : '#dddddd')}"
+             borderTopColor: item.img_src ? '#ddd' : (item.checked ? menu_checked_color : '#dddddd'),
+             borderBottomColor: item.img_src ? '#ddd' : (item.checked ? menu_checked_color : '#dddddd')}"
              class="switch-menu-item"
              v-for="(item, index) in menu_arr"
              @click="switchMenuHandle(item, index)"
