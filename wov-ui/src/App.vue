@@ -11,30 +11,22 @@
             return {
                 switch_page_arr: [{
                     txt: '首页',
-//                    src: PageUrlConfig['message'],
                     visibility: 'visible',
-                    img_icon_name: 'home-icon',
                     checked: true
                 },
                 {
                     txt: '发现',
-//                    src: PageUrlConfig['find'],
                     visibility: 'hidden',
-                    img_icon_name: 'find-icon',
                     checked: false
                 },
                 {
                     txt: '留言',
-//                    src: PageUrlConfig['home'],
                     visibility: 'hidden',
-                    img_icon_name: 'message-icon',
                     checked: false
                 },
                 {
                     txt: '关于',
-//                    src: PageUrlConfig['about'],
                     visibility: 'hidden',
-                    img_icon_name: 'about-icon',
                     checked: false
                 }]
             }
