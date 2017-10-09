@@ -39,7 +39,8 @@
     "webpack-dev-server": "^2.4.2",
     "weex-builder": "^0.2.6",
     "weex-loader": "^0.4.1",
-    "weex-tabbar": "^1.1.1"
+    "weex-tabbar": "^1.1.1",
+    "wov": "0.0.5"
   },
   "optionalDependencies": {
     "ios-deploy": "^1.9.0"
