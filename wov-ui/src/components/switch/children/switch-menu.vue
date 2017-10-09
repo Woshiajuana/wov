@@ -11,6 +11,7 @@
              v-for="(item, index) in switch_page_arr"
              @click="switchMenuHandle(item, index)"
              :key="index">
+            <image v-if="item.img_src" :src="item.checked ? item.img_checked_src : item.img_src" class="switch-menu-item-img"></image>
             <text class="switch-menu-item-txt" :style="{color: item.checked ? '#58B7FF' : '#999999'}">{{item.txt}}</text>
         </div>
     </div>
@@ -53,5 +54,11 @@
         font-size: 28px;
         justify-content: center;
         align-items: center;
+    }
+    .switch-menu-item-img {
+        justify-content: center;
+        align-items: center;
+        width: 44px;
+        height: 44px;
     }
 </style>
