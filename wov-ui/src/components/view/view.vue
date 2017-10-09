@@ -57,7 +57,7 @@
 
 <script>
     const ViewHeader = require('./children/view-header.vue');
-    const navigator = require('../../module/navigator/navigator');
+    const navigator = weex.requireModule('navigator');
     module.exports = {
         data () {
             return {

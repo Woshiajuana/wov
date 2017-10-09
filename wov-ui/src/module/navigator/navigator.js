@@ -1,5 +1,5 @@
-var navigator = weex.requireModule('navigator');
-export default {
+const navigator = weex.requireModule('navigator');
+module.exports = {
     /**压入*/
     push: ( { url, animated = 'true', close = '' }, params ) => {
         close && (close = 'true');

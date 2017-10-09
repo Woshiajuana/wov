@@ -1,13 +1,12 @@
 <template>
     <div>
-        <bar></bar>
+        <WovSwitch></WovSwitch>
     </div>
 </template>
 
 <script>
-//    import   WovSwitch   from 'wov'
+    import  WovSwitch  from 'wov'
 //    const WovSwitch = require('./../node_modules/wov/dist/index')
-    import bar from 'weex-tabbar'
     export default {
         data () {
             return {
@@ -42,7 +41,7 @@
             }
         },
         created () {
-            console.log(bar)
+            console.log(WovSwitch)
         },
         methods: {
             /**切换导航菜单*/
@@ -60,7 +59,7 @@
             }
         },
         components: {
-            bar
+            WovSwitch
         }
     }
 </script>
