@@ -8,7 +8,9 @@
             :menu_border_width="menu_border_width"
             :menu_background_color="menu_background_color"
             :menu_font_size="menu_font_size"
+            :menu_border_color="menu_border_color"
             :menu_checked_color="menu_checked_color"
+            :menu_font_color="menu_font_color"
             @switchMenu="switchMenuHandle">
             <slot v-if="use_menu" name="menu"></slot>
         </switch-menu>
@@ -47,7 +49,11 @@
             /**菜单字体大小*/
             menu_font_size: { default: '28px' },
             /**菜单字体颜色*/
-            menu_checked_color: { default: 'red' }
+            menu_checked_color: { default: 'red' },
+            /**边框的颜色*/
+            menu_border_color: { default: '#ddd' },
+            /**菜单字体颜色*/
+            menu_font_color: { default: '#999' }
         },
         methods: {
             /**切换菜单*/
