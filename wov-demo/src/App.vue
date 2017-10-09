@@ -21,6 +21,7 @@
                 {
                     txt: 'DEMO',
                     visibility: 'hidden',
+                    src: PageUrlConfig['register'],
                     img_src: 'http://192.170.2.151:13140/src/assets/img/demo-icon.png',
                     img_checked_src: 'http://192.170.2.151:13140/src/assets/img/demo-checked-icon.png',
                     checked: false

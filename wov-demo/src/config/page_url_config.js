@@ -7,4 +7,5 @@ export default {
     'search': CONFIG.BASE_URL + 'search/Search.js',
     'webview': CONFIG.BASE_URL + 'webview/Webview.js',
     'filter': CONFIG.BASE_URL + 'filter/Filter.js',
+    'register': CONFIG.BASE_URL + 'register.js',
 }
