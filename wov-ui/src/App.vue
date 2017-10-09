@@ -51,9 +51,3 @@
         }
     }
 </script>
-
-<style scoped>
-    .menu-content{
-        flex: 1;
-    }
-</style>
