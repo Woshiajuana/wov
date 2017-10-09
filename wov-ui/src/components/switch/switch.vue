@@ -8,6 +8,7 @@
             :menu_border_width="menu_border_width"
             :menu_background_color="menu_background_color"
             :menu_font_size="menu_font_size"
+            :menu_checked_color="menu_checked_color"
             @switchMenu="switchMenuHandle">
             <slot v-if="use_menu" name="menu"></slot>
         </switch-menu>
@@ -32,7 +33,7 @@
     module.exports = {
         props: {
             /**菜单位置*/
-            menu_position: { default: 'top' },
+            menu_position: { default: 'bottom' },
             /**菜单高度*/
             menu_height: { default: 100 },
             /**菜单颜色*/
@@ -44,7 +45,9 @@
             /**菜单响应状态*/
             menu_border_width: { default: '4px' },
             /**菜单字体大小*/
-            menu_font_size: { default: '28px' }
+            menu_font_size: { default: '28px' },
+            /**菜单字体颜色*/
+            menu_checked_color: { default: 'red' }
         },
         methods: {
             /**切换菜单*/

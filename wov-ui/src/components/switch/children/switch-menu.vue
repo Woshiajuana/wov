@@ -6,24 +6,24 @@
         <slot v-if="use_menu"></slot>
         <div v-if="!use_menu"
              :style="{ height: menu_height,
-             borderTopWidth: (menu_position && !item.img_src) ? 0 : menu_border_width,
-             borderBottomWidth: (menu_position && !item.img_src) ? menu_border_width : 0,
-             borderTopColor: item.checked ? 'red' : '#dddddd',
-             borderBottomColor: item.checked ? 'red' : '#dddddd'}"
+             borderTopWidth: item.img_src ? (menu_position ? 0 : 2) : (menu_position ? 0 : menu_border_width),
+             borderBottomWidth: item.img_src ? (menu_position ? 2 : 0) : (menu_position ? menu_border_width : 0),
+             borderTopColor: item.img_src ? '#dddddd' : (item.checked ? menu_checked_color : '#dddddd'),
+             borderBottomColor: item.img_src ? '#dddddd' : (item.checked ? menu_checked_color : '#dddddd')}"
              class="switch-menu-item"
              v-for="(item, index) in menu_arr"
              @click="switchMenuHandle(item, index)"
              :key="index">
-            <image v-if="item.img_src" :src="item.checked ? item.img_checked_src : item.img_src" class="switch-menu-item-img"></image>
+            <image v-if="item.img_src" :src="item.checked ? (item.img_checked_src || item.img_src) : item.img_src" class="switch-menu-item-img"></image>
             <text class="switch-menu-item-txt"
-                  :style="{color: item.checked ? '#58B7FF' : '#999999',
-                  fontSize: menu_font_size}">{{item.txt}}</text>
+                  :style="{color: item.checked ? menu_checked_color : '#999999',
+                  fontSize: item.img_src ? '22px' : menu_font_size }">{{item.txt}}</text>
         </div>
     </div>
 </template>
 <script>
     module.exports = {
-        props: [ 'menu_arr', 'menu_position', 'menu_height', 'menu_background_color', 'use_menu', 'menu_border_width', 'menu_font_size' ],
+        props: [ 'menu_arr', 'menu_position', 'menu_height', 'menu_background_color', 'use_menu', 'menu_border_width', 'menu_font_size', 'menu_checked_color' ],
         methods: {
             switchMenuHandle (item, index) {
                 this.$emit('switchMenu', item, index);

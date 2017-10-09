@@ -147,12 +147,13 @@
 	//
 	//
 	//
+	//
 
 	var SwitchMenu = __webpack_require__(5);
 	module.exports = {
 	    props: {
 	        /**菜单位置*/
-	        menu_position: { default: 'top' },
+	        menu_position: { default: 'bottom' },
 	        /**菜单高度*/
 	        menu_height: { default: 100 },
 	        /**菜单颜色*/
@@ -164,7 +165,9 @@
 	        /**菜单响应状态*/
 	        menu_border_width: { default: '4px' },
 	        /**菜单字体大小*/
-	        menu_font_size: { default: '28px' }
+	        menu_font_size: { default: '28px' },
+	        /**菜单字体颜色*/
+	        menu_checked_color: { default: 'red' }
 	    },
 	    methods: {
 	        /**切换菜单*/
@@ -299,7 +302,7 @@
 	//
 
 	module.exports = {
-	    props: ['menu_arr', 'menu_position', 'menu_height', 'menu_background_color', 'use_menu', 'menu_border_width', 'menu_font_size'],
+	    props: ['menu_arr', 'menu_position', 'menu_height', 'menu_background_color', 'use_menu', 'menu_border_width', 'menu_font_size', 'menu_checked_color'],
 	    methods: {
 	        switchMenuHandle: function switchMenuHandle(item, index) {
 	            this.$emit('switchMenu', item, index);
@@ -325,10 +328,10 @@
 	      staticClass: ["switch-menu-item"],
 	      style: {
 	        height: _vm.menu_height,
-	        borderTopWidth: (_vm.menu_position && !item.img_src) ? 0 : _vm.menu_border_width,
-	        borderBottomWidth: (_vm.menu_position && !item.img_src) ? _vm.menu_border_width : 0,
-	        borderTopColor: item.checked ? 'red' : '#dddddd',
-	        borderBottomColor: item.checked ? 'red' : '#dddddd'
+	        borderTopWidth: item.img_src ? (_vm.menu_position ? 0 : 2) : (_vm.menu_position ? 0 : _vm.menu_border_width),
+	        borderBottomWidth: item.img_src ? (_vm.menu_position ? 2 : 0) : (_vm.menu_position ? _vm.menu_border_width : 0),
+	        borderTopColor: item.img_src ? '#dddddd' : (item.checked ? _vm.menu_checked_color : '#dddddd'),
+	        borderBottomColor: item.img_src ? '#dddddd' : (item.checked ? _vm.menu_checked_color : '#dddddd')
 	      },
 	      on: {
 	        "click": function($event) {
@@ -338,13 +341,13 @@
 	    }, [(item.img_src) ? _c('image', {
 	      staticClass: ["switch-menu-item-img"],
 	      attrs: {
-	        "src": item.checked ? item.img_checked_src : item.img_src
+	        "src": item.checked ? (item.img_checked_src || item.img_src) : item.img_src
 	      }
 	    }) : _vm._e(), _c('text', {
 	      staticClass: ["switch-menu-item-txt"],
 	      style: {
-	        color: item.checked ? '#58B7FF' : '#999999',
-	        fontSize: _vm.menu_font_size
+	        color: item.checked ? _vm.menu_checked_color : '#999999',
+	        fontSize: item.img_src ? '22px' : _vm.menu_font_size
 	      }
 	    }, [_vm._v(_vm._s(item.txt))])]) : _vm._e()
 	  })], 2)
@@ -366,7 +369,8 @@
 	      "menu_height": _vm.menu_height,
 	      "menu_border_width": _vm.menu_border_width,
 	      "menu_background_color": _vm.menu_background_color,
-	      "menu_font_size": _vm.menu_font_size
+	      "menu_font_size": _vm.menu_font_size,
+	      "menu_checked_color": _vm.menu_checked_color
 	    },
 	    on: {
 	      "switchMenu": _vm.switchMenuHandle
