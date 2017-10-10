@@ -1,41 +1,46 @@
 <template>
     <wov-view
-        :is_header="false">
+        :is_header="false"
+        backgroundColor="#fbf9fe">
         <div class="logo-wrap">
             <image class="logo-icon" :src="logo_src"></image>
             <text class="version-text">v0.0.7</text>
         </div>
-        <wov-item
-            left_text="Official"
-            right_text="Enter"
-            :is_arrow="false"
-            :height="100"
-            :right_img_src="arrow_img_src"
-            :left_img_src="official_img_src"
-            :left_img_width_and_height="[60,60]"
-            @onPress="onPressHandle('Official')">
-        </wov-item>
-        <wov-item
-            left_text="GitHub"
-            right_text="Star Me"
-            :is_arrow="false"
-            :height="100"
-            :right_img_src="arrow_img_src"
-            :left_img_src="git_img_src"
-            :left_img_width_and_height="[60,60]"
-            @onPress="onPressHandle('GitHub')">
-        </wov-item>
-        <wov-item
-            left_text="Blog"
-            right_text="Welcome"
-            :is_arrow="false"
-            :height="100"
-            :right_img_src="arrow_img_src"
-            :left_img_src="blog_img_src"
-            :border_bottom_width="0"
-            :left_img_width_and_height="[60,60]"
-            @onPress="onPressHandle('Blog')">
-        </wov-item>
+        <div class="main-wrap">
+            <wov-item
+                    left_text="Official"
+                    right_text="Enter"
+                    :is_arrow="false"
+                    :height="100"
+                    :right_img_src="arrow_img_src"
+                    :left_img_src="official_img_src"
+                    :border_bottom_width="2"
+                    :left_img_width_and_height="[60,60]"
+                    @onPress="onPressHandle('Official')">
+            </wov-item>
+            <wov-item
+                    left_text="GitHub"
+                    right_text="Star Me"
+                    :is_arrow="false"
+                    :height="100"
+                    :right_img_src="arrow_img_src"
+                    :left_img_src="git_img_src"
+                    :border_bottom_width="2"
+                    :left_img_width_and_height="[60,60]"
+                    @onPress="onPressHandle('GitHub')">
+            </wov-item>
+            <wov-item
+                    left_text="Blog"
+                    right_text="Welcome"
+                    :is_arrow="false"
+                    :height="100"
+                    :right_img_src="arrow_img_src"
+                    :left_img_src="blog_img_src"
+                    :border_bottom_width="0"
+                    :left_img_width_and_height="[60,60]"
+                    @onPress="onPressHandle('Blog')">
+            </wov-item>
+        </div>
     </wov-view>
 </template>
 
@@ -98,5 +103,13 @@
         margin-top: 20px;
         font-size: 36px;
         color: #999;
+    }
+    .main-wrap{
+        border-top-color: #ddd;
+        border-top-width: 2px;
+        border-top-style: solid;
+        border-bottom-color: #ddd;
+        border-bottom-width: 2px;
+        border-bottom-style: solid;
     }
 </style>
