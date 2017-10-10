@@ -21,12 +21,13 @@
     import source from '../../assets/lib/source'
     export default {
         data () {
-            return {
+            return {//20A0FF
                 demo_arr: [
-                    { img_src: source('wov-icon.png'), name: 'WovView' },
-                    { img_src: source('wov-icon.png'), name: 'WovView' },
-                    { img_src: source('wov-icon.png'), name: 'WovView' },
-                    { img_src: source('wov-icon.png'), name: 'WovView' },
+                    { img_src: source('switch-icon.png'), name: 'WovSwitch' },
+                    { img_src: source('view-icon.png'), name: 'WovView' },
+                    { img_src: source('item-icon.png'), name: 'WovItem' },
+                    { img_src: source('btn-icon.png'), name: 'WovBtn' },
+                    { img_src: source('web-icon.png'), name: 'WovWeb' },
                 ]
             }
         },

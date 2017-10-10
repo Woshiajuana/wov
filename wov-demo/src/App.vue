@@ -30,7 +30,7 @@
                 {
                     txt: 'ABOUT',
                     visibility: 'hidden',
-                    src: PageUrlConfig['register'],
+                    src: PageUrlConfig['about'],
                     img_src: source('about-icon.png'),
                     img_checked_src: source('about-checked-icon.png'),
                     checked: false
