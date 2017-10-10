@@ -3,13 +3,21 @@
         :is_header="false">
         <div class="logo-wrap">
             <image class="logo-icon" :src="logo_src"></image>
-            <text class="version-text">v0.0.5</text>
+            <text class="version-text">v0.0.7</text>
         </div>
+        <wov-item
+            left_text="GitHub"
+            right_text="me">
+        </wov-item>
+        <wov-item
+            left_text="GitHub"
+            right_text="me">
+        </wov-item>
     </wov-view>
 </template>
 
 <script>
-    import { WovView } from 'wov'
+    import { WovView, WovItem } from 'wov'
     import source from '../../assets/lib/source'
     export default {
         data () {
@@ -18,7 +26,8 @@
             }
         },
         components: {
-            WovView
+            WovView,
+            WovItem
         }
     }
 </script>

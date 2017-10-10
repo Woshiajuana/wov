@@ -131,10 +131,6 @@
 
 	'use strict';
 
-	Object.defineProperty(exports, "__esModule", {
-	    value: true
-	});
-	//
 	//
 	//
 	//
@@ -187,7 +183,7 @@
 	//
 	//
 
-	exports.default = {
+	module.exports = {
 	    name: 'item',
 	    props: {
 	        /**高度*/

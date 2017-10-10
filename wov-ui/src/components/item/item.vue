@@ -25,7 +25,6 @@
                   color: right_text_color,
                   fontSize: right_text_size,
                   textAlign: right_text_align }">{{right_text}}</text>
-
             <input class="item-text item-right"
                    :placeholder="is_placeholder"
                    v-if="is_input"
@@ -51,7 +50,7 @@
 </template>
 
 <script>
-    export default {
+    module.exports = {
         name: 'item',
         props: {
             /**高度*/
