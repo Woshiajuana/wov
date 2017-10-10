@@ -7,16 +7,19 @@
         </div>
         <wov-item
             left_text="GitHub"
-            right_text="me"
+            right_text="Star Me"
             :height="100"
-            :left_img_src="left_img_src"
-            :left_img_width_and_height="[50,50]"
-            @onPress="onPressHandle">
+            :left_img_src="git_img_src"
+            :left_img_width_and_height="[60,60]"
+            @onPress="onPressHandle('GitHub')">
         </wov-item>
         <wov-item
-            left_text="GitHub"
-            right_text="me"
-            :height="100">
+            left_text="Blog"
+            right_text="Welcome"
+            :height="100"
+            :left_img_src="blog_img_src"
+            :left_img_width_and_height="[60,60]"
+            @onPress="onPressHandle('Blog')">
         </wov-item>
     </wov-view>
 </template>
@@ -30,14 +33,24 @@
         data () {
             return {
                 logo_src: source('wov-icon.png'),
-                left_img_src: source('github-icon.png')
+                git_img_src: source('github-icon.png'),
+                blog_img_src: source('blog-icon.png')
             }
         },
         methods: {
-            onPressHandle () {
-                navigator.push({ url: PageUrl['webview'] },{
-                    link: 'https://github.com/Woshiajuana/wov/'
-                })
+            onPressHandle ( page_name ) {
+                switch (page_name) {
+                    case 'GitHub':
+                        navigator.push({ url: PageUrl['webview'] },{
+                            link: 'https://github.com/Woshiajuana/wov/'
+                        });
+                        break;
+                    case 'Blog':
+                        navigator.push({ url: PageUrl['webview'] },{
+                            link: 'http://www.owulia.com/ajuan/'
+                        });
+                        break;
+                }
             }
         },
         components: {
