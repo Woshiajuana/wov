@@ -1,6 +1,6 @@
 <template>
     <wov-switch
-            :switch_page_arr="switch_page_arr">
+        :switch_page_arr="switch_page_arr">
     </wov-switch>
 </template>
 
