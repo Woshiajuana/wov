@@ -40,7 +40,7 @@
     "weex-builder": "^0.2.6",
     "weex-loader": "^0.4.1",
     "weex-tabbar": "^1.1.1",
-    "wov": "0.0.11"
+    "wov": "0.0.12"
   },
   "optionalDependencies": {
     "ios-deploy": "^1.9.0"
