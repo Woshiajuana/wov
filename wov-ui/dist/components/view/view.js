@@ -273,8 +273,7 @@
 	    "position": "absolute",
 	    "width": 750,
 	    "left": 0,
-	    "bottom": 0,
-	    "backgroundColor": "#f5f5f5"
+	    "bottom": 0
 	  },
 	  "view-refresh": {
 	    "justifyContent": "center",
@@ -369,6 +368,8 @@
 	//
 	//
 	//
+	//
+	//
 
 	var ViewHeader = __webpack_require__(21);
 	var navigator = weex.requireModule('navigator');
@@ -391,12 +392,14 @@
 	        is_not_enabled_left_default_click: { default: false },
 	        /**是否有头部*/
 	        is_header: { default: true },
+	        /**主体背景颜色*/
+	        background_color: { default: '' },
 	        /**是否支持下拉刷新*/
 	        is_refresh: { default: false },
 	        /**是否支持上拉加载*/
 	        is_load: { default: false },
 	        /**导航条背景色*/
-	        background_color: { default: '#FFFFFF' },
+	        nav_background_color: { default: '#FFFFFF' },
 	        /**导航条高度*/
 	        header_height: { default: 90 },
 	        /**左侧按钮图片*/
@@ -553,7 +556,7 @@
 	    staticClass: ["view-wrap"]
 	  }, [(_vm.is_header) ? _c('view-header', {
 	    attrs: {
-	      "background_color": _vm.background_color,
+	      "background_color": _vm.nav_background_color,
 	      "header_height": _vm.header_height,
 	      "left_item_img_src": _vm.left_item_img_src,
 	      "left_item_title": _vm.left_item_title,
@@ -571,7 +574,8 @@
 	  }) : _vm._e(), _c('scroller', {
 	    staticClass: ["view-inner"],
 	    style: {
-	      top: _vm.is_header ? 90 : .1
+	      top: _vm.is_header ? 90 : 0,
+	      backgroundColor: _vm.background_color
 	    }
 	  }, [(_vm.is_refresh) ? _c('refresh', {
 	    staticClass: ["view-refresh"],

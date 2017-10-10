@@ -22,7 +22,7 @@
                 {
                     txt: 'DEMO',
                     visibility: 'hidden',
-                    src: PageUrlConfig['register'],
+                    src: PageUrlConfig['demo'],
                     img_src: source('demo-icon.png'),
                     img_checked_src: source('demo-checked-icon.png'),
                     checked: false
@@ -30,6 +30,7 @@
                 {
                     txt: 'ABOUT',
                     visibility: 'hidden',
+                    src: PageUrlConfig['register'],
                     img_src: source('about-icon.png'),
                     img_checked_src: source('about-checked-icon.png'),
                     checked: false

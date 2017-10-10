@@ -2,7 +2,7 @@
     <div class="view-wrap">
         <view-header
             v-if="is_header"
-            :background_color="background_color"
+            :background_color="nav_background_color"
             :header_height="header_height"
             :left_item_img_src="left_item_img_src"
             :left_item_title="left_item_title"
@@ -15,7 +15,9 @@
             @rightItemClick="rightItemClickHandle"
             @leftItemClick="leftItemClickHandle">
         </view-header>
-        <scroller :style="{ top: is_header ? 90 : .1 }" class="view-inner">
+        <scroller class="view-inner"
+            :style="{ top: is_header ? 90 : 0 ,
+            backgroundColor: background_color}">
             <!--上拉刷新-->
             <refresh class="view-refresh"
                      v-if="is_refresh"
@@ -76,12 +78,14 @@
             is_not_enabled_left_default_click: { default: false },
             /**是否有头部*/
             is_header: { default: true },
+            /**主体背景颜色*/
+            background_color: { default: '' },
             /**是否支持下拉刷新*/
             is_refresh: { default: false },
             /**是否支持上拉加载*/
             is_load: { default: false },
             /**导航条背景色*/
-            background_color: { default: '#FFFFFF' },
+            nav_background_color: { default: '#FFFFFF' },
             /**导航条高度*/
             header_height: { default: 90 },
             /**左侧按钮图片*/
@@ -183,7 +187,6 @@
         width: 750px;
         left: 0;
         bottom: 0;
-        background-color: #f5f5f5;
     }
     .view-refresh,
     .view-loading{
