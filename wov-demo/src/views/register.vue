@@ -27,7 +27,7 @@
 
 <script>
     import { WovView } from 'wov'
-    import ArticleListItem from '../../components/article-list-item.vue'
+    import ArticleListItem from '../components/article-list-item.vue'
     export default {
         data () {
             return {
