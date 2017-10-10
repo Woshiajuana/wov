@@ -2,64 +2,65 @@
     <div class="webview-wrap">
         <web class="webview-inner"
              ref="webview"
-             :src="webviewSrcCom"
+             :src="web_src"
              @pagestart="pageStartHandle"
              @pagefinish="pageFinishHandle"
              @error="pageErrorHandle">
         </web>
         <div class="webview-menu">
             <div class="webview-menu-item" @click="leftMenuClickHandle">
-                <image class="webview-menu-item-icon" :src="leftMenuSrcCom"></image>
+                <image class="webview-menu-item-icon" :src="left_menu_src"></image>
             </div>
             <div class="webview-menu-item" @click="centerMenuClickHandle">
-                <image class="webview-menu-item-icon" :src="centerMenuSrcCom"></image>
+                <image class="webview-menu-item-icon" :src="center_menu_src"></image>
             </div>
             <div class="webview-menu-item" @click="rightMenuClickHandle">
-                <image class="webview-menu-item-icon" :src="rightMenuSrcCom"></image>
+                <image class="webview-menu-item-icon" :src="right_menu_src"></image>
             </div>
         </div>
     </div>
 </template>
 
 <script>
-    import navigator from '../../module/navigator/navigator';
-    import source from '../../tool/source';
     const webview = weex.requireModule('webview');
+    const navigator = weex.requireModule('navigator');
     export default {
         data () {
             return {
                 page_count: 0
             }
         },
-        computed: {
+        props: {
             /**webview内容资源*/
-            webviewSrcCom () {
-                return navigator.params(this) ? navigator.params(this).link : '';
-            },
+            web_src: { default: '' },
             /**左边菜单资源*/
-            leftMenuSrcCom () {
-                return source('return-icon.png');
-            },
+            left_menu_src: { default: '' },
             /**中间菜单资源*/
-            centerMenuSrcCom () {
-                return source('refresh-icon.png');
-            },
+            center_menu_src: { default: '' },
             /**右边菜单资源*/
-            rightMenuSrcCom () {
-                return source('close-icon.png');
-            }
+            right_menu_src: { default: '' },
+            /**是否使用默认点击事件*/
+            use_left_event: { default: false },
+            use_center_event: { default: false },
+            use_right_event: { default: false }
         },
         methods: {
             /**页面开始加载触发*/
-            pageStartHandle () {},
+            pageStartHandle () {
+                this.$emit('pageStart');
+            },
             /**页面加载完成触发*/
             pageFinishHandle () {
                 this.page_count += 1;
+                this.$emit('pageFinish');
             },
             /**页面加载失败触发*/
-            pageErrorHandle () {},
+            pageErrorHandle () {
+                this.$emit('pageError');
+            },
             /**左边菜单点击事件*/
             leftMenuClickHandle () {
+                if(this.use_left_event) return this.$emit('leftMenuClick');
                 var page_count = this.page_count;
                 webview.goBack(this.$refs.webview);
                 setTimeout(() => {
@@ -70,11 +71,11 @@
             },
             /**中间菜单点击事件*/
             centerMenuClickHandle () {
-                webview.reload(this.$refs.webview)
+                this.use_center_event ? this.$emit('centerMenuClick') : webview.reload(this.$refs.webview);
             },
             /**右边菜单点击事件*/
             rightMenuClickHandle () {
-                navigator.pop();
+                this.use_right_event ? this.$emit('rightMenuClick') : navigator.pop();
             }
         }
     };
