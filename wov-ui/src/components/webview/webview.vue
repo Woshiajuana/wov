@@ -24,7 +24,7 @@
 <script>
     const webview = weex.requireModule('webview');
     const navigator = weex.requireModule('navigator');
-    export default {
+    module.exports = {
         data () {
             return {
                 page_count: 0
