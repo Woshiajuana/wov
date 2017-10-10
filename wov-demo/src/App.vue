@@ -6,6 +6,7 @@
 
 <script>
     import { WovSwitch } from 'wov'
+    import source from './tool/source'
     import PageUrlConfig from './config/page_url_config'
     export default {
         data () {
@@ -13,8 +14,8 @@
                 switch_page_arr: [{
                     txt: 'HOME',
                     src: PageUrlConfig['home'],
-                    img_src: 'http://192.170.2.151:13140/src/assets/img/home-icon.png',
-                    img_checked_src: 'http://192.170.2.151:13140/src/assets/img/home-checked-icon.png',
+                    img_src: source('home-icon.png'),
+                    img_checked_src: source('home-checked-icon.png'),
                     visibility: 'visible',
                     checked: true
                 },
@@ -22,15 +23,15 @@
                     txt: 'DEMO',
                     visibility: 'hidden',
                     src: PageUrlConfig['register'],
-                    img_src: 'http://192.170.2.151:13140/src/assets/img/demo-icon.png',
-                    img_checked_src: 'http://192.170.2.151:13140/src/assets/img/demo-checked-icon.png',
+                    img_src: source('demo-icon.png'),
+                    img_checked_src: source('demo-checked-icon.png'),
                     checked: false
                 },
                 {
                     txt: 'ABOUT',
                     visibility: 'hidden',
-                    img_src: 'http://192.170.2.151:13140/src/assets/img/about-icon.png',
-                    img_checked_src: 'http://192.170.2.151:13140/src/assets/img/about-checked-icon.png',
+                    img_src: source('about-icon.png'),
+                    img_checked_src: source('about-checked-icon.png'),
                     checked: false
                 }]
             }
