@@ -7,7 +7,8 @@
         </div>
         <wov-item
             left_text="GitHub"
-            right_text="me">
+            right_text="me"
+            @onPress="onPressHandle">
         </wov-item>
         <wov-item
             left_text="GitHub"
@@ -19,10 +20,19 @@
 <script>
     import { WovView, WovItem } from 'wov'
     import source from '../../assets/lib/source'
+    import navigator from '../../module/navigator/navigator'
+    import PageUrl from '../../config/page_url_config'
     export default {
         data () {
             return {
                 logo_src: source('wov-icon.png')
+            }
+        },
+        methods: {
+            onPressHandle () {
+                navigator.push({ url: PageUrl['webview'] },{
+                    link: 'http://www.owulia.com/ink/'
+                })
             }
         },
         components: {

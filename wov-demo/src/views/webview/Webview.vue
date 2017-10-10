@@ -1,33 +1,28 @@
 <template>
-
+    <wov-web
+        :left_menu_src="left_menu_src"
+        :center_menu_src="center_menu_src"
+        :right_menu_src="right_menu_src"
+        :web_src="webviewSrcCom">
+    </wov-web>
 </template>
 
 <script>
-    import {} from 'wov'
+    import { WovWeb } from 'wov'
     import navigator from '../../module/navigator/navigator'
     import source from '../../assets/lib/source'
     export default {
         data () {
             return {
-                page_count: 0
+                left_menu_src: source('return-icon.png'),
+                center_menu_src: source('refresh-icon.png'),
+                right_menu_src: source('close-icon.png')
             }
         },
         computed: {
             /**webview内容资源*/
             webviewSrcCom () {
                 return navigator.params(this) ? navigator.params(this).link : '';
-            },
-            /**左边菜单资源*/
-            leftMenuSrcCom () {
-                return source('return-icon.png');
-            },
-            /**中间菜单资源*/
-            centerMenuSrcCom () {
-                return source('refresh-icon.png');
-            },
-            /**右边菜单资源*/
-            rightMenuSrcCom () {
-                return source('close-icon.png');
             }
         },
         methods: {
@@ -57,40 +52,9 @@
             rightMenuClickHandle () {
                 navigator.pop();
             }
+        },
+        components: {
+            WovWeb
         }
     };
 </script>
-
-<style>
-    .webview-wrap {
-        flex: 1;
-    }
-    .webview-inner {
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 98px;
-    }
-    .webview-menu {
-        position: absolute;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        height: 98px;
-        width: 750px;
-        flex-direction: row;
-        justify-content: space-between;
-        background-color: #f5f5f9;
-    }
-    .webview-menu-item {
-        justify-content: center;
-        align-items: center;
-        height: 98px;
-        width: 98px;
-    }
-    .webview-menu-item-icon {
-        width: 45px;
-        height: 45px;
-    }
-</style>

@@ -102,6 +102,9 @@
         flex-direction: row;
         justify-content: space-between;
         background-color: #f5f5f9;
+        border-top-width: 2px;
+        border-top-color: #ddd;
+        border-top-style: solid;
     }
     .webview-menu-item {
         justify-content: center;
