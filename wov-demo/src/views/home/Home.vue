@@ -9,12 +9,14 @@
             left_text="GitHub"
             right_text="me"
             :height="100"
+            :left_img_src="left_img_src"
+            :left_img_width_and_height="[50,50]"
             @onPress="onPressHandle">
         </wov-item>
         <wov-item
             left_text="GitHub"
-            :height="100"
-            right_text="me">
+            right_text="me"
+            :height="100">
         </wov-item>
     </wov-view>
 </template>
@@ -27,7 +29,8 @@
     export default {
         data () {
             return {
-                logo_src: source('wov-icon.png')
+                logo_src: source('wov-icon.png'),
+                left_img_src: source('github-icon.png')
             }
         },
         methods: {
