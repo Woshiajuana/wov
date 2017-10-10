@@ -1,3 +1,351 @@
-// { "framework": "Vue"} 
+// { "framework": "Vue" }
+/******/ (function(modules) { // webpackBootstrap
+/******/ 	// The module cache
+/******/ 	var installedModules = {};
 
-!function(t){function e(r){if(i[r])return i[r].exports;var o=i[r]={i:r,l:!1,exports:{}};return t[r].call(o.exports,o,o.exports,e),o.l=!0,o.exports}var i={};e.m=t,e.c=i,e.i=function(t){return t},e.d=function(t,i,r){e.o(t,i)||Object.defineProperty(t,i,{configurable:!1,enumerable:!0,get:r})},e.n=function(t){var i=t&&t.__esModule?function(){return t.default}:function(){return t};return e.d(i,"a",i),i},e.o=function(t,e){return Object.prototype.hasOwnProperty.call(t,e)},e.p="",e(e.s=22)}({12:function(t,e,i){"use strict";Object.defineProperty(e,"__esModule",{value:!0}),e.default={name:"item",props:{height:{default:90},left_width:{default:120},left_text:{default:"左边"},left_text_align:{default:"left"},left_text_color:{default:"#333"},left_text_size:{default:28},right_text:{default:"右边"},right_text_color:{default:"#333"},right_text_align:{default:"right"},right_text_size:{default:28},padding_left:{default:20},padding_right:{default:0},border_bottom_width:{default:1},border_bottom_color:{default:"#ddd"},border_bottom_style:{default:"solid"},is_input:{default:!1},input_type:{default:"text"},input_max_length:{default:11},is_placeholder:{default:"请输入"},is_arrow:{default:!0},is_arrow_color:{default:"#999999"},left_img_src:{default:""},left_img_width_and_height:{default:[40,40]},right_img_src:{default:""},right_img_width_and_height:{default:[40,40]}},data:function(){return{input_value:""}},created:function(){this.input_value=this.right_text},methods:{pressHandle:function(t){this.$emit("onPress",t)},inputHandle:function(){this.$emit("inputChange",this.input_value)}}}},15:function(t,e){t.exports={"item-wrap":{backgroundColor:"#ffffff"},"item-inner":{flex:1,flexDirection:"row",alignItems:"center"},"item-arrow":{width:24,height:24,marginRight:10,marginLeft:10,borderTopWidth:3,borderTopStyle:"solid",borderRightWidth:3,borderRightStyle:"solid",transform:"rotate(45deg)"},"item-right-img":{marginLeft:10},"item-left-img":{marginRight:10},"item-right":{flex:1}}},18:function(t,e){t.exports={render:function(){var t=this,e=t.$createElement,i=t._self._c||e;return i("div",{staticClass:["item-wrap"],style:{height:t.height,paddingLeft:t.padding_left,paddingRight:t.padding_right},on:{click:t.pressHandle}},[i("div",{staticClass:["item-inner","item-inner-arrow"],style:{borderBottomWidth:t.border_bottom_width,borderBottomColor:t.border_bottom_color,borderBottomStyle:t.border_bottom_style,paddingRight:t.padding_left}},[t.left_img_src?i("image",{staticClass:["item-left-img"],style:{width:t.left_img_width_and_height[0],height:t.left_img_width_and_height[1]},attrs:{src:t.left_img_src}}):t._e(),i("text",{staticClass:["item-text","item-left"],style:{width:t.left_width,color:t.left_text_color,fontSize:t.left_text_size,textAlign:t.left_text_align}},[t._v(t._s(t.left_text))]),t.is_input?t._e():i("text",{staticClass:["item-text","item-right"],style:{width:t.left_width,color:t.right_text_color,fontSize:t.right_text_size,textAlign:t.right_text_align}},[t._v(t._s(t.right_text))]),t.is_input?i("input",{staticClass:["item-text","item-right"],style:{width:t.left_width,color:t.right_text_color,fontSize:t.right_text_size,textAlign:t.right_text_align},attrs:{placeholder:t.is_placeholder,value:t.input_value,maxlength:t.input_max_length,type:t.input_type},on:{input:t.inputHandle}}):t._e(),t.right_img_src?i("image",{staticClass:["item-right-img"],style:{width:t.right_img_width_and_height[0],height:t.right_img_width_and_height[1]},attrs:{src:t.right_img_src}}):t._e(),t.is_arrow?i("div",{staticClass:["item-arrow"],style:{borderTopColor:t.is_arrow_color,borderRightColor:t.is_arrow_color}}):t._e()])])},staticRenderFns:[]},t.exports.render._withStripped=!0},22:function(t,e,i){var r,o,l=[];l.push(i(15)),r=i(12);var _=i(18);o=r=r||{},"object"!=typeof r.default&&"function"!=typeof r.default||(Object.keys(r).some(function(t){return"default"!==t&&"__esModule"!==t})&&console.error("named exports are not supported in *.vue files."),o=r=r.default),"function"==typeof o&&(o=o.options),o.__file="F:\\workcode\\wov\\wov-ui\\src\\components\\item\\item.vue",o.render=_.render,o.staticRenderFns=_.staticRenderFns,o._scopeId="data-v-55a1f916",o.style=o.style||{},l.forEach(function(t){for(var e in t)o.style[e]=t[e]}),"function"==typeof __register_static_styles__&&__register_static_styles__(o._scopeId,l),t.exports=r,t.exports.el="true",new Vue(t.exports)}});
+/******/ 	// The require function
+/******/ 	function __webpack_require__(moduleId) {
+
+/******/ 		// Check if module is in cache
+/******/ 		if(installedModules[moduleId])
+/******/ 			return installedModules[moduleId].exports;
+
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		var module = installedModules[moduleId] = {
+/******/ 			exports: {},
+/******/ 			id: moduleId,
+/******/ 			loaded: false
+/******/ 		};
+
+/******/ 		// Execute the module function
+/******/ 		modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
+
+/******/ 		// Flag the module as loaded
+/******/ 		module.loaded = true;
+
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
+
+
+/******/ 	// expose the modules object (__webpack_modules__)
+/******/ 	__webpack_require__.m = modules;
+
+/******/ 	// expose the module cache
+/******/ 	__webpack_require__.c = installedModules;
+
+/******/ 	// __webpack_public_path__
+/******/ 	__webpack_require__.p = "";
+
+/******/ 	// Load entry module and return exports
+/******/ 	return __webpack_require__(0);
+/******/ })
+/************************************************************************/
+/******/ ({
+
+/***/ 0:
+/***/ (function(module, exports, __webpack_require__) {
+
+	var __vue_exports__, __vue_options__
+	var __vue_styles__ = []
+
+	/* styles */
+	__vue_styles__.push(__webpack_require__(13)
+	)
+
+	/* script */
+	__vue_exports__ = __webpack_require__(14)
+
+	/* template */
+	var __vue_template__ = __webpack_require__(15)
+	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
+	if (
+	  typeof __vue_exports__.default === "object" ||
+	  typeof __vue_exports__.default === "function"
+	) {
+	if (Object.keys(__vue_exports__).some(function (key) { return key !== "default" && key !== "__esModule" })) {console.error("named exports are not supported in *.vue files.")}
+	__vue_options__ = __vue_exports__ = __vue_exports__.default
+	}
+	if (typeof __vue_options__ === "function") {
+	  __vue_options__ = __vue_options__.options
+	}
+	__vue_options__.__file = "F:\\workcode\\wov\\wov-ui\\src\\components\\item\\item.vue"
+	__vue_options__.render = __vue_template__.render
+	__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
+	__vue_options__._scopeId = "data-v-55a1f916"
+	__vue_options__.style = __vue_options__.style || {}
+	__vue_styles__.forEach(function (module) {
+	  for (var name in module) {
+	    __vue_options__.style[name] = module[name]
+	  }
+	})
+	if (typeof __register_static_styles__ === "function") {
+	  __register_static_styles__(__vue_options__._scopeId, __vue_styles__)
+	}
+
+	module.exports = __vue_exports__
+	module.exports.el = 'true'
+	new Vue(module.exports)
+
+
+/***/ }),
+
+/***/ 13:
+/***/ (function(module, exports) {
+
+	module.exports = {
+	  "item-wrap": {
+	    "backgroundColor": "#ffffff"
+	  },
+	  "item-inner": {
+	    "flex": 1,
+	    "flexDirection": "row",
+	    "alignItems": "center"
+	  },
+	  "item-arrow": {
+	    "width": 24,
+	    "height": 24,
+	    "marginRight": 10,
+	    "marginLeft": 10,
+	    "borderTopWidth": 3,
+	    "borderTopStyle": "solid",
+	    "borderRightWidth": 3,
+	    "borderRightStyle": "solid",
+	    "transform": "rotate(45deg)"
+	  },
+	  "item-right-img": {
+	    "marginLeft": 10
+	  },
+	  "item-left-img": {
+	    "marginRight": 10
+	  },
+	  "item-right": {
+	    "flex": 1
+	  }
+	}
+
+/***/ }),
+
+/***/ 14:
+/***/ (function(module, exports) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+
+	exports.default = {
+	    name: 'item',
+	    props: {
+	        /**高度*/
+	        height: { default: 90 },
+	        /**左边宽度*/
+	        left_width: { default: 120 },
+	        /**左边文案*/
+	        left_text: { default: '左边' },
+	        /**左边文案对齐方式*/
+	        left_text_align: { default: 'left' },
+	        /**左边文案颜色*/
+	        left_text_color: { default: '#333' },
+	        /**左边文案字体大小*/
+	        left_text_size: { default: 28 },
+	        /**右边文案*/
+	        right_text: { default: '右边' },
+	        /**右边文案颜色*/
+	        right_text_color: { default: '#333' },
+	        /**右边文案对齐方式*/
+	        right_text_align: { default: 'right' },
+	        /**右边文案字体大小*/
+	        right_text_size: { default: 28 },
+	        /**距离左边宽度*/
+	        padding_left: { default: 20 },
+	        /**距离右边宽度*/
+	        padding_right: { default: 0 },
+	        /**边框宽度*/
+	        border_bottom_width: { default: 1 },
+	        /**边框颜色*/
+	        border_bottom_color: { default: '#ddd' },
+	        /**边框宽度*/
+	        border_bottom_style: { default: 'solid' },
+	        /**是否是输入框*/
+	        is_input: { default: false },
+	        /**输入框类型*/
+	        input_type: { default: 'text' },
+	        /**输入最大值*/
+	        input_max_length: { default: 11 },
+	        /**输入框提示预览*/
+	        is_placeholder: { default: '请输入' },
+	        /**是否需要右边icon*/
+	        is_arrow: { default: true },
+	        /**是否需要右边icon*/
+	        is_arrow_color: { default: '#999999' },
+	        /**左边图片*/
+	        left_img_src: { default: '' },
+	        /**左边图片宽*/
+	        left_img_width_and_height: { default: [40, 40] },
+	        /**右边图片*/
+	        right_img_src: { default: '' },
+	        /**右边图片宽*/
+	        right_img_width_and_height: { default: [40, 40] }
+	    },
+	    data: function data() {
+	        return {
+	            input_value: ''
+	        };
+	    },
+	    created: function created() {
+	        this.input_value = this.right_text;
+	    },
+
+	    methods: {
+	        /**点击事件*/
+	        pressHandle: function pressHandle(event) {
+	            this.$emit('onPress', event);
+	        },
+	        inputHandle: function inputHandle() {
+	            this.$emit('inputChange', this.input_value);
+	        }
+	    }
+	};
+
+/***/ }),
+
+/***/ 15:
+/***/ (function(module, exports) {
+
+	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+	  return _c('div', {
+	    staticClass: ["item-wrap"],
+	    style: {
+	      height: _vm.height,
+	      paddingLeft: _vm.padding_left,
+	      paddingRight: _vm.padding_right
+	    },
+	    on: {
+	      "click": _vm.pressHandle
+	    }
+	  }, [_c('div', {
+	    staticClass: ["item-inner", "item-inner-arrow"],
+	    style: {
+	      borderBottomWidth: _vm.border_bottom_width,
+	      borderBottomColor: _vm.border_bottom_color,
+	      borderBottomStyle: _vm.border_bottom_style,
+	      paddingRight: _vm.padding_left
+	    }
+	  }, [(_vm.left_img_src) ? _c('image', {
+	    staticClass: ["item-left-img"],
+	    style: {
+	      width: _vm.left_img_width_and_height[0],
+	      height: _vm.left_img_width_and_height[1]
+	    },
+	    attrs: {
+	      "src": _vm.left_img_src
+	    }
+	  }) : _vm._e(), _c('text', {
+	    staticClass: ["item-text", "item-left"],
+	    style: {
+	      width: _vm.left_width,
+	      color: _vm.left_text_color,
+	      fontSize: _vm.left_text_size,
+	      textAlign: _vm.left_text_align
+	    }
+	  }, [_vm._v(_vm._s(_vm.left_text))]), (!_vm.is_input) ? _c('text', {
+	    staticClass: ["item-text", "item-right"],
+	    style: {
+	      width: _vm.left_width,
+	      color: _vm.right_text_color,
+	      fontSize: _vm.right_text_size,
+	      textAlign: _vm.right_text_align
+	    }
+	  }, [_vm._v(_vm._s(_vm.right_text))]) : _vm._e(), (_vm.is_input) ? _c('input', {
+	    staticClass: ["item-text", "item-right"],
+	    style: {
+	      width: _vm.left_width,
+	      color: _vm.right_text_color,
+	      fontSize: _vm.right_text_size,
+	      textAlign: _vm.right_text_align
+	    },
+	    attrs: {
+	      "placeholder": _vm.is_placeholder,
+	      "value": _vm.input_value,
+	      "maxlength": _vm.input_max_length,
+	      "type": _vm.input_type
+	    },
+	    on: {
+	      "input": _vm.inputHandle
+	    }
+	  }) : _vm._e(), (_vm.right_img_src) ? _c('image', {
+	    staticClass: ["item-right-img"],
+	    style: {
+	      width: _vm.right_img_width_and_height[0],
+	      height: _vm.right_img_width_and_height[1]
+	    },
+	    attrs: {
+	      "src": _vm.right_img_src
+	    }
+	  }) : _vm._e(), (_vm.is_arrow) ? _c('div', {
+	    staticClass: ["item-arrow"],
+	    style: {
+	      borderTopColor: _vm.is_arrow_color,
+	      borderRightColor: _vm.is_arrow_color
+	    }
+	  }) : _vm._e()])])
+	},staticRenderFns: []}
+	module.exports.render._withStripped = true
+
+/***/ })
+
+/******/ });

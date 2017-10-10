@@ -6,7 +6,7 @@
 
 <script>
     import { WovSwitch } from 'wov'
-    import source from './tool/source'
+    import source from './assets/lib/source'
     import PageUrlConfig from './config/page_url_config'
     export default {
         data () {
