@@ -76,9 +76,9 @@
             loadHandle () {
                 setTimeout(() => {
                     this.rows += 10;
-                    if(this.rows >= 30) {
-                        this.$refs.scroller.banLoad();
-                    }
+//                    if(this.rows >= 30) {
+//                        this.$refs.scroller.banLoad();
+//                    }
                     this.$refs.scroller.loaded();
                 }, 1500)
             },

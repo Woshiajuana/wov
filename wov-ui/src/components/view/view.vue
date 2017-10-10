@@ -16,7 +16,7 @@
             @leftItemClick="leftItemClickHandle">
         </view-header>
         <scroller class="view-inner"
-            :style="{ top: is_header ? 90 : 0 ,
+            :style="{ top: is_header ? 90 : 0.1,
             backgroundColor: background_color}">
             <!--上拉刷新-->
             <refresh class="view-refresh"

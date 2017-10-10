@@ -574,7 +574,7 @@
 	  }) : _vm._e(), _c('scroller', {
 	    staticClass: ["view-inner"],
 	    style: {
-	      top: _vm.is_header ? 90 : 0,
+	      top: _vm.is_header ? 90 : 0.1,
 	      backgroundColor: _vm.background_color
 	    }
 	  }, [(_vm.is_refresh) ? _c('refresh', {
