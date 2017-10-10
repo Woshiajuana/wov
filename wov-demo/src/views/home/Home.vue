@@ -8,10 +8,12 @@
         <wov-item
             left_text="GitHub"
             right_text="me"
+            :height="100"
             @onPress="onPressHandle">
         </wov-item>
         <wov-item
             left_text="GitHub"
+            :height="100"
             right_text="me">
         </wov-item>
     </wov-view>
@@ -31,7 +33,7 @@
         methods: {
             onPressHandle () {
                 navigator.push({ url: PageUrl['webview'] },{
-                    link: 'http://www.owulia.com/ink/'
+                    link: 'https://github.com/Woshiajuana/wov/'
                 })
             }
         },
