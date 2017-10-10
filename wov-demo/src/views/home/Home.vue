@@ -8,7 +8,9 @@
         <wov-item
             left_text="GitHub"
             right_text="Star Me"
+            :is_arrow="false"
             :height="100"
+            :right_img_src="arrow_img_src"
             :left_img_src="git_img_src"
             :left_img_width_and_height="[60,60]"
             @onPress="onPressHandle('GitHub')">
@@ -16,7 +18,9 @@
         <wov-item
             left_text="Blog"
             right_text="Welcome"
+            :is_arrow="false"
             :height="100"
+            :right_img_src="arrow_img_src"
             :left_img_src="blog_img_src"
             :left_img_width_and_height="[60,60]"
             @onPress="onPressHandle('Blog')">
@@ -34,7 +38,8 @@
             return {
                 logo_src: source('wov-icon.png'),
                 git_img_src: source('github-icon.png'),
-                blog_img_src: source('blog-icon.png')
+                blog_img_src: source('blog-icon.png'),
+                arrow_img_src: source('right-arrow-icon.png')
             }
         },
         methods: {
