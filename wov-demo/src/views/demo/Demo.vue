@@ -3,33 +3,12 @@
         class="demo-view"
         :is_header="false">
         <div class="view-inner">
-            <div class="demo-item"><text>1</text></div>
-            <div class="demo-item"><text>2</text></div>
-            <div class="demo-item"><text>3</text></div>
-            <div class="demo-item"><text>4</text></div>
-            <div class="demo-item"><text>5</text></div>
-            <div class="demo-item"><text>6</text></div>
-            <div class="demo-item"><text>7</text></div>
-            <div class="demo-item"><text>8</text></div>
-            <div class="demo-item"><text>8</text></div>
-            <div class="demo-item"><text>8</text></div>
-            <div class="demo-item"><text>8</text></div>
-            <div class="demo-item"><text>8</text></div>
-            <div class="demo-item"><text>8</text></div>
-            <div class="demo-item"><text>8</text></div>
-            <div class="demo-item"><text>8</text></div>
-            <div class="demo-item"><text>8</text></div>
-            <div class="demo-item"><text>8</text></div>
-            <div class="demo-item"><text>8</text></div>
-            <div class="demo-item"><text>8</text></div>
-            <div class="demo-item"><text>8</text></div>
-            <div class="demo-item"><text>8</text></div>
-            <div class="demo-item"><text>8</text></div>
-            <div class="demo-item"><text>8</text></div>
-            <div class="demo-item"><text>8</text></div>
-            <div class="demo-item"><text>8</text></div>
-            <div class="demo-item"><text>8</text></div>
-
+            <div class="demo-item border-bottom"
+                 :class="[((index + 1) % 3 != 0) && 'border-right']"
+                v-for="(item, index) in demo_arr" :key="index">
+                <image class="demo-item-img" :src="item.img_src"></image>
+                <text class="demo-item-name">{{item.name}}</text>
+            </div>
         </div>
         <div class="prompt-wrap">
             <text class="prompt-text">没有啦~~~</text>
@@ -39,9 +18,17 @@
 
 <script>
     import { WovView } from 'wov'
+    import source from '../../assets/lib/source'
     export default {
         data () {
-            return {}
+            return {
+                demo_arr: [
+                    { img_src: source('wov-icon.png'), name: 'WovView' },
+                    { img_src: source('wov-icon.png'), name: 'WovView' },
+                    { img_src: source('wov-icon.png'), name: 'WovView' },
+                    { img_src: source('wov-icon.png'), name: 'WovView' },
+                ]
+            }
         },
         components: {
             WovView
@@ -55,15 +42,31 @@
     }
     .view-inner{
         flex-direction: row;
-        flex-direction: row;
         flex-wrap: wrap;
     }
     .demo-item{
         width: 250px;
         height: 250px;
-        border-width: 2px;
-        border-color: #999;
+        border-color: #DEDEDE;
         border-style: solid;
+        justify-content: center;
+        align-items: center;
+    }
+    .border-bottom{
+        border-bottom-width: 2px;
+    }
+    .border-right{
+        border-right-width: 2px;
+    }
+    .demo-item-img{
+        width: 60px;
+        height: 60px;
+    }
+    .demo-item-name{
+        text-align: center;
+        font-size: 24px;
+        margin-top: 20px;
+        color: #333;
     }
     .prompt-wrap{
         padding-bottom: 80px;
