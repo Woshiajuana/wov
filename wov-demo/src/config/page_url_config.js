@@ -5,4 +5,5 @@ export default {
     'about': CONFIG.BASE_URL + 'about/About.js',
     'webview': CONFIG.BASE_URL + 'webview/Webview.js',
     'register': CONFIG.BASE_URL + 'register.js',
+    'switch': CONFIG.BASE_URL + 'switch/index.js',
 }

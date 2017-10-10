@@ -5,6 +5,7 @@
         <div class="view-inner">
             <div class="demo-item border-bottom"
                  :class="[((index + 1) % 3 != 0) && 'border-right']"
+                 @click="onPressHandle(item.src_name)"
                 v-for="(item, index) in demo_arr" :key="index">
                 <image class="demo-item-img" :src="item.img_src"></image>
                 <text class="demo-item-name">{{item.name}}</text>
@@ -19,16 +20,23 @@
 <script>
     import { WovView } from 'wov'
     import source from '../../assets/lib/source'
+    import navigator from '../../module/navigator/navigator'
+    import PageUrl from '../../config/page_url_config'
     export default {
         data () {
             return {//20A0FF
                 demo_arr: [
-                    { img_src: source('switch-icon.png'), name: 'WovSwitch' },
-                    { img_src: source('view-icon.png'), name: 'WovView' },
-                    { img_src: source('item-icon.png'), name: 'WovItem' },
-                    { img_src: source('btn-icon.png'), name: 'WovBtn' },
-                    { img_src: source('web-icon.png'), name: 'WovWeb' },
+                    { img_src: source('switch-icon.png'), name: 'WovSwitch', src_name: 'switch' },
+                    { img_src: source('view-icon.png'), name: 'WovView', src_name: 'view' },
+                    { img_src: source('item-icon.png'), name: 'WovItem', src_name: 'item' },
+                    { img_src: source('btn-icon.png'), name: 'WovBtn', src_name: 'btn' },
+                    { img_src: source('web-icon.png'), name: 'WovWeb', src_name: 'web' },
                 ]
+            }
+        },
+        methods: {
+            onPressHandle (src_name) {
+                navigator.push({ url: PageUrl[src_name] });
             }
         },
         components: {
