@@ -6,6 +6,16 @@
             <text class="version-text">v0.0.7</text>
         </div>
         <wov-item
+            left_text="Official"
+            right_text="Enter"
+            :is_arrow="false"
+            :height="100"
+            :right_img_src="arrow_img_src"
+            :left_img_src="official_img_src"
+            :left_img_width_and_height="[60,60]"
+            @onPress="onPressHandle('Official')">
+        </wov-item>
+        <wov-item
             left_text="GitHub"
             right_text="Star Me"
             :is_arrow="false"
@@ -22,6 +32,7 @@
             :height="100"
             :right_img_src="arrow_img_src"
             :left_img_src="blog_img_src"
+            :border_bottom_width="0"
             :left_img_width_and_height="[60,60]"
             @onPress="onPressHandle('Blog')">
         </wov-item>
@@ -37,6 +48,7 @@
         data () {
             return {
                 logo_src: source('wov-icon.png'),
+                official_img_src: source('official-icon.png'),
                 git_img_src: source('github-icon.png'),
                 blog_img_src: source('blog-icon.png'),
                 arrow_img_src: source('right-arrow-icon.png')
@@ -45,6 +57,11 @@
         methods: {
             onPressHandle ( page_name ) {
                 switch (page_name) {
+                    case 'Official':
+                        navigator.push({ url: PageUrl['webview'] },{
+                            link: 'https://github.com/Woshiajuana/wov/'
+                        });
+                        break;
                     case 'GitHub':
                         navigator.push({ url: PageUrl['webview'] },{
                             link: 'https://github.com/Woshiajuana/wov/'
