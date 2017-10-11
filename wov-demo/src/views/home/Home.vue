@@ -41,6 +41,9 @@
                 @onPress="onPressHandle('Blog')">
             </wov-item>
         </div>
+        <div class="reminder-wrap">
+            <text class="reminder-text">©2017 Woshiajuana o(∩_∩)o </text>
+        </div>
     </wov-view>
 </template>
 
@@ -111,5 +114,15 @@
         border-bottom-color: #ddd;
         border-bottom-width: 2px;
         border-bottom-style: solid;
+    }
+    .reminder-wrap{
+        margin-top: 120px;
+        height: 100px;
+        justify-content: center;
+        align-items: center;
+    }
+    .reminder-text{
+        font-size: 20px;
+        color: #999;
     }
 </style>

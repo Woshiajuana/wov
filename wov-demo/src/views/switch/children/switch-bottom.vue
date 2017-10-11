@@ -1,5 +1,5 @@
 <template>
-    <wov-view center_item_title="居底的TAB切换" :left_item_img_src="left_item_img_src">
+    <wov-view background_color="#fbf9fe" center_item_title="居底的TAB切换" :left_item_img_src="left_item_img_src">
         <wov-switch :switch_page_arr="switch_page_arr"></wov-switch>
     </wov-view>
 </template>

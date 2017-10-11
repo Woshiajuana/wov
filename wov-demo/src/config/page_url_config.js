@@ -10,4 +10,6 @@ export default {
     'switch_top': CONFIG.BASE_URL + 'switch/children/switch-top.js',
     'switch_bottom': CONFIG.BASE_URL + 'switch/children/switch-bottom.js',
     'switch_menu': CONFIG.BASE_URL + 'switch/children/switch-menu.js',
+
+
 }
