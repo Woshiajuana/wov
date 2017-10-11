@@ -47,7 +47,7 @@
         background-color: #fbf9fe;
     }
     .main-wrap{
-        margin-top: 360px;
+        margin-top: 320px;
         border-top-color: #ddd;
         border-top-width: 2px;
         border-top-style: solid;
