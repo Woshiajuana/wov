@@ -4,6 +4,8 @@
 
 <script>
     import DemoMenu from '../../components/demo-menu.vue'
+    import PageUrl from '../../config/page_url_config'
+    import navigator from '../../module/navigator/navigator'
     export default {
         data () {
             return {
@@ -15,8 +17,8 @@
             }
         },
         methods: {
-            onPressHandle ( item ) {
-                
+            onPressHandle ({ page_name }) {
+                navigator.push({ url: PageUrl[page_name] });
             }
         },
         components: {
