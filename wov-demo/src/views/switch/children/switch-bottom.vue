@@ -16,16 +16,16 @@
                     visibility: 'visible',
                     checked: true
                 },
-                    {
-                        txt: 'B页面',
-                        visibility: 'hidden',
-                        checked: false
-                    },
-                    {
-                        txt: 'C页面',
-                        visibility: 'hidden',
-                        checked: false
-                    }]
+                {
+                    txt: 'B页面',
+                    visibility: 'hidden',
+                    checked: false
+                },
+                {
+                    txt: 'C页面',
+                    visibility: 'hidden',
+                    checked: false
+                }]
             }
         },
         components: {
