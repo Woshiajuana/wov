@@ -31,6 +31,24 @@
                     { img_src: source('item-icon.png'), name: 'WovItem', src_name: 'item' },
                     { img_src: source('btn-icon.png'), name: 'WovBtn', src_name: 'btn' },
                     { img_src: source('web-icon.png'), name: 'WovWeb', src_name: 'web' },
+
+                    { img_src: source('switch-icon.png'), name: 'WovSwitch', src_name: 'switch' },
+                    { img_src: source('view-icon.png'), name: 'WovView', src_name: 'view' },
+                    { img_src: source('item-icon.png'), name: 'WovItem', src_name: 'item' },
+                    { img_src: source('btn-icon.png'), name: 'WovBtn', src_name: 'btn' },
+                    { img_src: source('web-icon.png'), name: 'WovWeb', src_name: 'web' },
+
+                    { img_src: source('switch-icon.png'), name: 'WovSwitch', src_name: 'switch' },
+                    { img_src: source('view-icon.png'), name: 'WovView', src_name: 'view' },
+                    { img_src: source('item-icon.png'), name: 'WovItem', src_name: 'item' },
+                    { img_src: source('btn-icon.png'), name: 'WovBtn', src_name: 'btn' },
+                    { img_src: source('web-icon.png'), name: 'WovWeb', src_name: 'web' },
+
+                    { img_src: source('switch-icon.png'), name: 'WovSwitch', src_name: 'switch' },
+                    { img_src: source('view-icon.png'), name: 'WovView', src_name: 'view' },
+                    { img_src: source('item-icon.png'), name: 'WovItem', src_name: 'item' },
+                    { img_src: source('btn-icon.png'), name: 'WovBtn', src_name: 'btn' },
+                    { img_src: source('web-icon.png'), name: 'WovWeb', src_name: 'web' },
                 ]
             }
         },

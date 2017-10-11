@@ -58,7 +58,7 @@
             /**左边宽度*/
             left_width: { default: 120 },
             /**左边文案*/
-            left_text: { default: '左边' },
+            left_text: { default: '' },
             /**左边文案对齐方式*/
             left_text_align: { default: 'left' },
             /**左边文案颜色*/
@@ -66,7 +66,7 @@
             /**左边文案字体大小*/
             left_text_size: { default: 28 },
             /**右边文案*/
-            right_text: { default: '右边' },
+            right_text: { default: '' },
             /**右边文案颜色*/
             right_text_color: { default: '#333' },
             /**右边文案对齐方式*/
