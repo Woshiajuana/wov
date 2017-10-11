@@ -5,12 +5,24 @@
         center_item_title="WovSwitch">
         <div class="main-wrap">
             <wov-item
-                left_text="Official"
-                right_text="Enter"
-                :is_arrow="false"
-                :height="100"
-                :right_img_src="arrow_img_src"
-                :border_bottom_width="0"
+                left_text="居顶的TAB切换"
+                left_width='200'
+                height="100"
+                border_bottom_width="2"
+                :left_img_width_and_height="[60,60]"
+                @onPress="onPressHandle('Official')">
+            </wov-item>
+            <wov-item
+                left_text="居底的TAB切换"
+                height="100"
+                border_bottom_width="2"
+                :left_img_width_and_height="[60,60]"
+                @onPress="onPressHandle('Official')">
+            </wov-item>
+            <wov-item
+                left_text="APP菜单"
+                height="100"
+                border_bottom_width="0"
                 :left_img_width_and_height="[60,60]"
                 @onPress="onPressHandle('Official')">
             </wov-item>
@@ -47,7 +59,7 @@
         background-color: #fbf9fe;
     }
     .main-wrap{
-        margin-top: 320px;
+        margin-top: 180px;
         border-top-color: #ddd;
         border-top-width: 2px;
         border-top-style: solid;

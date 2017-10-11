@@ -11,10 +11,10 @@
                 left_text="Official"
                 right_text="Enter"
                 :is_arrow="false"
-                :height="100"
+                height="100"
                 :right_img_src="arrow_img_src"
                 :left_img_src="official_img_src"
-                :border_bottom_width="2"
+                border_bottom_width="2"
                 :left_img_width_and_height="[60,60]"
                 @onPress="onPressHandle('Official')">
             </wov-item>
@@ -22,10 +22,10 @@
                 left_text="GitHub"
                 right_text="Star Me"
                 :is_arrow="false"
-                :height="100"
+                height="100"
                 :right_img_src="arrow_img_src"
                 :left_img_src="git_img_src"
-                :border_bottom_width="2"
+                border_bottom_width="2"
                 :left_img_width_and_height="[60,60]"
                 @onPress="onPressHandle('GitHub')">
             </wov-item>
@@ -33,10 +33,10 @@
                 left_text="Blog"
                 right_text="Welcome"
                 :is_arrow="false"
-                :height="100"
+                height="100"
                 :right_img_src="arrow_img_src"
                 :left_img_src="blog_img_src"
-                :border_bottom_width="0"
+                border_bottom_width="0"
                 :left_img_width_and_height="[60,60]"
                 @onPress="onPressHandle('Blog')">
             </wov-item>
