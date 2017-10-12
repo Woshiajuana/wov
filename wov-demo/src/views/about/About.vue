@@ -39,6 +39,13 @@
                 right_text="zhigang.chen@owulia.com"
                 :is_arrow="false"
                 height="100"
+                border_bottom_width="2">
+            </wov-item>
+            <wov-item
+                left_text="Links"
+                right_text=""
+                height="100"
+                @onPress="onPressHandle"
                 border_bottom_width="0">
             </wov-item>
         </div>
@@ -47,11 +54,17 @@
 
 <script>
     import { WovView, WovItem } from 'wov'
-    import source from '../../assets/lib/source'
+    import navigator from '../../module/navigator/navigator'
+    import PageUrl from '../../config/page_url_config'
     export default {
         data () {
             return {
 
+            }
+        },
+        methods: {
+            onPressHandle () {
+                navigator.push({ url: PageUrl['link'] });
             }
         },
         components: {
