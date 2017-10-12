@@ -5,13 +5,33 @@
         left_item_img_src=""
         center_item_title="关于">
         <div class="container-inner">
-
+            <wov-item
+                left_text="GitHub"
+                right_text="Star Me"
+                :is_arrow="false"
+                height="100"
+                border_bottom_width="2">
+            </wov-item>
+            <wov-item
+                left_text="GitHub"
+                right_text="Star Me"
+                :is_arrow="false"
+                height="100"
+                border_bottom_width="2">
+            </wov-item>
+            <wov-item
+                left_text="GitHub"
+                right_text="Star Me"
+                :is_arrow="false"
+                height="100"
+                border_bottom_width="2">
+            </wov-item>
         </div>
     </wov-view>
 </template>
 
 <script>
-    import { WovView } from 'wov'
+    import { WovView, WovItem } from 'wov'
     import source from '../../assets/lib/source'
     export default {
         data () {
@@ -20,7 +40,8 @@
             }
         },
         components: {
-            WovView
+            WovView,
+            WovItem
         }
     }
 </script>
@@ -30,7 +51,7 @@
         background-color: #fbf9fe;
     }
     .container-inner{
-        align-items: center;
+        width: 750px;
     }
     .about-title{
         line-height: 90px;
