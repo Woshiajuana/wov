@@ -4,7 +4,7 @@
         backgroundColor="#fbf9fe">
         <div class="logo-wrap">
             <image class="logo-icon" :src="logo_src"></image>
-            <text class="version-text">v0.0.7</text>
+            <text class="version-text">v0.0.13</text>
         </div>
         <div class="main-wrap">
             <wov-item

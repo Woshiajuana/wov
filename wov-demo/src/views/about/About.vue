@@ -6,8 +6,8 @@
         center_item_title="关于">
         <div class="container-inner">
             <wov-item
-                left_text="GitHub"
-                right_text="Star Me"
+                left_text="当前版本"
+                right_text="0.0.13"
                 :is_arrow="false"
                 height="100"
                 border_bottom_width="2">
@@ -24,7 +24,7 @@
                 right_text="Star Me"
                 :is_arrow="false"
                 height="100"
-                border_bottom_width="2">
+                border_bottom_width="0">
             </wov-item>
         </div>
     </wov-view>
@@ -52,10 +52,8 @@
     }
     .container-inner{
         width: 750px;
-    }
-    .about-title{
-        line-height: 90px;
-        font-size: 42px;
-        color: #333;
+        border-bottom-color: #ddd;
+        border-bottom-width: 2px;
+        border-bottom-style: solid;
     }
 </style>
