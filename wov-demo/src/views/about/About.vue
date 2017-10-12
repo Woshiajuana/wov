@@ -6,9 +6,24 @@
         center_item_title="关于">
         <div class="container-inner">
             <wov-item
+                left_text="Name"
+                right_text="wov"
+                :is_arrow="false"
+                height="100"
+                border_bottom_width="2">
+            </wov-item>
+            <wov-item
                 left_text="Version"
                 right_text="0.0.14"
                 :is_arrow="false"
+                height="100"
+                border_bottom_width="2">
+            </wov-item>
+            <wov-item
+                left_text="Introduction"
+                right_text="A Weex UI"
+                :is_arrow="false"
+                left_width="180"
                 height="100"
                 border_bottom_width="2">
             </wov-item>
