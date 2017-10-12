@@ -6,22 +6,22 @@
         center_item_title="关于">
         <div class="container-inner">
             <wov-item
-                left_text="当前版本"
-                right_text="0.0.13"
+                left_text="Version"
+                right_text="0.0.14"
                 :is_arrow="false"
                 height="100"
                 border_bottom_width="2">
             </wov-item>
             <wov-item
-                left_text="GitHub"
-                right_text="Star Me"
+                left_text="Author"
+                right_text="Woshiajuana"
                 :is_arrow="false"
                 height="100"
                 border_bottom_width="2">
             </wov-item>
             <wov-item
-                left_text="GitHub"
-                right_text="Star Me"
+                left_text="E-Mail"
+                right_text="zhigang.chen@owulia.com"
                 :is_arrow="false"
                 height="100"
                 border_bottom_width="0">

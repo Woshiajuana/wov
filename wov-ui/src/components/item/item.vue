@@ -21,8 +21,7 @@
                   textAlign: left_text_align }">{{left_text}}</text>
             <text class="item-text item-right"
                   v-if="!is_input"
-                  :style="{ width: left_width,
-                  color: right_text_color,
+                  :style="{ color: right_text_color,
                   fontSize: right_text_size,
                   textAlign: right_text_align }">{{right_text}}</text>
             <input class="item-text item-right"
@@ -31,8 +30,7 @@
                    :value="input_value"
                    @input="inputHandle"
                    :maxlength="input_max_length"
-                   :style="{ width: left_width,
-                   color: right_text_color,
+                   :style="{ color: right_text_color,
                    fontSize: right_text_size,
                    textAlign: right_text_align }"
                    :type="input_type"/>
