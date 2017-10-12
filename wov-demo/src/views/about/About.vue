@@ -1,8 +1,12 @@
 <template>
     <wov-view
         class="about-view"
-        :is_header="false">
+        nav_background_color="#fbf9fe"
+        left_item_img_src=""
+        center_item_title="关于">
+        <div class="container-inner">
 
+        </div>
     </wov-view>
 </template>
 
@@ -24,5 +28,13 @@
 <style>
     .about-view{
         background-color: #fbf9fe;
+    }
+    .container-inner{
+        align-items: center;
+    }
+    .about-title{
+        line-height: 90px;
+        font-size: 42px;
+        color: #333;
     }
 </style>
