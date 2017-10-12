@@ -50,17 +50,17 @@
                 switch (page_name) {
                     case 'Weex':
                         navigator.push({ url: PageUrl['webview'] },{
-                            link: 'https://github.com/Woshiajuana/wov/'
+                            link: 'https://weex.apache.org/cn/'
                         });
                         break;
                     case 'Vue':
                         navigator.push({ url: PageUrl['webview'] },{
-                            link: 'https://github.com/Woshiajuana/wov/'
+                            link: 'https://cn.vuejs.org/v2/guide/'
                         });
                         break;
                     case 'Owulia':
                         navigator.push({ url: PageUrl['webview'] },{
-                            link: 'http://www.owulia.com/ajuan/'
+                            link: 'http://www.owulia.com/'
                         });
                         break;
                 }
