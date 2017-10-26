@@ -1,20 +1,57 @@
 <template>
-    <div class="view-header" :style="{ height: header_height, backgroundColor: background_color }">
-        <div class="view-header-left" @click="leftItemClickHandle">
-            <image v-if="left_item_img_src" :src="left_item_img_src" class="header-left-image" resize="cover"></image>
-            <text v-if="left_item_title" :style="{ color: left_item_color }" class="header-left-text">{{left_item_title}}</text>
+    <div class="view-header"
+         :style="{ height: view_header_height,
+         backgroundColor: view_header_background_color,
+         borderBottomColor: view_header_border_color,
+         borderBottomWidth: view_header_border_width }">
+        <div class="view-header-left"
+             :style="{ height: view_header_height}"
+             @click="leftItemClickHandle">
+            <image class="header-left-image"
+                   v-if="view_header_left_src"
+                   :style="{width: view_header_left_src_size[0],
+                   marginLeft: view_header_left_src_mar_left,
+                   marginRight: view_header_left_src_mar_right,
+                   height: view_header_left_src_size[1]}"
+                   :src="view_header_left_src">
+            </image>
+            <text class="header-left-text"
+                  v-if="view_header_left_txt"
+                  :style="{ color: view_header_left_color,
+                   marginLeft: view_header_left_txt_mar_left,
+                   marginRight: view_header_left_txt_mar_right}">{{view_header_left_txt}}</text>
         </div>
-        <text :style="{ color: center_item_color }" class="header-center-text">{{center_item_title}}</text>
-        <div class="view-header-right" @click="rightItemClickHandle">
-            <text v-if="right_item_title" :style="{ color: right_item_color }" class="header-right-text">{{right_item_title}}</text>
-            <image v-if="right_item_img_src" :src="right_item_img_src" class="header-right-image" resize="cover"></image>
+        <text :style="{ color: view_header_center_color }" class="header-center-text">{{view_header_center_txt}}</text>
+        <div class="view-header-right"
+             :style="{ height: view_header_height}"
+             @click="rightItemClickHandle">
+            <text  class="header-right-text"
+                   v-if="view_header_right_txt"
+                   :style="{ color: view_header_right_color,
+                   marginLeft: view_header_right_txt_mar_left,
+                   marginRight: view_header_right_txt_mar_right }">{{view_header_right_txt}}</text>
+            <image v-if="view_header_right_src"
+                   :src="view_header_right_src"
+                   :style="{width: view_header_right_src_size[0],
+                   marginLeft: view_header_right_src_mar_left,
+                   marginRight: view_header_right_src_mar_right,
+                   height: view_header_right_src_size[1]}"
+                   class="header-right-image"></image>
         </div>
     </div>
 </template>
 
 <script>
-    module.exports = {
-        props: [ 'background_color', 'header_height', 'left_item_img_src', 'left_item_title', 'left_item_color', 'center_item_title', 'center_item_color', 'right_item_img_src', 'right_item_title', 'right_item_color' ],
+    module.exports =  {
+        props: [ 'view_header_background_color', 'view_header_height', 'view_header_left_src',
+            'view_header_left_src_size', 'view_header_right_src_size',
+            'view_header_left_src_mar_left', 'view_header_right_src_mar_right',
+            'view_header_left_src_mar_right','view_header_left_txt_mar_left',
+            'view_header_left_txt_mar_right','view_header_right_txt_mar_left',
+            'view_header_right_txt_mar_right','view_header_right_src_mar_left',
+            'view_header_left_txt', 'view_header_left_color', 'view_header_center_txt',
+            'view_header_center_color', 'view_header_right_src', 'view_header_right_txt',
+            'view_header_right_color', 'view_header_border_width', 'view_header_border_color' ],
         methods: {
             /**右边按钮点击事件*/
             rightItemClickHandle (event) {
@@ -36,15 +73,13 @@
         left: 0;
         right: 0;
         width: 750px;
-        border-bottom-width: 2px;
-        border-bottom-color: #e5e5e5;
     }
     .view-header-right,
     .view-header-left {
         position: absolute;
         flex-direction: row;
+        align-items: center;
         top: 0;
-        height: 88px;
     }
     .view-header-right{
         right: 0;
@@ -54,12 +89,8 @@
     }
     .header-right-text,
     .header-left-text {
-        top: 28px;
-        padding-left: 25px;
-        padding-right: 25px;
         text-align: right;
         font-size: 30px;
-        font-family: 'Open Sans', sans-serif;
     }
     .header-center-text {
         position: absolute;
@@ -69,15 +100,11 @@
         line-height: 88px;
         text-align: center;
         font-size: 34px;
-        font-family: 'Open Sans', sans-serif;
     }
     .header-left-image,
     .header-right-image {
-        top: 25px;
-        width: 90px;
+        width: 40px;
         height: 40px;
-        padding-right: 25px;
-        padding-left: 25px;
     }
 </style>
 

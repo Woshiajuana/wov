@@ -1,122 +1,107 @@
 <template>
     <div class="item-wrap"
-        :style="{ height: height,
-        paddingLeft: padding_left,
-        paddingRight: padding_right}"
-        @click="pressHandle">
-        <div class="item-inner item-inner-arrow"
-            :style="{ borderBottomWidth: border_bottom_width,
-             borderBottomColor: border_bottom_color,
-             borderBottomStyle: border_bottom_style,
-             paddingRight: padding_left}">
-            <image class="item-left-img"
-                   v-if="left_img_src"
-                   :style="{width: left_img_width_and_height[0],
-                   height: left_img_width_and_height[1]}"
-                   :src="left_img_src"></image>
-            <text class="item-text item-left"
-                  :style="{ width: left_width,
-                  color: left_text_color,
-                  fontSize: left_text_size,
-                  textAlign: left_text_align }">{{left_text}}</text>
-            <text class="item-text item-right"
-                  v-if="!is_input"
-                  :style="{ color: right_text_color,
-                  fontSize: right_text_size,
-                  textAlign: right_text_align }">{{right_text}}</text>
-            <input class="item-text item-right"
-                   :placeholder="is_placeholder"
-                   v-if="is_input"
-                   :value="input_value"
-                   @input="inputHandle"
-                   :maxlength="input_max_length"
-                   :style="{ color: right_text_color,
-                   fontSize: right_text_size,
-                   textAlign: right_text_align }"
-                   :type="input_type"/>
-            <image class="item-right-img"
-                :style="{width: right_img_width_and_height[0],
-                height: right_img_width_and_height[1]}"
-                v-if="right_img_src"
-                :src="right_img_src"></image>
-            <div class="item-arrow"
-                 v-if="is_arrow"
-                 :style="{ borderTopColor: is_arrow_color,
-                 borderRightColor: is_arrow_color}"></div>
+         :style="{height: item_height,
+         backgroundColor: item_background_color,
+         paddingLeft: item_padding_left,
+         paddingRight: item_padding_right,
+         borderBottomWidth: item_border_width,
+         borderBottomColor: item_border_color}">
+        <image class="item-img"
+               v-if="item_left_src"
+               :src="item_left_src"
+               :style="{height: item_left_src_size[1],
+               width: item_left_src_size[0],
+               marginLeft: item_left_src_mar_left,
+               marginRight: item_left_src_mar_right}">
+        </image>
+        <div class="item-inner"
+             :style="{height: item_height,
+              paddingLeft: item_inner_padding_left,
+              paddingRight: item_inner_padding_right,
+              borderBottomWidth: item_inner_border_width,
+              borderBottomColor: item_inner_border_color}">
+            <div class="item-left" :style="{width: item_left_width}">
+                <text class="item-left-text"
+                      :style="{color:item_left_color,
+                      fontSize:item_left_size}">{{item_left_txt}}</text>
+            </div>
+            <div v-if="!item_use_input" class="item-right">
+                <text class="item-right-text"
+                      :style="{color:item_right_color,
+                      fontSize:item_right_size}">{{item_right_txt}}</text>
+            </div>
+            <input v-if="item_use_input && item_input_type == 'text'" class="item-right item-input"
+                   :style="{color:item_right_color,
+                   fontSize:item_right_size}"
+                   @input="onputHandle"
+                   v-model="right_input"
+                   :maxlength="item_input_max"
+                   :placeholder="item_input_placeholder" type="text"/>
+            <input v-if="item_use_input  && item_input_type == 'password'" class="item-right item-input"
+                   :style="{color:item_right_color,
+                   fontSize:item_right_size}"
+                   @input="onputHandle"
+                   v-model="right_input"
+                   :maxlength="item_input_max"
+                   :placeholder="item_input_placeholder" type="password"/>
+            <image class="item-img"
+                   v-if="item_right_src"
+                   :src="item_right_src"
+                   :style="{height: item_right_src_size[1],
+               width: item_right_src_size[0],
+               marginLeft: item_right_src_mar_left,
+               marginRight: item_right_src_mar_right}">
+            </image>
+            <div v-if="item_use_arrow" class="item-arrow"></div>
         </div>
     </div>
 </template>
 
 <script>
     module.exports = {
-        name: 'item',
-        props: {
-            /**高度*/
-            height: { default: 90 },
-            /**左边宽度*/
-            left_width: { default: 120 },
-            /**左边文案*/
-            left_text: { default: '' },
-            /**左边文案对齐方式*/
-            left_text_align: { default: 'left' },
-            /**左边文案颜色*/
-            left_text_color: { default: '#333' },
-            /**左边文案字体大小*/
-            left_text_size: { default: 28 },
-            /**右边文案*/
-            right_text: { default: '' },
-            /**右边文案颜色*/
-            right_text_color: { default: '#333' },
-            /**右边文案对齐方式*/
-            right_text_align: { default: 'right' },
-            /**右边文案字体大小*/
-            right_text_size: { default: 28 },
-            /**距离左边宽度*/
-            padding_left: { default: 20 },
-            /**距离右边宽度*/
-            padding_right: { default: 0 },
-            /**边框宽度*/
-            border_bottom_width: { default: 1 },
-            /**边框颜色*/
-            border_bottom_color: { default: '#ddd' },
-            /**边框宽度*/
-            border_bottom_style: { default: 'solid' },
-            /**是否是输入框*/
-            is_input: { default: false },
-            /**输入框类型*/
-            input_type: { default: 'text' },
-            /**输入最大值*/
-            input_max_length: { default: 11 },
-            /**输入框提示预览*/
-            is_placeholder: { default: '请输入' },
-            /**是否需要右边icon*/
-            is_arrow: { default: true },
-            /**是否需要右边icon*/
-            is_arrow_color: { default: '#999999' },
-            /**左边图片*/
-            left_img_src: { default: '' },
-            /**左边图片宽*/
-            left_img_width_and_height: { default: [40,40] },
-            /**右边图片*/
-            right_img_src: { default: '' },
-            /**右边图片宽*/
-            right_img_width_and_height: { default: [40,40] }
-        },
         data () {
             return {
-                input_value: ''
+                right_input: ''
             }
         },
+        props: {
+            item_use_arrow: { default: true },
+            item_height: { default: 90 },
+            item_left_txt: { default: '' },
+            item_background_color: { default: '' },
+            item_left_color: { default: '' },
+            item_left_size: { default: 28 },
+            item_left_width: { default: ''},
+            item_right_txt: { default: '' },
+            item_right_color: { default: '#000' },
+            item_right_size: { default: 28 },
+            item_left_src: { default: '' },
+            item_left_src_mar_left: { default: '' },
+            item_left_src_mar_right: { default: '' },
+            item_left_src_size: { default: [36,36] },
+            item_padding_left: { default: 0 },
+            item_padding_right: { default: 0 },
+            item_inner_padding_left: { default: 0 },
+            item_inner_padding_right: { default: 0 },
+            item_border_width: { default: 2 },
+            item_border_color: { default: '#ddd' },
+            item_inner_border_width: { default: 0 },
+            item_inner_border_color: { default: '#ddd'},
+            item_right_src: { default: '' },
+            item_right_src_size: { default: [36,36] },
+            item_right_src_mar_left: { default: 0 },
+            item_right_src_mar_right: { default: 0 },
+            item_use_input: { default: false },
+            item_input_type: { default: 'text' },
+            item_input_placeholder: { default: '请输入' },
+            item_input_max: { default: '' },
+        },
         created () {
-            this.input_value = this.right_text;
+            this.right_input = this.item_right_txt;
         },
         methods: {
-            /**点击事件*/
-            pressHandle (event) {
-                this.$emit('onPress',event);
-            },
-            inputHandle (){
-                this.$emit('inputChange', this.input_value);
+            onputHandle () {
+                this.$emit('onput',this.right_input);
             }
         }
     }
@@ -124,34 +109,34 @@
 
 <style>
     .item-wrap{
-        background-color: #ffffff;
+        flex-direction: row;
+        align-items: center;
     }
     .item-inner{
         flex: 1;
         flex-direction: row;
         align-items: center;
     }
+    .item-right{
+        flex: 1;
+        flex-direction: row;
+        justify-content: flex-end;
+    }
+    .item-input{
+        text-align: right;
+        margin-bottom: 8px;
+        padding-left: 20px;
+    }
     .item-arrow{
-        width: 24px;
-        height: 24px;
-        margin-right: 10px;
-        margin-left: 10px;
+        width: 16px;
+        height: 16px;
+        margin-right: 25px;
+        margin-left: 25px;
         border-top-width: 3px;
         border-top-style: solid;
         border-right-width: 3px;
         border-right-style: solid;
+        border-color: #979797;
         transform: rotate(45deg);
-    }
-    .item-right-img{
-        margin-left: 10px;
-    }
-    .item-left-img{
-        margin-right: 10px;
-    }
-    .item-left{
-
-    }
-    .item-right{
-        flex: 1;
     }
 </style>

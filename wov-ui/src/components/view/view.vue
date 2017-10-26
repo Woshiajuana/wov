@@ -1,35 +1,47 @@
 <template>
     <div class="view-wrap">
         <view-header
-            v-if="is_header"
-            :background_color="nav_background_color"
-            :header_height="header_height"
-            :left_item_img_src="left_item_img_src"
-            :left_item_title="left_item_title"
-            :left_item_color="left_item_color"
-            :center_item_title="center_item_title"
-            :center_item_color="center_item_color"
-            :right_item_img_src="right_item_img_src"
-            :right_item_title="right_item_title"
-            :right_item_color="right_item_color"
+            v-if="view_use_header"
+            :view_header_background_color="view_header_background_color"
+            :view_header_height="view_header_height"
+            :view_header_left_src="view_header_left_src"
+            :view_header_left_txt="view_header_left_txt"
+            :view_header_left_color="view_header_left_color"
+            :view_header_center_txt="view_header_center_txt"
+            :view_header_center_color="view_header_center_color"
+            :view_header_right_src="view_header_right_src"
+            :view_header_right_txt="view_header_right_txt"
+            :view_header_right_color="view_header_right_color"
+            :view_header_border_width="view_header_border_width"
+            :view_header_border_color="view_header_border_color"
+            :view_header_left_src_size="view_header_left_src_size"
+            :view_header_right_src_size="view_header_right_src_size"
+            :view_header_left_src_mar_left="view_header_left_src_mar_left"
+            :view_header_left_src_mar_right="view_header_left_src_mar_right"
+            :view_header_right_src_mar_left="view_header_right_src_mar_left"
+            :view_header_right_src_mar_right="view_header_right_src_mar_right"
+            :view_header_left_txt_mar_left="view_header_left_txt_mar_left"
+            :view_header_left_txt_mar_right="view_header_left_txt_mar_right"
+            :view_header_right_txt_mar_left="view_header_right_txt_mar_left"
+            :view_header_right_txt_mar_right="view_header_right_txt_mar_right"
             @rightItemClick="rightItemClickHandle"
             @leftItemClick="leftItemClickHandle">
         </view-header>
         <scroller class="view-inner"
-            :style="{ top: is_header ? 90 : 0.1,
-            backgroundColor: background_color}">
+            :style="{ top: view_use_header ? 90 : 0.1,
+            backgroundColor: view_background_color}">
             <!--上拉刷新-->
             <refresh class="view-refresh"
-                     v-if="is_refresh"
+                     v-if="view_use_refresh"
                      @refresh="refreshHandle"
                      @pullingdown="pullingDownHandle"
-                     :style="{ backgroundColor: refresh_load_background_color }"
+                     :style="{ backgroundColor: view_refresh_load_background_color }"
                      :display="is_refresh_status ? 'show' : 'hide'">
                 <loading-indicator class="view-refresh-icon"
                                    v-if="is_refresh_type"
                                    :style="{ visibility: is_refresh_type ? 'visible' : 'hidden',
-                                   color: indicator_color,
-                                   backgroundColor: indicator_background_color }">
+                                   color: view_indicator_color,
+                                   backgroundColor: view_indicator_background_color }">
                 </loading-indicator>
             </refresh>
             <!--/上拉刷新-->
@@ -38,19 +50,19 @@
             <!--/主体-->
             <!--下拉刷新-->
             <loading class="view-loading"
-                     v-if="is_load"
+                     v-if="view_use_load"
                      @loading="loadHandle"
                      @pullingup="pullingUpHandle"
-                     :style="{ backgroundColor: refresh_load_background_color }"
+                     :style="{ backgroundColor: view_refresh_load_background_color }"
                      :display="is_load_status ? 'show' : 'hide'">
                 <loading-indicator class="view-loading-icon"
                                    :style="{ visibility: is_load_type ? 'visible' : 'hidden',
-                                   color: indicator_color,
-                                   backgroundColor: indicator_background_color }">
+                                   color: view_indicator_color,
+                                   backgroundColor: view_indicator_background_color }">
                 </loading-indicator>
                 <text class="view-loading-text"
                       v-if="!is_load_type"
-                      :style="{ color: load_done_color }">没有更多了</text>
+                      :style="{ color: view_load_done_color }">没有更多了</text>
             </loading>
             <!--/下拉刷新-->
         </scroller>
@@ -60,7 +72,7 @@
 <script>
     const ViewHeader = require('./children/view-header.vue');
     const navigator = weex.requireModule('navigator');
-    module.exports = {
+    module.exports =  {
         data () {
             return {
                 /**下拉状态*/
@@ -75,43 +87,57 @@
         },
         props: {
             /**是否不启用默认点击事件*/
-            is_not_enabled_left_default_click: { default: false },
+            view_not_use_left_default_click: { default: false },
             /**是否有头部*/
-            is_header: { default: true },
+            view_use_header: { default: true },
             /**主体背景颜色*/
-            background_color: { default: '' },
+            view_background_color: { default: '' },
             /**是否支持下拉刷新*/
-            is_refresh: { default: false },
+            view_use_refresh: { default: false },
             /**是否支持上拉加载*/
-            is_load: { default: false },
+            view_use_load: { default: false },
             /**导航条背景色*/
-            nav_background_color: { default: '#FFFFFF' },
+            view_header_background_color: { default: '#ef4735' },
+            /**导航条边框宽度*/
+            view_header_border_width: { default: 0 },
             /**导航条高度*/
-            header_height: { default: 90 },
+            view_header_height: { default: 90 },
             /**左侧按钮图片*/
-            left_item_img_src: { default: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAYAAACM/rhtAAAAAXNSR0IArs4c6QAAAf1JREFUWAntmL0rRlEcx72EWEjKS0oUKRZZTAZllEUWI4NBmQwmJhkMLAZZGBgMKCv5AwyKEkVKSSjvkffPt/x0O930yNNzTnp+9e2c873POb/P/d3z3HufJyMjHekK/I8KFHAai+gOraJ8FEwIZh19RDSQLLqsPy6Ux/wV1OasI1jvkQvBGopWTv0t5P0S5wChyrlw23jFyGtkk30JuXA7eCVeyUiuPbuAXLg9vFLkNQQ3h1y4A7xyr2Qkz0SzyIU7xKtE3mMaAhfuGK/KOxkAU8iFO8GrCQFuIgbuFK82BLixGLgzvPoQ4EZj4C7wGlINp2+nG4MYk46pPfj25bn7UWOF6yfqRee/MGkT9aMHFBt6ZXKTpXo8bGS6+bpx4xoexoU/5Wzm4DVKddUs3y65Kwwwbg/qWBHaQE0aRGKZfg/SftRcE93v/k+e5bPPWGvzte6lBomE3kx0NnZm1s7jxW2NRNZM+mfKWHEfGZy1M3hWjaQn/e2Cehk4QgZnrR6BwUQ1JHr+Gpy148EQAlKH9KgzOGtHQoJsBEbfMoOzdigkSN16rmIgB0KCbAHm1oF8Z9wbEmQrMHqg22VWqxutbuTBRDskTygK+cq4MxhCQDrQM4pCnocEKJYupMoZ5D19/cAPKrqh0VvQI+oLiiwCo6rpf5t0pCuQaAU+AQjE6XRPS3R6AAAAAElFTkSuQmCC' },
+            view_header_left_src: { default: '' },
             /**左侧按钮标题*/
-            left_item_title: { default: '' },
+            view_header_left_txt: { default: '' },
             /**左侧按钮颜色*/
-            left_item_color: { default: '#000000' },
+            view_header_left_color: { default: '#000000' },
             /**导航条标题*/
-            center_item_title: { default: '' },
+            view_header_center_txt: { default: '' },
             /**导航条标题颜色*/
-            center_item_color: { default: '#000000' },
+            view_header_center_color: { default: '#fff' },
             /**右侧按钮图片*/
-            right_item_img_src: { default: '' },
+            view_header_right_src: { default: '' },
             /**右侧按钮标题*/
-            right_item_title: { default: '' },
+            view_header_right_txt: { default: '' },
             /**右侧按钮标题颜色*/
-            right_item_color: { default: '#000000' },
+            view_header_right_color: { default: '#000000' },
             /**下拉上拉背景色*/
-            refresh_load_background_color: { default: '#383838' },
+            view_refresh_load_background_color: { default: '#383838' },
             /**指示器颜色*/
-            indicator_color: { default: '#58B7FF' },
+            view_indicator_color: { default: '#58B7FF' },
             /**指示器背景颜色*/
-            indicator_background_color: { default: '#FFFFFF' },
+            view_indicator_background_color: { default: '#FFFFFF' },
             /**字体颜色*/
-            load_done_color: { default: '#FFFFFF' }
+            view_load_done_color: { default: '#FFFFFF' },
+
+            view_header_border_color: { default: '#ddd' },
+            view_header_left_src_size: { default: [50, 50] },
+            view_header_right_src_size: { default: [40, 40] },
+            view_header_left_src_mar_left: { default: 25 },
+            view_header_left_src_mar_right: { default: 0 },
+            view_header_right_src_mar_left: { default: 0 },
+            view_header_right_src_mar_right: { default: 25 },
+            view_header_left_txt_mar_left: { default: 25 },
+            view_header_left_txt_mar_right: { default: 0 },
+            view_header_right_txt_mar_left: { default: 0 },
+            view_header_right_txt_mar_right: { default: 25 },
         },
         methods: {
             /**右边按钮点击事件*/
@@ -120,7 +146,7 @@
             },
             /**左边按钮点击事件*/
             leftItemClickHandle (event) {
-                this.is_not_enabled_left_default_click ? this.$emit('leftItemClick',event) : navigator.pop();
+                this.view_not_use_left_default_click ? this.$emit('leftItemClick',event) : navigator.pop();
             },
             /**上拉加载数据*/
             loadHandle (event) {
