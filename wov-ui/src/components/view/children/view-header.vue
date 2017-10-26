@@ -2,6 +2,7 @@
     <div class="view-header"
          :style="{ height: view_header_height,
          backgroundColor: view_header_background_color,
+         backgroundImage: view_header_background_image,
          borderBottomColor: view_header_border_color,
          borderBottomWidth: view_header_border_width }">
         <div class="view-header-left"
@@ -45,6 +46,7 @@
     module.exports =  {
         props: [ 'view_header_background_color', 'view_header_height', 'view_header_left_src',
             'view_header_left_src_size', 'view_header_right_src_size',
+            'view_header_background_image',
             'view_header_left_src_mar_left', 'view_header_right_src_mar_right',
             'view_header_left_src_mar_right','view_header_left_txt_mar_left',
             'view_header_left_txt_mar_right','view_header_right_txt_mar_left',

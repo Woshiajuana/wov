@@ -3,6 +3,7 @@
         <view-header
             v-if="view_use_header"
             :view_header_background_color="view_header_background_color"
+            :view_header_background_image="view_header_background_image"
             :view_header_height="view_header_height"
             :view_header_left_src="view_header_left_src"
             :view_header_left_txt="view_header_left_txt"
@@ -98,6 +99,7 @@
             view_use_load: { default: false },
             /**导航条背景色*/
             view_header_background_color: { default: '#ef4735' },
+            view_header_background_image: { default: '' },
             /**导航条边框宽度*/
             view_header_border_width: { default: 0 },
             /**导航条高度*/
