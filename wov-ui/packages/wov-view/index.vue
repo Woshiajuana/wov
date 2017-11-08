@@ -108,6 +108,7 @@
 
 <script>
     const navigator = weex.requireModule('navigator');
+    import config from './config'
     export default {
         data () {
             return {
