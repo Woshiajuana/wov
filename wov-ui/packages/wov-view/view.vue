@@ -1,48 +1,59 @@
 <template>
     <div class="view-wrap">
+        <!--头部-->
         <div class="view-header"
+             v-if="view_use_header"
              :style="{ height: view_header_height,
              backgroundColor: view_header_background_color,
              backgroundImage: view_header_background_image,
              borderBottomColor: view_header_border_color,
              borderBottomWidth: view_header_border_width }">
+            <!--左边-->
             <div class="view-header-left"
                  :style="{ height: view_header_height}"
                  @click="leftItemClickHandle">
                 <image class="header-left-image"
                        v-if="view_header_left_src"
                        :style="{width: view_header_left_src_size[0],
-                   marginLeft: view_header_left_src_mar_left,
-                   marginRight: view_header_left_src_mar_right,
-                   height: view_header_left_src_size[1]}"
+                       marginLeft: view_header_left_src_mar_left,
+                       marginRight: view_header_left_src_mar_right,
+                       height: view_header_left_src_size[1]}"
                        :src="view_header_left_src">
                 </image>
                 <text class="header-left-text"
                       v-if="view_header_left_txt"
                       :style="{ color: view_header_left_color,
-                   marginLeft: view_header_left_txt_mar_left,
-                   marginRight: view_header_left_txt_mar_right}">{{view_header_left_txt}}</text>
+                      marginLeft: view_header_left_txt_mar_left,
+                      marginRight: view_header_left_txt_mar_right}">{{view_header_left_txt}}</text>
             </div>
-            <div class="view-header-center">
+            <!--/左边-->
+            <!--中间-->
+            <div class="view-header-center" :style="{ height: view_header_height}">
                 <text :style="{ color: view_header_center_color }" class="header-center-text">{{view_header_center_txt}}</text>
+
             </div>
+            <!--/中间-->
+            <!--右边-->
             <div class="view-header-right"
                  :style="{ height: view_header_height}"
                  @click="rightItemClickHandle">
                 <text class="header-right-text"
                       v-if="view_header_right_txt"
                       :style="{ color: view_header_right_color,
-                  marginLeft: view_header_right_txt_mar_left,
-                  marginRight: view_header_right_txt_mar_right }">{{view_header_right_txt}}</text>
+                      marginLeft: view_header_right_txt_mar_left,
+                      marginRight: view_header_right_txt_mar_right }">{{view_header_right_txt}}</text>
                 <image v-if="view_header_right_src"
                        :src="view_header_right_src"
                        :style="{width: view_header_right_src_size[0],
-                   marginLeft: view_header_right_src_mar_left,
-                   marginRight: view_header_right_src_mar_right,
-                   height: view_header_right_src_size[1]}"
-                       class="header-right-image"></image>
+                       marginLeft: view_header_right_src_mar_left,
+                       marginRight: view_header_right_src_mar_right,
+                       height: view_header_right_src_size[1]}"
+                       class="header-right-image">
+                </image>
             </div>
+            <!--/右边-->
         </div>
+        <!--/头部-->
         <scroller class="view-inner"
             :style="{ top: view_use_header ? 90 : 0.1,
             backgroundColor: view_background_color}">
@@ -53,11 +64,12 @@
                      @pullingdown="pullingDownHandle"
                      :style="{ backgroundColor: view_refresh_load_background_color }"
                      :display="is_refresh_status ? 'show' : 'hide'">
-                <loading-indicator class="view-refresh-icon"
-                                   v-if="is_refresh_type"
-                                   :style="{ visibility: is_refresh_type ? 'visible' : 'hidden',
-                                   color: view_indicator_color,
-                                   backgroundColor: view_indicator_background_color }">
+                <loading-indicator
+                        class="view-refresh-icon"
+                        v-if="is_refresh_type"
+                        :style="{ visibility: is_refresh_type ? 'visible' : 'hidden',
+                        color: view_indicator_color,
+                        backgroundColor: view_indicator_background_color }">
                 </loading-indicator>
             </refresh>
             <!--/上拉刷新-->
@@ -71,10 +83,11 @@
                      @pullingup="pullingUpHandle"
                      :style="{ backgroundColor: view_refresh_load_background_color }"
                      :display="is_load_status ? 'show' : 'hide'">
-                <loading-indicator class="view-loading-icon"
-                                   :style="{ visibility: is_load_type ? 'visible' : 'hidden',
-                                   color: view_indicator_color,
-                                   backgroundColor: view_indicator_background_color }">
+                <loading-indicator
+                        class="view-loading-icon"
+                        :style="{ visibility: is_load_type ? 'visible' : 'hidden',
+                        color: view_indicator_color,
+                        backgroundColor: view_indicator_background_color }">
                 </loading-indicator>
                 <text class="view-loading-text"
                       v-if="!is_load_type"
@@ -143,7 +156,6 @@
             view_indicator_background_color: { default: '#FFFFFF' },
             /**字体颜色*/
             view_load_done_color: { default: '#FFFFFF' },
-
             view_header_border_color: { default: '#ddd' },
             view_header_left_src_size: { default: [50, 50] },
             view_header_right_src_size: { default: [40, 40] },
@@ -224,6 +236,48 @@
 <style>
     .view-wrap{
         flex: 1;
+    }
+    .view-header {
+        position: fixed;
+        flex-direction: row;
+        top: 0;
+        left: 0;
+        right: 0;
+        width: 750px;
+    }
+    .view-header-right,
+    .view-header-left {
+        position: absolute;
+        flex-direction: row;
+        align-items: center;
+        top: 0;
+    }
+    .view-header-right{
+        right: 0;
+    }
+    .view-header-left{
+        left: 0;
+    }
+    .header-right-text,
+    .header-left-text {
+        text-align: right;
+        font-size: 30px;
+    }
+    .view-header-center{
+        position: absolute;
+        left: 120px;
+        right: 120px;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+    }
+    .header-center-text {
+        font-size: 34px;
+    }
+    .header-left-image,
+    .header-right-image {
+        width: 40px;
+        height: 40px;
     }
     .view-inner{
         position: absolute;
