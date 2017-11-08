@@ -30,7 +30,7 @@
             <!--中间-->
             <div class="view-header-center" :style="{ height: view_header_height}">
                 <text class="header-center-text"
-                      :style="{ color: view_header_center_color }">xsxsaxaxaxaxa</text>
+                      :style="{ color: view_header_center_color }">{{view_header_center_txt}}</text>
                 <image v-if="view_header_center_src"
                        :src="view_header_center_src"
                        :style="{width: view_header_center_src_size[0],

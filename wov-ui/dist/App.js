@@ -99,10 +99,18 @@
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	exports.default = {
+	    data: function data() {
+	        return {
+	            return_src: 'https://ss0.baidu.com/73x1bjeh1BF3odCf/it/u=138126325,1485620701&fm=85&s=7FAB2EC3909A35D01E299C1A030010D2'
+	        };
+	    },
+
 	    components: {
 	        WovView: _wovView2.default
 	    }
 	}; //
+	//
+	//
 	//
 	//
 	//
@@ -687,7 +695,7 @@
 	    style: {
 	      color: _vm.view_header_center_color
 	    }
-	  }, [_vm._v("xsxsaxaxaxaxa")]), (_vm.view_header_center_src) ? _c('image', {
+	  }, [_vm._v(_vm._s(_vm.view_header_center_txt))]), (_vm.view_header_center_src) ? _c('image', {
 	    staticClass: ["header-center-image"],
 	    style: {
 	      width: _vm.view_header_center_src_size[0],
@@ -784,6 +792,8 @@
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
 	  return _c('wov-view', {
 	    attrs: {
+	      "view_header_left_src": _vm.return_src,
+	      "view_header_right_src": _vm.return_src,
 	      "view_header_center_txt": "哈哈"
 	    }
 	  }, [_c('text', [_vm._v("xxxx")])])

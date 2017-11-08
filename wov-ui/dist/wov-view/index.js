@@ -602,7 +602,7 @@
 	    style: {
 	      color: _vm.view_header_center_color
 	    }
-	  }, [_vm._v("xsxsaxaxaxaxa")]), (_vm.view_header_center_src) ? _c('image', {
+	  }, [_vm._v(_vm._s(_vm.view_header_center_txt))]), (_vm.view_header_center_src) ? _c('image', {
 	    staticClass: ["header-center-image"],
 	    style: {
 	      width: _vm.view_header_center_src_size[0],
