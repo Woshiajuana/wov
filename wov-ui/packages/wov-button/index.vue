@@ -5,20 +5,20 @@
 </template>
 
 <script>
-    module.exports = {
+    export default {
         name: 'wov-button',
         props: {
-            disabled: { default: false },
-            delay: { default: 0 }
+            button_disabled: { default: false },
+            button_delay: { default: 0 }
         },
         methods: {
             pressHandle () {
-                !this.disabled && this.$emit('onPress', ()=>{
+                !this.button_disabled && this.$emit('onPress', ()=>{
                     setTimeout(() => {
-                        this.disabled = false;
-                    }, +this.delay);
+                        this.button_disabled = false;
+                    }, +this.button_delay);
                 });
-                this.disabled = true;
+                this.button_disabled = true;
             }
         }
     }

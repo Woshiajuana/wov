@@ -1,33 +1,48 @@
 <template>
     <div class="view-wrap">
-        <view-header
-            v-if="view_use_header"
-            :view_header_background_color="view_header_background_color"
-            :view_header_background_image="view_header_background_image"
-            :view_header_height="view_header_height"
-            :view_header_left_src="view_header_left_src"
-            :view_header_left_txt="view_header_left_txt"
-            :view_header_left_color="view_header_left_color"
-            :view_header_center_txt="view_header_center_txt"
-            :view_header_center_color="view_header_center_color"
-            :view_header_right_src="view_header_right_src"
-            :view_header_right_txt="view_header_right_txt"
-            :view_header_right_color="view_header_right_color"
-            :view_header_border_width="view_header_border_width"
-            :view_header_border_color="view_header_border_color"
-            :view_header_left_src_size="view_header_left_src_size"
-            :view_header_right_src_size="view_header_right_src_size"
-            :view_header_left_src_mar_left="view_header_left_src_mar_left"
-            :view_header_left_src_mar_right="view_header_left_src_mar_right"
-            :view_header_right_src_mar_left="view_header_right_src_mar_left"
-            :view_header_right_src_mar_right="view_header_right_src_mar_right"
-            :view_header_left_txt_mar_left="view_header_left_txt_mar_left"
-            :view_header_left_txt_mar_right="view_header_left_txt_mar_right"
-            :view_header_right_txt_mar_left="view_header_right_txt_mar_left"
-            :view_header_right_txt_mar_right="view_header_right_txt_mar_right"
-            @rightItemClick="rightItemClickHandle"
-            @leftItemClick="leftItemClickHandle">
-        </view-header>
+        <div class="view-header"
+             :style="{ height: view_header_height,
+             backgroundColor: view_header_background_color,
+             backgroundImage: view_header_background_image,
+             borderBottomColor: view_header_border_color,
+             borderBottomWidth: view_header_border_width }">
+            <div class="view-header-left"
+                 :style="{ height: view_header_height}"
+                 @click="leftItemClickHandle">
+                <image class="header-left-image"
+                       v-if="view_header_left_src"
+                       :style="{width: view_header_left_src_size[0],
+                   marginLeft: view_header_left_src_mar_left,
+                   marginRight: view_header_left_src_mar_right,
+                   height: view_header_left_src_size[1]}"
+                       :src="view_header_left_src">
+                </image>
+                <text class="header-left-text"
+                      v-if="view_header_left_txt"
+                      :style="{ color: view_header_left_color,
+                   marginLeft: view_header_left_txt_mar_left,
+                   marginRight: view_header_left_txt_mar_right}">{{view_header_left_txt}}</text>
+            </div>
+            <div class="view-header-center">
+                <text :style="{ color: view_header_center_color }" class="header-center-text">{{view_header_center_txt}}</text>
+            </div>
+            <div class="view-header-right"
+                 :style="{ height: view_header_height}"
+                 @click="rightItemClickHandle">
+                <text class="header-right-text"
+                      v-if="view_header_right_txt"
+                      :style="{ color: view_header_right_color,
+                  marginLeft: view_header_right_txt_mar_left,
+                  marginRight: view_header_right_txt_mar_right }">{{view_header_right_txt}}</text>
+                <image v-if="view_header_right_src"
+                       :src="view_header_right_src"
+                       :style="{width: view_header_right_src_size[0],
+                   marginLeft: view_header_right_src_mar_left,
+                   marginRight: view_header_right_src_mar_right,
+                   height: view_header_right_src_size[1]}"
+                       class="header-right-image"></image>
+            </div>
+        </div>
         <scroller class="view-inner"
             :style="{ top: view_use_header ? 90 : 0.1,
             backgroundColor: view_background_color}">
