@@ -22,7 +22,7 @@ export default {
     view_header_border_width: 0,
 
     /**导航条高度*/
-    view_header_height: 0,
+    view_header_height: 90,
 
     /**下拉上拉背景色*/
     view_refresh_load_background_color: '#383838',
@@ -61,7 +61,7 @@ export default {
 
     /**头部中间文字样式定义*/
     view_header_center_txt: '',
-    view_header_center_color: '#fff',
+    view_header_center_color: '#3c3c3c',
 
     /**头部右边图片样式定义*/
     view_header_right_src: '',

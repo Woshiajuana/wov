@@ -50,10 +50,10 @@
 	var __vue_styles__ = []
 
 	/* script */
-	__vue_exports__ = __webpack_require__(11)
+	__vue_exports__ = __webpack_require__(9)
 
 	/* template */
-	var __vue_template__ = __webpack_require__(12)
+	var __vue_template__ = __webpack_require__(10)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -65,7 +65,7 @@
 	if (typeof __vue_options__ === "function") {
 	  __vue_options__ = __vue_options__.options
 	}
-	__vue_options__.__file = "F:\\workcode\\wov\\wov-ui\\src\\components\\btn\\btn.vue"
+	__vue_options__.__file = "F:\\workcode\\wov\\wov-ui\\packages\\wov-button\\index.vue"
 	__vue_options__.render = __vue_template__.render
 	__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
 	__vue_options__.style = __vue_options__.style || {}
@@ -85,11 +85,14 @@
 
 /***/ }),
 
-/***/ 11:
+/***/ 9:
 /***/ (function(module, exports) {
 
 	'use strict';
 
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
 	//
 	//
 	//
@@ -97,26 +100,29 @@
 	//
 	//
 
-	module.exports = {
-	    name: 'btn',
+	exports.default = {
+	    name: 'wov-button',
 	    props: {
-	        type: { default: true }
+	        button_disabled: { default: false },
+	        button_delay: { default: 0 }
 	    },
 	    methods: {
 	        pressHandle: function pressHandle() {
 	            var _this = this;
 
-	            this.type && this.$emit('onPress', function () {
-	                _this.type = true;
+	            !this.button_disabled && this.$emit('onPress', function () {
+	                setTimeout(function () {
+	                    _this.button_disabled = false;
+	                }, +_this.button_delay);
 	            });
-	            this.type = false;
+	            this.button_disabled = true;
 	        }
 	    }
 	};
 
 /***/ }),
 
-/***/ 12:
+/***/ 10:
 /***/ (function(module, exports) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;

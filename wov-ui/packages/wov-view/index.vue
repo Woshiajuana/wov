@@ -30,7 +30,7 @@
             <!--中间-->
             <div class="view-header-center" :style="{ height: view_header_height}">
                 <text class="header-center-text"
-                      :style="{ color: view_header_center_color }">{{view_header_center_txt}}</text>
+                      :style="{ color: view_header_center_color }">xsxsaxaxaxaxa</text>
                 <image v-if="view_header_center_src"
                        :src="view_header_center_src"
                        :style="{width: view_header_center_src_size[0],
@@ -63,7 +63,7 @@
         </div>
         <!--/头部-->
         <scroller class="view-inner"
-            :style="{ top: view_use_header ? 90 : 0.1,
+            :style="{ top: view_use_header ? view_header_height : 0.1,
             backgroundColor: view_background_color}">
             <!--上拉刷新-->
             <refresh class="view-refresh"
