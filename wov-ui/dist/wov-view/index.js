@@ -308,6 +308,10 @@
 	//
 	//
 	//
+	//
+	//
+	//
+	//
 
 	var navigator = weex.requireModule('navigator');
 	exports.default = {
@@ -336,8 +340,10 @@
 	        /**是否支持上拉加载*/
 	        view_use_load: { default: _config2.default.view_use_load },
 
-	        /**导航条边框宽度*/
+	        /**导航条边框*/
 	        view_header_border_width: { default: _config2.default.view_header_border_width },
+	        view_header_border_color: { default: _config2.default.view_header_border_color },
+
 	        /**导航条高度*/
 	        view_header_height: { default: _config2.default.view_header_height },
 
@@ -349,7 +355,6 @@
 	        view_indicator_background_color: { default: _config2.default.view_indicator_background_color },
 	        /**字体颜色*/
 	        view_load_done_color: { default: _config2.default.view_load_done_color },
-	        view_header_border_color: { default: _config2.default.view_header_border_color },
 
 	        /**头部背景色*/
 	        view_header_background_color: { default: _config2.default.view_header_background_color },
@@ -360,6 +365,8 @@
 	        view_header_left_src_size: { default: _config2.default.view_header_left_src_size },
 	        view_header_left_src_mar_left: { default: _config2.default.view_header_left_src_mar_left },
 	        view_header_left_src_mar_right: { default: _config2.default.view_header_left_src_mar_right },
+	        view_header_left_src_pad_left: { default: _config2.default.view_header_left_src_pad_left },
+	        view_header_left_src_pad_right: { default: _config2.default.view_header_left_src_pad_right },
 
 	        /**头部左边文字样式定义*/
 	        view_header_left_txt: { default: _config2.default.view_header_left_txt },
@@ -382,6 +389,8 @@
 	        view_header_right_src_size: { default: _config2.default.view_header_right_src_size },
 	        view_header_right_src_mar_left: { default: _config2.default.view_header_right_src_mar_left },
 	        view_header_right_src_mar_right: { default: _config2.default.view_header_right_src_mar_right },
+	        view_header_right_src_pad_left: { default: _config2.default.view_header_right_src_pad_left },
+	        view_header_right_src_pad_right: { default: _config2.default.view_header_right_src_pad_right },
 
 	        /**头部右边文字样式定义*/
 	        view_header_right_txt: { default: _config2.default.view_header_right_txt },
@@ -491,8 +500,9 @@
 	    /**是否支持上拉加载*/
 	    view_use_load: false,
 
-	    /**导航条边框宽度*/
+	    /**导航条边框*/
 	    view_header_border_width: 0,
+	    view_header_border_color: '#ddd',
 
 	    /**导航条高度*/
 	    view_header_height: 90,
@@ -508,7 +518,6 @@
 
 	    /**字体颜色*/
 	    view_load_done_color: '#FFFFFF',
-	    view_header_border_color: '#ddd',
 
 	    /**头部背景色*/
 	    view_header_background_color: '#fdfdfd',
@@ -517,8 +526,10 @@
 	    /**头部左边图片样式定义*/
 	    view_header_left_src: '',
 	    view_header_left_src_size: [40, 40],
-	    view_header_left_src_mar_left: 0,
+	    view_header_left_src_mar_left: 25,
 	    view_header_left_src_mar_right: 0,
+	    view_header_left_src_pad_left: 0,
+	    view_header_left_src_pad_right: 0,
 
 	    /**头部左边文字样式定义*/
 	    view_header_left_txt: '',
@@ -541,6 +552,8 @@
 	    view_header_right_src_size: [40, 40],
 	    view_header_right_src_mar_left: 0,
 	    view_header_right_src_mar_right: 25,
+	    view_header_right_src_pad_left: 0,
+	    view_header_right_src_pad_right: 0,
 
 	    /**头部右边文字样式定义*/
 	    view_header_right_txt: '',
@@ -577,9 +590,11 @@
 	  }, [(_vm.view_header_left_src) ? _c('image', {
 	    staticClass: ["header-left-image"],
 	    style: {
-	      width: _vm.view_header_left_src_size[0],
+	      width: _vm.view_header_left_src_size[0] + _vm.view_header_left_src_pad_left + _vm.view_header_left_src_pad_right,
 	      marginLeft: _vm.view_header_left_src_mar_left,
 	      marginRight: _vm.view_header_left_src_mar_right,
+	      paddingLeft: _vm.view_header_left_src_pad_left,
+	      paddingRight: _vm.view_header_left_src_pad_right,
 	      height: _vm.view_header_left_src_size[1]
 	    },
 	    attrs: {
@@ -631,9 +646,11 @@
 	  }, [_vm._v(_vm._s(_vm.view_header_right_txt))]) : _vm._e(), (_vm.view_header_right_src) ? _c('image', {
 	    staticClass: ["header-right-image"],
 	    style: {
-	      width: _vm.view_header_right_src_size[0],
+	      width: _vm.view_header_right_src_size[0] + _vm.view_header_right_src_pad_left + _vm.view_header_right_src_pad_right,
 	      marginLeft: _vm.view_header_right_src_mar_left,
 	      marginRight: _vm.view_header_right_src_mar_right,
+	      paddingLeft: _vm.view_header_right_src_pad_left,
+	      paddingRight: _vm.view_header_right_src_pad_right,
 	      height: _vm.view_header_right_src_size[1]
 	    },
 	    attrs: {

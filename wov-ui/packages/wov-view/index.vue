@@ -14,9 +14,11 @@
                  @click="leftItemClickHandle">
                 <image class="header-left-image"
                        v-if="view_header_left_src"
-                       :style="{width: view_header_left_src_size[0],
+                       :style="{width: view_header_left_src_size[0] + view_header_left_src_pad_left + view_header_left_src_pad_right,
                        marginLeft: view_header_left_src_mar_left,
                        marginRight: view_header_left_src_mar_right,
+                       paddingLeft: view_header_left_src_pad_left,
+                       paddingRight: view_header_left_src_pad_right,
                        height: view_header_left_src_size[1]}"
                        :src="view_header_left_src">
                 </image>
@@ -52,9 +54,11 @@
                       marginRight: view_header_right_txt_mar_right }">{{view_header_right_txt}}</text>
                 <image v-if="view_header_right_src"
                        :src="view_header_right_src"
-                       :style="{width: view_header_right_src_size[0],
+                       :style="{width: view_header_right_src_size[0] + view_header_right_src_pad_left + view_header_right_src_pad_right,
                        marginLeft: view_header_right_src_mar_left,
                        marginRight: view_header_right_src_mar_right,
+                       paddingLeft: view_header_right_src_pad_left,
+                       paddingRight: view_header_right_src_pad_right,
                        height: view_header_right_src_size[1]}"
                        class="header-right-image">
                 </image>
@@ -134,8 +138,10 @@
             /**是否支持上拉加载*/
             view_use_load: { default: config.view_use_load },
 
-            /**导航条边框宽度*/
+            /**导航条边框*/
             view_header_border_width: { default: config.view_header_border_width },
+            view_header_border_color: { default: config.view_header_border_color },
+
             /**导航条高度*/
             view_header_height: { default: config.view_header_height },
 
@@ -147,7 +153,6 @@
             view_indicator_background_color: { default: config.view_indicator_background_color },
             /**字体颜色*/
             view_load_done_color: { default: config.view_load_done_color },
-            view_header_border_color: { default: config.view_header_border_color },
 
             /**头部背景色*/
             view_header_background_color: { default: config.view_header_background_color },
@@ -158,6 +163,8 @@
             view_header_left_src_size: { default: config.view_header_left_src_size },
             view_header_left_src_mar_left: { default: config.view_header_left_src_mar_left },
             view_header_left_src_mar_right: { default: config.view_header_left_src_mar_right },
+            view_header_left_src_pad_left: { default: config.view_header_left_src_pad_left },
+            view_header_left_src_pad_right: { default: config.view_header_left_src_pad_right },
 
             /**头部左边文字样式定义*/
             view_header_left_txt: { default: config.view_header_left_txt },
@@ -180,6 +187,8 @@
             view_header_right_src_size: { default: config.view_header_right_src_size },
             view_header_right_src_mar_left: { default: config.view_header_right_src_mar_left },
             view_header_right_src_mar_right: { default: config.view_header_right_src_mar_right },
+            view_header_right_src_pad_left: { default: config.view_header_right_src_pad_left },
+            view_header_right_src_pad_right: { default: config.view_header_right_src_pad_right },
 
             /**头部右边文字样式定义*/
             view_header_right_txt: { default: config.view_header_right_txt },

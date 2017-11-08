@@ -18,8 +18,9 @@ export default {
     /**是否支持上拉加载*/
     view_use_load: false,
 
-    /**导航条边框宽度*/
+    /**导航条边框*/
     view_header_border_width: 0,
+    view_header_border_color: '#ddd',
 
     /**导航条高度*/
     view_header_height: 90,
@@ -35,7 +36,6 @@ export default {
 
     /**字体颜色*/
     view_load_done_color: '#FFFFFF',
-    view_header_border_color: '#ddd',
 
     /**头部背景色*/
     view_header_background_color: '#fdfdfd',
@@ -44,8 +44,10 @@ export default {
     /**头部左边图片样式定义*/
     view_header_left_src: '',
     view_header_left_src_size: [40, 40],
-    view_header_left_src_mar_left: 0,
+    view_header_left_src_mar_left: 25,
     view_header_left_src_mar_right: 0,
+    view_header_left_src_pad_left: 0,
+    view_header_left_src_pad_right: 0,
 
     /**头部左边文字样式定义*/
     view_header_left_txt: '',
@@ -68,6 +70,8 @@ export default {
     view_header_right_src_size: [40, 40],
     view_header_right_src_mar_left: 0,
     view_header_right_src_mar_right: 25,
+    view_header_right_src_pad_left: 0,
+    view_header_right_src_pad_right: 0,
 
     /**头部右边文字样式定义*/
     view_header_right_txt: '',
