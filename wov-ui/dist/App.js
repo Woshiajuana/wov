@@ -405,6 +405,8 @@
 	//
 	//
 	//
+	//
+	//
 
 	var navigator = weex.requireModule('navigator');
 	exports.default = {
@@ -472,6 +474,8 @@
 	        view_header_center_src_size: { default: _config2.default.view_header_center_src_size },
 	        view_header_center_src_mar_left: { default: _config2.default.view_header_center_src_mar_left },
 	        view_header_center_src_mar_right: { default: _config2.default.view_header_center_src_mar_right },
+	        view_header_center_src_pad_left: { default: _config2.default.view_header_center_src_pad_left },
+	        view_header_center_src_pad_right: { default: _config2.default.view_header_center_src_pad_right },
 
 	        /**头部中间文字样式定义*/
 	        view_header_center_txt: { default: _config2.default.view_header_center_txt },
@@ -635,6 +639,8 @@
 	    view_header_center_src_size: [40, 40],
 	    view_header_center_src_mar_left: 0,
 	    view_header_center_src_mar_right: 0,
+	    view_header_center_src_pad_left: 0,
+	    view_header_center_src_pad_right: 0,
 
 	    /**头部中间文字样式定义*/
 	    view_header_center_txt: '',
@@ -713,9 +719,11 @@
 	  }, [_vm._v(_vm._s(_vm.view_header_center_txt))]), (_vm.view_header_center_src) ? _c('image', {
 	    staticClass: ["header-center-image"],
 	    style: {
-	      width: _vm.view_header_center_src_size[0],
+	      width: _vm.view_header_center_src_size[0] + _vm.view_header_center_src_pad_left + _vm.view_header_center_src_pad_right,
 	      marginLeft: _vm.view_header_center_src_mar_left,
 	      marginRight: _vm.view_header_center_src_mar_right,
+	      paddingLeft: _vm.view_header_center_src_pad_left,
+	      paddingRight: _vm.view_header_center_src_pad_right,
 	      height: _vm.view_header_center_src_size[1]
 	    },
 	    attrs: {

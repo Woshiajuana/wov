@@ -112,6 +112,8 @@
 	    view_header_center_src_size: [40, 40],
 	    view_header_center_src_mar_left: 0,
 	    view_header_center_src_mar_right: 0,
+	    view_header_center_src_pad_left: 0,
+	    view_header_center_src_pad_right: 0,
 
 	    /**头部中间文字样式定义*/
 	    view_header_center_txt: '',
