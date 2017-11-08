@@ -29,8 +29,16 @@
             <!--/左边-->
             <!--中间-->
             <div class="view-header-center" :style="{ height: view_header_height}">
-                <text :style="{ color: view_header_center_color }" class="header-center-text">{{view_header_center_txt}}</text>
-
+                <text class="header-center-text"
+                      :style="{ color: view_header_center_color }">{{view_header_center_txt}}</text>
+                <image v-if="view_header_center_src"
+                       :src="view_header_center_src"
+                       :style="{width: view_header_center_src_size[0],
+                       marginLeft: view_header_center_src_mar_left,
+                       marginRight: view_header_center_src_mar_right,
+                       height: view_header_center_src_size[1]}"
+                       class="header-center-image">
+                </image>
             </div>
             <!--/中间-->
             <!--右边-->
@@ -132,20 +140,6 @@
             view_header_border_width: { default: 0 },
             /**导航条高度*/
             view_header_height: { default: 90 },
-            /**左侧按钮图片*/
-            view_header_left_src: { default: '' },
-            /**左侧按钮标题*/
-            view_header_left_txt: { default: '' },
-            /**左侧按钮颜色*/
-            view_header_left_color: { default: '#000000' },
-            /**导航条标题*/
-            view_header_center_txt: { default: '' },
-            /**导航条标题颜色*/
-            view_header_center_color: { default: '#fff' },
-            /**右侧按钮图片*/
-            view_header_right_src: { default: '' },
-            /**右侧按钮标题*/
-            view_header_right_txt: { default: '' },
             /**右侧按钮标题颜色*/
             view_header_right_color: { default: '#000000' },
             /**下拉上拉背景色*/
@@ -157,14 +151,37 @@
             /**字体颜色*/
             view_load_done_color: { default: '#FFFFFF' },
             view_header_border_color: { default: '#ddd' },
-            view_header_left_src_size: { default: [50, 50] },
-            view_header_right_src_size: { default: [40, 40] },
-            view_header_left_src_mar_left: { default: 25 },
+
+            /**头部左边图片样式定义*/
+            view_header_left_src: { default: '' },
+            view_header_left_src_size: { default: [40, 40] },
+            view_header_left_src_mar_left: { default: 0 },
             view_header_left_src_mar_right: { default: 0 },
-            view_header_right_src_mar_left: { default: 0 },
-            view_header_right_src_mar_right: { default: 25 },
+
+            /**头部左边文字样式定义*/
+            view_header_left_txt: { default: '' },
+            view_header_left_color: { default: '#000000' },
             view_header_left_txt_mar_left: { default: 25 },
             view_header_left_txt_mar_right: { default: 0 },
+
+            /**头部中间图片样式样式定义*/
+            view_header_center_src: { default: '' },
+            view_header_center_src_size: { default: [40,40] },
+            view_header_center_src_mar_left: { default: 0 },
+            view_header_center_src_mar_right: { default: 0 },
+
+            /**头部中间文字样式定义*/
+            view_header_center_txt: { default: '' },
+            view_header_center_color: { default: '#fff' },
+
+            /**头部右边图片样式定义*/
+            view_header_right_src: { default: '' },
+            view_header_right_src_size: { default: [40, 40] },
+            view_header_right_src_mar_left: { default: 0 },
+            view_header_right_src_mar_right: { default: 25 },
+
+            /**头部右边文字样式定义*/
+            view_header_right_txt: { default: '' },
             view_header_right_txt_mar_left: { default: 0 },
             view_header_right_txt_mar_right: { default: 25 },
         },
@@ -265,6 +282,7 @@
     }
     .view-header-center{
         position: absolute;
+        flex-direction: row;
         left: 120px;
         right: 120px;
         text-align: center;
