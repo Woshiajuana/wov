@@ -124,66 +124,68 @@
         },
         props: {
             /**是否不启用默认点击事件*/
-            view_not_use_left_default_click: { default: false },
+            view_not_use_left_default_click: { default: config.view_not_use_left_default_click },
             /**是否有头部*/
-            view_use_header: { default: true },
+            view_use_header: { default: config.view_use_header },
             /**主体背景颜色*/
-            view_background_color: { default: '' },
+            view_background_color: { default: config.view_background_color },
             /**是否支持下拉刷新*/
-            view_use_refresh: { default: false },
+            view_use_refresh: { default: config.view_use_refresh },
             /**是否支持上拉加载*/
-            view_use_load: { default: false },
-            /**导航条背景色*/
-            view_header_background_color: { default: '#ef4735' },
-            view_header_background_image: { default: '' },
+            view_use_load: { default: config.view_use_load },
+
             /**导航条边框宽度*/
-            view_header_border_width: { default: 0 },
+            view_header_border_width: { default: config.view_header_border_width },
             /**导航条高度*/
-            view_header_height: { default: 90 },
-            /**右侧按钮标题颜色*/
-            view_header_right_color: { default: '#000000' },
+            view_header_height: { default: config.view_header_height },
+
             /**下拉上拉背景色*/
-            view_refresh_load_background_color: { default: '#383838' },
+            view_refresh_load_background_color: { default: config.view_refresh_load_background_color },
             /**指示器颜色*/
-            view_indicator_color: { default: '#58B7FF' },
+            view_indicator_color: { default: config.view_indicator_color },
             /**指示器背景颜色*/
-            view_indicator_background_color: { default: '#FFFFFF' },
+            view_indicator_background_color: { default: config.view_indicator_background_color },
             /**字体颜色*/
-            view_load_done_color: { default: '#FFFFFF' },
-            view_header_border_color: { default: '#ddd' },
+            view_load_done_color: { default: config.view_load_done_color },
+            view_header_border_color: { default: config.view_header_border_color },
+
+            /**头部背景色*/
+            view_header_background_color: { default: config.view_header_background_color },
+            view_header_background_image: { default: config.view_header_background_image },
 
             /**头部左边图片样式定义*/
-            view_header_left_src: { default: '' },
-            view_header_left_src_size: { default: [40, 40] },
-            view_header_left_src_mar_left: { default: 0 },
-            view_header_left_src_mar_right: { default: 0 },
+            view_header_left_src: { default: config.view_header_left_src },
+            view_header_left_src_size: { default: config.view_header_left_src_size },
+            view_header_left_src_mar_left: { default: config.view_header_left_src_mar_left },
+            view_header_left_src_mar_right: { default: config.view_header_left_src_mar_right },
 
             /**头部左边文字样式定义*/
-            view_header_left_txt: { default: '' },
-            view_header_left_color: { default: '#000000' },
-            view_header_left_txt_mar_left: { default: 25 },
-            view_header_left_txt_mar_right: { default: 0 },
+            view_header_left_txt: { default: config.view_header_left_txt },
+            view_header_left_color: { default: config.view_header_left_color },
+            view_header_left_txt_mar_left: { default: config.view_header_left_txt_mar_left },
+            view_header_left_txt_mar_right: { default: config.view_header_left_txt_mar_right },
 
             /**头部中间图片样式样式定义*/
-            view_header_center_src: { default: '' },
-            view_header_center_src_size: { default: [40,40] },
-            view_header_center_src_mar_left: { default: 0 },
-            view_header_center_src_mar_right: { default: 0 },
+            view_header_center_src: { default: config.view_header_center_src },
+            view_header_center_src_size: { default: config.view_header_center_src_size },
+            view_header_center_src_mar_left: { default: config.view_header_center_src_mar_left },
+            view_header_center_src_mar_right: { default: config.view_header_center_src_mar_right },
 
             /**头部中间文字样式定义*/
-            view_header_center_txt: { default: '' },
-            view_header_center_color: { default: '#fff' },
+            view_header_center_txt: { default: config.view_header_center_txt },
+            view_header_center_color: { default: config.view_header_center_color },
 
             /**头部右边图片样式定义*/
-            view_header_right_src: { default: '' },
-            view_header_right_src_size: { default: [40, 40] },
-            view_header_right_src_mar_left: { default: 0 },
-            view_header_right_src_mar_right: { default: 25 },
+            view_header_right_src: { default: config.view_header_right_src },
+            view_header_right_src_size: { default: config.view_header_right_src_size },
+            view_header_right_src_mar_left: { default: config.view_header_right_src_mar_left },
+            view_header_right_src_mar_right: { default: config.view_header_right_src_mar_right },
 
             /**头部右边文字样式定义*/
-            view_header_right_txt: { default: '' },
-            view_header_right_txt_mar_left: { default: 0 },
-            view_header_right_txt_mar_right: { default: 25 },
+            view_header_right_txt: { default: config.view_header_right_txt },
+            view_header_right_color: { default: config.view_header_right_color },
+            view_header_right_txt_mar_left: { default: config.view_header_right_txt_mar_left },
+            view_header_right_txt_mar_right: { default: config.view_header_right_txt_mar_right },
         },
         methods: {
             /**右边按钮点击事件*/
@@ -243,9 +245,6 @@
             regainRefresh () {
                 this.is_refresh_type = true;
             }
-        },
-        components: {
-            ViewHeader
         }
     }
 </script>
