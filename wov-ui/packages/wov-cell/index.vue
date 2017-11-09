@@ -1,133 +1,187 @@
 <template>
-    <div class="item-wrap"
-         :style="{height: item_height,
-         backgroundColor: item_background_color,
-         paddingLeft: item_padding_left,
-         paddingRight: item_padding_right,
-         borderBottomWidth: item_border_width,
-         borderBottomColor: item_border_color}">
-        <image class="item-img"
-               v-if="item_left_src"
-               :src="item_left_src"
-               :style="{height: item_left_src_size[1],
-               width: item_left_src_size[0],
-               marginLeft: item_left_src_mar_left,
-               marginRight: item_left_src_mar_right}">
+    <div class="cell-wrap"
+         :style="{height: cell_height,
+         backgroundColor: cell_background_color,
+         paddingLeft: cell_padding_left,
+         paddingRight: cell_padding_right,
+         borderBottomWidth: cell_border_width,
+         borderBottomColor: cell_border_color}">
+        <image class="cell-img"
+               v-if="cell_left_src"
+               :src="cell_left_src"
+               :style="{height: cell_left_src_size[1],
+               width: cell_left_src_size[0],
+               marginLeft: cell_left_src_mar_left,
+               marginRight: cell_left_src_mar_right}">
         </image>
-        <div class="item-inner"
-             :style="{height: item_height,
-              paddingLeft: item_inner_padding_left,
-              paddingRight: item_inner_padding_right,
-              borderBottomWidth: item_inner_border_width,
-              borderBottomColor: item_inner_border_color}">
-            <div class="item-left" :style="{width: item_left_width}">
-                <text class="item-left-text"
-                      :style="{color:item_left_color,
-                      fontSize:item_left_size}">{{item_left_txt}}</text>
+        <div class="cell-inner"
+             :style="{height: cell_height,
+              paddingLeft: cell_inner_padding_left,
+              paddingRight: cell_inner_padding_right,
+              borderBottomWidth: cell_inner_border_width,
+              borderBottomColor: cell_inner_border_color}">
+            <div v-if="cell_left_width" class="cell-left" :style="{width: cell_left_width}">
+                <text class="cell-left-text"
+                      :style="{color:cell_left_color,
+                      fontSize:cell_left_size}">{{cell_left_txt}}</text>
+                <text class="cell-left-text"
+                      v-if="cell_left_txt_2"
+                      :style="{color:cell_left_color_2,
+                      marginTop: cell_left_2_mar_top,
+                      fontSize:cell_left_size_2}">{{cell_left_txt_2}}</text>
             </div>
-            <div v-if="!item_use_input" class="item-right">
-                <text class="item-right-text"
-                      :style="{color:item_right_color,
-                      fontSize:item_right_size}">{{item_right_txt}}</text>
+            <div v-if="!cell_left_width" class="cell-left">
+                <text class="cell-left-text"
+                      :style="{color:cell_left_color,
+                      fontSize:cell_left_size}">{{cell_left_txt}}</text>
+                <text class="cell-left-text"
+                      v-if="cell_left_txt_2"
+                      :style="{color:cell_left_color_2,
+                      marginTop: cell_left_2_mar_top,
+                      fontSize:cell_left_size_2}">{{cell_left_txt_2}}</text>
             </div>
-            <input v-if="item_use_input && item_input_type == 'text'" class="item-right item-input"
-                   :style="{color:item_right_color,
-                   fontSize:item_right_size}"
-                   @input="onputHandle"
+            <div v-if="!cell_use_input" class="cell-right">
+                <text class="cell-right-text"
+                      :style="{color:cell_right_color,
+                      textAlign: cell_right_text_align,
+                      fontSize:cell_right_size}">{{cell_right_txt}}</text>
+            </div>
+            <input v-if="cell_use_input && cell_input_type == 'text'" class="cell-right cell-input"
+                   :style="{color:cell_right_color,
+                   marginTop: cell_input_mar_top,
+                   height: (+cell_height - 4),
+                   lineHeight: (+cell_height - 4),
+                   textAlign: cell_right_text_align,
+                   fontSize:cell_right_size}"
+                   @input="inputHandle"
                    v-model="right_input"
-                   :maxlength="item_input_max"
-                   :placeholder="item_input_placeholder" type="text"/>
-            <input v-if="item_use_input  && item_input_type == 'password'" class="item-right item-input"
-                   :style="{color:item_right_color,
-                   fontSize:item_right_size}"
-                   @input="onputHandle"
+                   :maxlength="cell_input_max"
+                   :disabled="cell_input_disabled"
+                   :placeholder="cell_input_placeholder" type="text"/>
+            <input v-if="cell_use_input  && cell_input_type == 'password'" class="cell-right cell-input"
+                   :style="{color:cell_right_color,
+                   marginTop: cell_input_mar_top,
+                   height: (+cell_height - 4),
+                   lineHeight: (+cell_height - 4),
+                   textAlign: cell_right_text_align,
+                   fontSize:cell_right_size}"
+                   @input="inputHandle"
                    v-model="right_input"
-                   :maxlength="item_input_max"
-                   :placeholder="item_input_placeholder" type="password"/>
-            <image class="item-img"
-                   v-if="item_right_src"
-                   :src="item_right_src"
-                   :style="{height: item_right_src_size[1],
-               width: item_right_src_size[0],
-               marginLeft: item_right_src_mar_left,
-               marginRight: item_right_src_mar_right}">
+                   :maxlength="cell_input_max"
+                   :disabled="cell_input_disabled"
+                   :placeholder="cell_input_placeholder" type="password"/>
+            <input v-if="cell_use_input  && cell_input_type == 'date'" class="cell-right cell-input"
+                   :style="{color:cell_right_color,
+                   marginTop: cell_input_mar_top,
+                   height: (+cell_height - 4),
+                   lineHeight: (+cell_height - 4),
+                   textAlign: cell_right_text_align,
+                   fontSize:cell_right_size}"
+                   @input="inputHandle"
+                   v-model="right_input"
+                   :maxlength="cell_input_max"
+                   :disabled="cell_input_disabled"
+                   :placeholder="cell_input_placeholder" type="date"/>
+            <image class="cell-img"
+                   @click="cellRightSrcClickHandle"
+                   v-if="cell_right_src"
+                   :src="cell_right_src"
+                   :style="{height: cell_right_src_size[1],
+               width: cell_right_src_size[0],
+               marginLeft: cell_right_src_mar_left,
+               marginRight: cell_right_src_mar_right}">
             </image>
-            <div v-if="item_use_arrow" class="item-arrow"></div>
+            <div v-if="cell_use_arrow" class="cell-arrow"></div>
         </div>
     </div>
 </template>
 
 <script>
-    module.exports = {
+    export default {
         data () {
             return {
                 right_input: ''
             }
         },
         props: {
-            item_use_arrow: { default: true },
-            item_height: { default: 90 },
-            item_left_txt: { default: '' },
-            item_background_color: { default: '' },
-            item_left_color: { default: '' },
-            item_left_size: { default: 28 },
-            item_left_width: { default: ''},
-            item_right_txt: { default: '' },
-            item_right_color: { default: '#000' },
-            item_right_size: { default: 28 },
-            item_left_src: { default: '' },
-            item_left_src_mar_left: { default: '' },
-            item_left_src_mar_right: { default: '' },
-            item_left_src_size: { default: [36,36] },
-            item_padding_left: { default: 0 },
-            item_padding_right: { default: 0 },
-            item_inner_padding_left: { default: 0 },
-            item_inner_padding_right: { default: 0 },
-            item_border_width: { default: 2 },
-            item_border_color: { default: '#ddd' },
-            item_inner_border_width: { default: 0 },
-            item_inner_border_color: { default: '#ddd'},
-            item_right_src: { default: '' },
-            item_right_src_size: { default: [36,36] },
-            item_right_src_mar_left: { default: 0 },
-            item_right_src_mar_right: { default: 0 },
-            item_use_input: { default: false },
-            item_input_type: { default: 'text' },
-            item_input_placeholder: { default: '请输入' },
-            item_input_max: { default: '' },
+            cell_use_arrow: { default: true },
+            cell_height: { default: 90 },
+            cell_left_txt: { default: '' },
+            cell_left_txt_2: { default: '' },
+            cell_background_color: { default: '' },
+            cell_left_color: { default: '' },
+            cell_left_color_2: { default: '' },
+            cell_left_size: { default: 28 },
+            cell_left_size_2: { default: 28 },
+            cell_left_width: { default: ''},
+            cell_right_txt: { default: '' },
+            cell_right_color: { default: '#000' },
+            cell_right_size: { default: 28 },
+            cell_left_src: { default: '' },
+            cell_left_src_mar_left: { default: '' },
+            cell_left_src_mar_right: { default: '' },
+            cell_left_src_size: { default: [36,36] },
+            cell_padding_left: { default: 0 },
+            cell_padding_right: { default: 0 },
+            cell_inner_padding_left: { default: 0 },
+            cell_inner_padding_right: { default: 0 },
+            cell_border_width: { default: 2 },
+            cell_border_color: { default: '#ddd' },
+            cell_inner_border_width: { default: 0 },
+            cell_inner_border_color: { default: '#ddd'},
+            cell_right_src: { default: '' },
+            cell_right_src_size: { default: [36,36] },
+            cell_right_src_mar_left: { default: 0 },
+            cell_right_src_mar_right: { default: 0 },
+            cell_use_input: { default: false },
+            cell_input_disabled: { default: false },
+            cell_input_type: { default: 'text' },
+            cell_input_placeholder: { default: '请输入' },
+            cell_input_max: { default: '' },
+            cell_right_text_align: { default: 'right' },
+            cell_input_mar_top: { default: 0 },
+            cell_left_2_mar_top: { default: 0 },
         },
         created () {
-            this.right_input = this.item_right_txt;
+            this.right_input = this.cell_right_txt;
         },
         methods: {
-            onputHandle () {
-                this.$emit('onput',this.right_input);
+            inputHandle () {
+                this.$emit('input',this.right_input);
+            },
+            cellRightSrcClickHandle () {
+                this.$emit('cellRightSrcClick')
             }
         }
     }
 </script>
 
 <style>
-    .item-wrap{
+    .cell-wrap{
         flex-direction: row;
-        align-items: center;
+        align-cells: center;
     }
-    .item-inner{
+    .cell-inner{
         flex: 1;
         flex-direction: row;
-        align-items: center;
+        align-cells: center;
     }
-    .item-right{
+    .cell-right{
         flex: 1;
         flex-direction: row;
-        justify-content: flex-end;
     }
-    .item-input{
+    .cell-right-text{
+        flex: 1;
+    }
+    .cell-input{
         text-align: right;
         margin-bottom: 8px;
         padding-left: 20px;
     }
-    .item-arrow{
+    .cell-left-text{
+        flex: 1;
+    }
+    .cell-arrow{
         width: 16px;
         height: 16px;
         margin-right: 25px;

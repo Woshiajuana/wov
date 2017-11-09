@@ -1,3 +1,3 @@
 # wov-cell
 
-> Weex 按钮组件
+> Weex 细胞组件
