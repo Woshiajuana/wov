@@ -5,8 +5,8 @@
              :class="[nav_position ? 'top' : 'bottom']"
              :style="{ height: nav_height,
              backgroundColor: nav_background_color }">
-            <slot v-if="use_menu" name="menu"></slot>
-            <div v-if="!use_menu"
+            <slot v-if="!nav_use_menu" name="menu"></slot>
+            <div v-if="nav_use_menu"
                  :style="{ height: nav_height,
                  borderTopWidth: item.img_src ? (nav_position ? 0 : nav_border_width) : (nav_position ? 0 : nav_border_width),
                  borderBottomWidth: item.img_src ? (nav_position ? nav_border_width : 0) : (nav_position ? nav_border_width : 0),
@@ -28,8 +28,8 @@
         <!--/导航条-->
         <!--主体-->
         <div class="nav-bar-inner"
-             :style="{ top: nav_position == 'top' ? 100 : 0,
-             bottom: nav_position == 'top' ? 0 : 100 }">
+             :style="{ top: nav_position == 'top' ? nav_height : 0,
+             bottom: nav_position == 'top' ? 0 : nav_height }">
             <embed class="nav-bar-content"
                    v-for="(item, index) in nav_arr"
                    :key="index"
@@ -43,28 +43,19 @@
 </template>
 
 <script>
+    import config from './config'
     export default {
         props: {
-            /**菜单位置*/
-            nav_position: { default: 'bottom' },
-            /**菜单高度*/
-            nav_height: { default: 100 },
-            /**菜单颜色*/
-            nav_background_color: { default: '#F7F7FA' },
-            /**内容*/
-            nav_arr: { default: [] },
-            /**是否有默认*/
-            use_menu: { default: false },
-            /**菜单响应状态*/
-            nav_border_width: { default: '2px' },
-            /**菜单字体大小*/
-            nav_font_size: { default: '32px' },
-            /**菜单字体颜色*/
-            nav_checked_color: { default: '#58B7FF' },
-            /**边框的颜色*/
-            nav_border_color: { default: '#ddd' },
-            /**菜单字体颜色*/
-            nav_font_color: { default: '#999' }
+            nav_use_menu: { default: config.nav_use_menu },
+            nav_arr: { default: config.nav_arr },
+            nav_position: { default: config.nav_position },
+            nav_height: { default: config.nav_height },
+            nav_background_color: { default: config.nav_background_color },
+            nav_border_width: { default: config.nav_border_width },
+            nav_border_color: { default: config.nav_border_color },
+            nav_font_size: { default: config.nav_font_size },
+            nav_font_color: { default: config.nav_font_color },
+            nav_checked_color: { default: config.nav_checked_color },
         },
         methods: {
             /**切换菜单*/
