@@ -78,9 +78,6 @@
                 }
                 this.$emit('switchMenu',item,index);
             }
-        },
-        components: {
-            SwitchMenu
         }
     }
 </script>
