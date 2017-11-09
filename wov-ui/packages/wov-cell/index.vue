@@ -25,20 +25,20 @@
                       :style="{color:cell_left_color,
                       fontSize:cell_left_size}">{{cell_left_txt}}</text>
                 <text class="cell-left-text"
-                      v-if="cell_left_txt_2"
-                      :style="{color:cell_left_color_2,
-                      marginTop: cell_left_2_mar_top,
-                      fontSize:cell_left_size_2}">{{cell_left_txt_2}}</text>
+                      v-if="cell_left_txt_sub"
+                      :style="{color:cell_left_color_sub,
+                      marginTop: cell_left_sub_mar_top,
+                      fontSize:cell_left_size_sub}">{{cell_left_txt_sub}}</text>
             </div>
             <div v-if="!cell_left_width" class="cell-left">
                 <text class="cell-left-text"
                       :style="{color:cell_left_color,
                       fontSize:cell_left_size}">{{cell_left_txt}}</text>
                 <text class="cell-left-text"
-                      v-if="cell_left_txt_2"
-                      :style="{color:cell_left_color_2,
-                      marginTop: cell_left_2_mar_top,
-                      fontSize:cell_left_size_2}">{{cell_left_txt_2}}</text>
+                      v-if="cell_left_txt_sub"
+                      :style="{color:cell_left_color_sub,
+                      marginTop: cell_left_sub_mar_top,
+                      fontSize:cell_left_size_sub}">{{cell_left_txt_sub}}</text>
             </div>
             <div v-if="!cell_use_input" class="cell-right">
                 <text class="cell-right-text"
@@ -107,12 +107,12 @@
             cell_use_arrow: { default: true },
             cell_height: { default: 90 },
             cell_left_txt: { default: '' },
-            cell_left_txt_2: { default: '' },
+            cell_left_txt_sub: { default: '' },
             cell_background_color: { default: '' },
             cell_left_color: { default: '' },
-            cell_left_color_2: { default: '' },
+            cell_left_color_sub: { default: '' },
             cell_left_size: { default: 28 },
-            cell_left_size_2: { default: 28 },
+            cell_left_size_sub: { default: 28 },
             cell_left_width: { default: ''},
             cell_right_txt: { default: '' },
             cell_right_color: { default: '#000' },
@@ -140,7 +140,7 @@
             cell_input_max: { default: '' },
             cell_right_text_align: { default: 'right' },
             cell_input_mar_top: { default: 0 },
-            cell_left_2_mar_top: { default: 0 },
+            cell_left_sub_mar_top: { default: 0 },
         },
         created () {
             this.right_input = this.cell_right_txt;
