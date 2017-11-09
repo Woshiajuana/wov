@@ -86,25 +86,25 @@
 /***/ }),
 
 /***/ 9:
-/***/ (function(module, exports) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 
 	Object.defineProperty(exports, "__esModule", {
 	    value: true
 	});
-	//
-	//
-	//
-	//
-	//
-	//
+
+	var _config = __webpack_require__(24);
+
+	var _config2 = _interopRequireDefault(_config);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	exports.default = {
 	    name: 'wov-button',
 	    props: {
-	        button_disabled: { default: false },
-	        button_delay: { default: 0 }
+	        button_disabled: { default: _config2.default.button_disabled },
+	        button_delay: { default: _config2.default.button_delay }
 	    },
 	    methods: {
 	        pressHandle: function pressHandle() {
@@ -118,7 +118,12 @@
 	            this.button_disabled = true;
 	        }
 	    }
-	};
+	}; //
+	//
+	//
+	//
+	//
+	//
 
 /***/ }),
 
@@ -133,6 +138,24 @@
 	  }, [_vm._t("default")], 2)
 	},staticRenderFns: []}
 	module.exports.render._withStripped = true
+
+/***/ }),
+
+/***/ 24:
+/***/ (function(module, exports) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	/**
+	 * Created by Administrator on 2017/11/8.
+	 */
+	exports.default = {
+	  button_disabled: false,
+	  button_delay: 0
+	};
 
 /***/ })
 

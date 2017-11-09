@@ -45,10 +45,18 @@
 /* 0 */
 /***/ (function(module, exports) {
 
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
 	/**
 	 * Created by Administrator on 2017/11/8.
 	 */
-	"use strict";
+	exports.default = {
+	  button_disabled: false,
+	  button_delay: 0
+	};
 
 /***/ })
 /******/ ]);

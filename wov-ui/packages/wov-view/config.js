@@ -80,5 +80,4 @@ export default {
     view_header_right_txt_mar_left: 0,
     view_header_right_txt_mar_right: 25,
 
-
 }

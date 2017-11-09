@@ -5,11 +5,12 @@
 </template>
 
 <script>
+    import config from './config'
     export default {
         name: 'wov-button',
         props: {
-            button_disabled: { default: false },
-            button_delay: { default: 0 }
+            button_disabled: { default: config.button_disabled },
+            button_delay: { default: config.button_delay }
         },
         methods: {
             pressHandle () {

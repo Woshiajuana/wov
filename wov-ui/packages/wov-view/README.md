@@ -1,3 +1,5 @@
-# wov-button
+# wov-view
 
-> Weex 按钮组件
+> Weex 视图组件
+
+
