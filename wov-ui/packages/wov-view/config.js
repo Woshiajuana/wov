@@ -6,8 +6,11 @@ export default {
     /**是否不启用默认点击事件*/
     view_not_use_left_default_click: false,
 
-    /**是否有头部*/
+    /**头部*/
     view_use_header: true,
+    view_header_height: 90,
+    view_header_border_width: 0,
+    view_header_border_color: '#ddd',
 
     /**主体背景颜色*/
     view_background_color: '#fff',
@@ -17,13 +20,6 @@ export default {
 
     /**是否支持上拉加载*/
     view_use_load: false,
-
-    /**导航条边框*/
-    view_header_border_width: 0,
-    view_header_border_color: '#ddd',
-
-    /**导航条高度*/
-    view_header_height: 90,
 
     /**下拉上拉背景色*/
     view_refresh_load_background_color: '#383838',
@@ -66,7 +62,7 @@ export default {
 
     /**头部中间文字样式定义*/
     view_header_center_txt: '',
-    view_header_center_size: 30,
+    view_header_center_size: 34,
     view_header_center_color: '#3c3c3c',
 
     /**头部右边图片样式定义*/

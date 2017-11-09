@@ -129,9 +129,6 @@
 	    "justifyContent": "center",
 	    "alignItems": "center"
 	  },
-	  "header-center-text": {
-	    "fontSize": 34
-	  },
 	  "view-inner": {
 	    "position": "absolute",
 	    "width": 750,
@@ -308,10 +305,13 @@
 	        return {
 	            /**下拉状态*/
 	            is_refresh_status: false,
+
 	            /**上拉状态*/
 	            is_load_status: false,
+
 	            /**是否可以上拉*/
 	            is_load_type: true,
+
 	            /**是否可以下拉*/
 	            is_refresh_type: true
 	        };
@@ -320,29 +320,22 @@
 	    props: {
 	        /**是否不启用默认点击事件*/
 	        view_not_use_left_default_click: { default: _config2.default.view_not_use_left_default_click },
-	        /**是否有头部*/
-	        view_use_header: { default: _config2.default.view_use_header },
+
 	        /**主体背景颜色*/
 	        view_background_color: { default: _config2.default.view_background_color },
-	        /**是否支持下拉刷新*/
-	        view_use_refresh: { default: _config2.default.view_use_refresh },
-	        /**是否支持上拉加载*/
-	        view_use_load: { default: _config2.default.view_use_load },
 
-	        /**导航条边框*/
+	        /**头部*/
+	        view_use_header: { default: _config2.default.view_use_header },
+	        view_header_height: { default: _config2.default.view_header_height },
 	        view_header_border_width: { default: _config2.default.view_header_border_width },
 	        view_header_border_color: { default: _config2.default.view_header_border_color },
 
-	        /**导航条高度*/
-	        view_header_height: { default: _config2.default.view_header_height },
-
-	        /**下拉上拉背景色*/
+	        /**下拉上拉*/
+	        view_use_refresh: { default: _config2.default.view_use_refresh },
+	        view_use_load: { default: _config2.default.view_use_load },
 	        view_refresh_load_background_color: { default: _config2.default.view_refresh_load_background_color },
-	        /**指示器颜色*/
 	        view_indicator_color: { default: _config2.default.view_indicator_color },
-	        /**指示器背景颜色*/
 	        view_indicator_background_color: { default: _config2.default.view_indicator_background_color },
-	        /**字体颜色*/
 	        view_load_done_color: { default: _config2.default.view_load_done_color },
 
 	        /**头部背景色*/
@@ -398,10 +391,12 @@
 	            this.$emit('rightItemClick', event);
 	        },
 
+
 	        /**左边按钮点击事件*/
 	        leftItemClickHandle: function leftItemClickHandle(event) {
 	            this.view_not_use_left_default_click ? this.$emit('leftItemClick', event) : navigator.pop();
 	        },
+
 
 	        /**上拉加载数据*/
 	        loadHandle: function loadHandle(event) {
@@ -410,6 +405,7 @@
 	            !this.is_load_type && setTimeout(this.loaded, 0);
 	        },
 
+
 	        /**下拉刷新数据*/
 	        refreshHandle: function refreshHandle(event) {
 	            this.is_refresh_status = true;
@@ -417,15 +413,18 @@
 	            !this.is_refresh_type && setTimeout(this.refreshed, 0);
 	        },
 
+
 	        /**下拉距离*/
 	        pullingDownHandle: function pullingDownHandle(event) {
 	            this.$emit('pullingDown', event);
 	        },
 
+
 	        /**上拉距离*/
 	        pullingUpHandle: function pullingUpHandle(event) {
 	            this.$emit('pullingUp', event);
 	        },
+
 
 	        /**重置状态*/
 	        resetStatus: function resetStatus() {
@@ -433,30 +432,36 @@
 	            this.is_refresh_status = false;
 	        },
 
+
 	        /**上拉完成*/
 	        loaded: function loaded() {
 	            this.is_load_status = false;
 	        },
+
 
 	        /**下拉完成*/
 	        refreshed: function refreshed() {
 	            this.is_refresh_status = false;
 	        },
 
+
 	        /**禁止上拉*/
 	        banLoad: function banLoad() {
 	            this.is_load_type = false;
 	        },
+
 
 	        /**恢复上拉*/
 	        regainLoad: function regainLoad() {
 	            this.is_load_type = true;
 	        },
 
+
 	        /**禁止下拉*/
 	        banRefresh: function banRefresh() {
 	            this.is_refresh_type = false;
 	        },
+
 
 	        /**恢复下拉*/
 	        regainRefresh: function regainRefresh() {
@@ -482,8 +487,11 @@
 	    /**是否不启用默认点击事件*/
 	    view_not_use_left_default_click: false,
 
-	    /**是否有头部*/
+	    /**头部*/
 	    view_use_header: true,
+	    view_header_height: 90,
+	    view_header_border_width: 0,
+	    view_header_border_color: '#ddd',
 
 	    /**主体背景颜色*/
 	    view_background_color: '#fff',
@@ -493,13 +501,6 @@
 
 	    /**是否支持上拉加载*/
 	    view_use_load: false,
-
-	    /**导航条边框*/
-	    view_header_border_width: 0,
-	    view_header_border_color: '#ddd',
-
-	    /**导航条高度*/
-	    view_header_height: 90,
 
 	    /**下拉上拉背景色*/
 	    view_refresh_load_background_color: '#383838',
@@ -542,7 +543,7 @@
 
 	    /**头部中间文字样式定义*/
 	    view_header_center_txt: '',
-	    view_header_center_size: 30,
+	    view_header_center_size: 34,
 	    view_header_center_color: '#3c3c3c',
 
 	    /**头部右边图片样式定义*/

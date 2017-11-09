@@ -123,10 +123,13 @@
             return {
                 /**下拉状态*/
                 is_refresh_status: false,
+
                 /**上拉状态*/
                 is_load_status: false,
+
                 /**是否可以上拉*/
                 is_load_type: true,
+
                 /**是否可以下拉*/
                 is_refresh_type: true
             }
@@ -134,29 +137,22 @@
         props: {
             /**是否不启用默认点击事件*/
             view_not_use_left_default_click: { default: config.view_not_use_left_default_click },
-            /**是否有头部*/
-            view_use_header: { default: config.view_use_header },
+
             /**主体背景颜色*/
             view_background_color: { default: config.view_background_color },
-            /**是否支持下拉刷新*/
-            view_use_refresh: { default: config.view_use_refresh },
-            /**是否支持上拉加载*/
-            view_use_load: { default: config.view_use_load },
 
-            /**导航条边框*/
+            /**头部*/
+            view_use_header: { default: config.view_use_header },
+            view_header_height: { default: config.view_header_height },
             view_header_border_width: { default: config.view_header_border_width },
             view_header_border_color: { default: config.view_header_border_color },
 
-            /**导航条高度*/
-            view_header_height: { default: config.view_header_height },
-
-            /**下拉上拉背景色*/
+            /**下拉上拉*/
+            view_use_refresh: { default: config.view_use_refresh },
+            view_use_load: { default: config.view_use_load },
             view_refresh_load_background_color: { default: config.view_refresh_load_background_color },
-            /**指示器颜色*/
             view_indicator_color: { default: config.view_indicator_color },
-            /**指示器背景颜色*/
             view_indicator_background_color: { default: config.view_indicator_background_color },
-            /**字体颜色*/
             view_load_done_color: { default: config.view_load_done_color },
 
             /**头部背景色*/
@@ -211,55 +207,67 @@
             rightItemClickHandle (event) {
                 this.$emit('rightItemClick',event);
             },
+
             /**左边按钮点击事件*/
             leftItemClickHandle (event) {
                 this.view_not_use_left_default_click ? this.$emit('leftItemClick',event) : navigator.pop();
             },
+
             /**上拉加载数据*/
             loadHandle (event) {
                 this.is_load_status = true;
                 this.is_load_type && this.$emit('load', event);
                 !this.is_load_type && setTimeout(this.loaded,0);
             },
+
             /**下拉刷新数据*/
             refreshHandle (event) {
                 this.is_refresh_status = true;
                 this.is_refresh_type && this.$emit('refresh', event);
                 !this.is_refresh_type && setTimeout(this.refreshed,0);
             },
+
             /**下拉距离*/
             pullingDownHandle (event) {
                 this.$emit('pullingDown', event);
             },
+
             /**上拉距离*/
             pullingUpHandle (event) {
                 this.$emit('pullingUp', event);
             },
+
             /**重置状态*/
             resetStatus () {
                 this.is_load_status = false;
                 this.is_refresh_status = false;
             },
+
             /**上拉完成*/
             loaded () {
                 this.is_load_status = false;
             },
+
             /**下拉完成*/
             refreshed () {
                 this.is_refresh_status = false;
             },
+
             /**禁止上拉*/
             banLoad () {
                 this.is_load_type = false;
             },
+
             /**恢复上拉*/
             regainLoad () {
                 this.is_load_type = true;
             },
+
             /**禁止下拉*/
             banRefresh () {
                 this.is_refresh_type = false;
             },
+
             /**恢复下拉*/
             regainRefresh () {
                 this.is_refresh_type = true;
@@ -301,9 +309,6 @@
         text-align: center;
         justify-content: center;
         align-items: center;
-    }
-    .header-center-text {
-        font-size: 34px;
     }
     .view-inner{
         position: absolute;
