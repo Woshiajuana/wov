@@ -25,6 +25,7 @@
                 <text class="header-left-text"
                       v-if="view_header_left_txt"
                       :style="{ color: view_header_left_color,
+                      fontSize: view_header_left_size,
                       marginLeft: view_header_left_txt_mar_left,
                       marginRight: view_header_left_txt_mar_right}">{{view_header_left_txt}}</text>
             </div>
@@ -32,7 +33,8 @@
             <!--中间-->
             <div class="view-header-center" :style="{ height: view_header_height}">
                 <text class="header-center-text"
-                      :style="{ color: view_header_center_color }">{{view_header_center_txt}}</text>
+                      :style="{ color: view_header_center_color,
+                      fontSize: view_header_center_size }">{{view_header_center_txt}}</text>
                 <image v-if="view_header_center_src"
                        :src="view_header_center_src"
                        :style="{width: view_header_center_src_size[0] + view_header_center_src_pad_left + view_header_center_src_pad_right,
@@ -52,6 +54,7 @@
                 <text class="header-right-text"
                       v-if="view_header_right_txt"
                       :style="{ color: view_header_right_color,
+                      fontSize: view_header_right_size,
                       marginLeft: view_header_right_txt_mar_left,
                       marginRight: view_header_right_txt_mar_right }">{{view_header_right_txt}}</text>
                 <image v-if="view_header_right_src"
@@ -171,6 +174,7 @@
             /**头部左边文字样式定义*/
             view_header_left_txt: { default: config.view_header_left_txt },
             view_header_left_color: { default: config.view_header_left_color },
+            view_header_left_size: { default: config.view_header_left_size },
             view_header_left_txt_mar_left: { default: config.view_header_left_txt_mar_left },
             view_header_left_txt_mar_right: { default: config.view_header_left_txt_mar_right },
 
@@ -184,6 +188,7 @@
 
             /**头部中间文字样式定义*/
             view_header_center_txt: { default: config.view_header_center_txt },
+            view_header_center_size: { default: config.view_header_center_size },
             view_header_center_color: { default: config.view_header_center_color },
 
             /**头部右边图片样式定义*/
@@ -196,6 +201,7 @@
 
             /**头部右边文字样式定义*/
             view_header_right_txt: { default: config.view_header_right_txt },
+            view_header_right_size: { default: config.view_header_right_size },
             view_header_right_color: { default: config.view_header_right_color },
             view_header_right_txt_mar_left: { default: config.view_header_right_txt_mar_left },
             view_header_right_txt_mar_right: { default: config.view_header_right_txt_mar_right },
@@ -287,11 +293,6 @@
     .view-header-left{
         left: 0;
     }
-    .header-right-text,
-    .header-left-text {
-        text-align: right;
-        font-size: 30px;
-    }
     .view-header-center{
         position: absolute;
         flex-direction: row;
@@ -303,11 +304,6 @@
     }
     .header-center-text {
         font-size: 34px;
-    }
-    .header-left-image,
-    .header-right-image {
-        width: 40px;
-        height: 40px;
     }
     .view-inner{
         position: absolute;

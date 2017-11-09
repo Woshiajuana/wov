@@ -51,7 +51,8 @@ export default {
 
     /**头部左边文字样式定义*/
     view_header_left_txt: '',
-    view_header_left_color: '#000000',
+    view_header_left_color: '#3c3c3c',
+    view_header_left_size: 30,
     view_header_left_txt_mar_left: 25,
     view_header_left_txt_mar_right: 0,
 
@@ -65,6 +66,7 @@ export default {
 
     /**头部中间文字样式定义*/
     view_header_center_txt: '',
+    view_header_center_size: 30,
     view_header_center_color: '#3c3c3c',
 
     /**头部右边图片样式定义*/
@@ -77,7 +79,8 @@ export default {
 
     /**头部右边文字样式定义*/
     view_header_right_txt: '',
-    view_header_right_color: '#000000',
+    view_header_right_size: 30,
+    view_header_right_color: '#3c3c3c',
     view_header_right_txt_mar_left: 0,
     view_header_right_txt_mar_right: 25,
 

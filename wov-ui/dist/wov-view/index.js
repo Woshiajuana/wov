@@ -120,14 +120,6 @@
 	    "top": 0,
 	    "left": 0
 	  },
-	  "header-right-text": {
-	    "textAlign": "right",
-	    "fontSize": 30
-	  },
-	  "header-left-text": {
-	    "textAlign": "right",
-	    "fontSize": 30
-	  },
 	  "view-header-center": {
 	    "position": "absolute",
 	    "flexDirection": "row",
@@ -139,14 +131,6 @@
 	  },
 	  "header-center-text": {
 	    "fontSize": 34
-	  },
-	  "header-left-image": {
-	    "width": 40,
-	    "height": 40
-	  },
-	  "header-right-image": {
-	    "width": 40,
-	    "height": 40
 	  },
 	  "view-inner": {
 	    "position": "absolute",
@@ -200,6 +184,9 @@
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+	//
+	//
+	//
 	//
 	//
 	//
@@ -373,6 +360,7 @@
 	        /**头部左边文字样式定义*/
 	        view_header_left_txt: { default: _config2.default.view_header_left_txt },
 	        view_header_left_color: { default: _config2.default.view_header_left_color },
+	        view_header_left_size: { default: _config2.default.view_header_left_size },
 	        view_header_left_txt_mar_left: { default: _config2.default.view_header_left_txt_mar_left },
 	        view_header_left_txt_mar_right: { default: _config2.default.view_header_left_txt_mar_right },
 
@@ -386,6 +374,7 @@
 
 	        /**头部中间文字样式定义*/
 	        view_header_center_txt: { default: _config2.default.view_header_center_txt },
+	        view_header_center_size: { default: _config2.default.view_header_center_size },
 	        view_header_center_color: { default: _config2.default.view_header_center_color },
 
 	        /**头部右边图片样式定义*/
@@ -398,6 +387,7 @@
 
 	        /**头部右边文字样式定义*/
 	        view_header_right_txt: { default: _config2.default.view_header_right_txt },
+	        view_header_right_size: { default: _config2.default.view_header_right_size },
 	        view_header_right_color: { default: _config2.default.view_header_right_color },
 	        view_header_right_txt_mar_left: { default: _config2.default.view_header_right_txt_mar_left },
 	        view_header_right_txt_mar_right: { default: _config2.default.view_header_right_txt_mar_right }
@@ -537,7 +527,8 @@
 
 	    /**头部左边文字样式定义*/
 	    view_header_left_txt: '',
-	    view_header_left_color: '#000000',
+	    view_header_left_color: '#3c3c3c',
+	    view_header_left_size: 30,
 	    view_header_left_txt_mar_left: 25,
 	    view_header_left_txt_mar_right: 0,
 
@@ -551,6 +542,7 @@
 
 	    /**头部中间文字样式定义*/
 	    view_header_center_txt: '',
+	    view_header_center_size: 30,
 	    view_header_center_color: '#3c3c3c',
 
 	    /**头部右边图片样式定义*/
@@ -563,7 +555,8 @@
 
 	    /**头部右边文字样式定义*/
 	    view_header_right_txt: '',
-	    view_header_right_color: '#000000',
+	    view_header_right_size: 30,
+	    view_header_right_color: '#3c3c3c',
 	    view_header_right_txt_mar_left: 0,
 	    view_header_right_txt_mar_right: 25
 
@@ -610,6 +603,7 @@
 	    staticClass: ["header-left-text"],
 	    style: {
 	      color: _vm.view_header_left_color,
+	      fontSize: _vm.view_header_left_size,
 	      marginLeft: _vm.view_header_left_txt_mar_left,
 	      marginRight: _vm.view_header_left_txt_mar_right
 	    }
@@ -621,7 +615,8 @@
 	  }, [_c('text', {
 	    staticClass: ["header-center-text"],
 	    style: {
-	      color: _vm.view_header_center_color
+	      color: _vm.view_header_center_color,
+	      fontSize: _vm.view_header_center_size
 	    }
 	  }, [_vm._v(_vm._s(_vm.view_header_center_txt))]), (_vm.view_header_center_src) ? _c('image', {
 	    staticClass: ["header-center-image"],
@@ -648,6 +643,7 @@
 	    staticClass: ["header-right-text"],
 	    style: {
 	      color: _vm.view_header_right_color,
+	      fontSize: _vm.view_header_right_size,
 	      marginLeft: _vm.view_header_right_txt_mar_left,
 	      marginRight: _vm.view_header_right_txt_mar_right
 	    }
