@@ -1,8 +1,14 @@
 
-module.exports = {
-    WovSwitch: require("./src/components/switch/switch.vue"),
-    WovView: require("./src/components/view/view.vue"),
-    WovItem: require("./src/components/item/item.vue"),
-    WovBtn: require("./src/components/btn/btn.vue"),
-    WovWeb: require("./src/components/webview/webview.vue"),
+import WovView from './packages/wov-view'
+import WovNavbar from './packages/wov-navbar'
+import WovCell from './packages/wov-cell'
+import WovButton from './packages/wov-button'
+import WovWebview from './packages/wov-webview'
+
+export default {
+    WovView,
+    WovNavbar,
+    WovCell,
+    WovButton,
+    WovWebview,
 };
