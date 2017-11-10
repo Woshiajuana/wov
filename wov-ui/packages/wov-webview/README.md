@@ -1,3 +1,3 @@
-# wov-navbar
+# wov-webview
 
-> Weex 导航条组件
+> Weex webview视图组件

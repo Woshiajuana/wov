@@ -1,5 +1,7 @@
 <template>
-    <div class="webview-wrap">
+    <wov-view
+            :view_use_header="web_use_header"
+            :view_header_center_txt="web_header_title">
         <web class="webview-inner"
              ref="webview"
              :src="web_src"
@@ -9,21 +11,23 @@
         </web>
         <div class="webview-menu">
             <div class="webview-menu-item" @click="leftMenuClickHandle">
-                <image class="webview-menu-item-icon" :src="left_menu_src"></image>
+                <image class="webview-menu-item-icon" :src="web_menu_left_src"></image>
             </div>
             <div class="webview-menu-item" @click="centerMenuClickHandle">
-                <image class="webview-menu-item-icon" :src="center_menu_src"></image>
+                <image class="webview-menu-item-icon" :src="web_menu_center_src"></image>
             </div>
             <div class="webview-menu-item" @click="rightMenuClickHandle">
-                <image class="webview-menu-item-icon" :src="right_menu_src"></image>
+                <image class="webview-menu-item-icon" :src="web_menu_right_src"></image>
             </div>
         </div>
-    </div>
+    </wov-view>
 </template>
 
 <script>
     const webview = weex.requireModule('webview');
     const navigator = weex.requireModule('navigator');
+    import WovView from '../wov-view'
+    import config from './config'
     export default {
         data () {
             return {
@@ -32,17 +36,24 @@
         },
         props: {
             /**webview内容资源*/
-            web_src: { default: '' },
-            /**左边菜单资源*/
-            left_menu_src: { default: '' },
-            /**中间菜单资源*/
-            center_menu_src: { default: '' },
-            /**右边菜单资源*/
-            right_menu_src: { default: '' },
-            /**是否使用默认点击事件*/
-            use_left_event: { default: false },
-            use_center_event: { default: false },
-            use_right_event: { default: false }
+            web_src: config.web_src,
+
+            /**是否使用头部*/
+            web_use_header: config.web_use_header,
+            web_header_title: config.web_header_title,
+
+            /**是否使用菜单*/
+            web_use_menu: config.web_use_menu,
+
+            /**菜单资源*/
+            web_menu_left_src: config.web_menu_left_src,
+            web_menu_center_src: config.web_menu_center_src,
+            web_menu_right_src: config.web_menu_right_src,
+
+            /**是否使用点击事件*/
+            web_use_left_event: config.web_use_left_event,
+            web_use_center_event: config.web_use_center_event,
+            web_use_right_event: config.web_use_right_event,
         },
         methods: {
             /**页面开始加载触发*/
@@ -60,7 +71,7 @@
             },
             /**左边菜单点击事件*/
             leftMenuClickHandle () {
-                if(this.use_left_event) return this.$emit('leftMenuClick');
+                if(this.web_use_left_event) return this.$emit('leftMenuClick');
                 var page_count = this.page_count;
                 webview.goBack(this.$refs.webview);
                 setTimeout(() => {
@@ -71,20 +82,20 @@
             },
             /**中间菜单点击事件*/
             centerMenuClickHandle () {
-                this.use_center_event ? this.$emit('centerMenuClick') : webview.reload(this.$refs.webview);
+                this.web_use_center_event ? this.$emit('centerMenuClick') : webview.reload(this.$refs.webview);
             },
             /**右边菜单点击事件*/
             rightMenuClickHandle () {
-                this.use_right_event ? this.$emit('rightMenuClick') : navigator.pop();
+                this.web_use_right_event ? this.$emit('rightMenuClick') : navigator.pop();
             }
+        },
+        components: {
+            WovView
         }
     };
 </script>
 
 <style>
-    .webview-wrap {
-        flex: 1;
-    }
     .webview-inner {
         position: absolute;
         top: 0;
