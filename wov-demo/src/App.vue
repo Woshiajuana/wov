@@ -2,10 +2,13 @@
     <wov-switch
         :switch_page_arr="switch_page_arr">
     </wov-switch>
+    <wov-navbar nav_arr="">
+
+    </wov-navbar>
 </template>
 
 <script>
-    import { WovSwitch } from 'wov'
+    import { WovNavbar } from 'wov'
     import source from './assets/lib/source'
     import PageUrlConfig from './config/page_url_config'
     export default {
@@ -39,7 +42,7 @@
         },
         methods: {},
         components: {
-            WovSwitch
+            WovNavbar
         }
     }
 </script>
