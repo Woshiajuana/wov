@@ -8,7 +8,6 @@
             <wov-cell cell_left_txt="Official"
                       cell_right_txt="Enter"
                       :cell_use_arrow="false"
-                      cell_height="100"
                       :cell_right_src="arrow_img_src"
                       :cell_left_src="official_img_src"
                       cell_border_width="2"
@@ -18,7 +17,6 @@
             <wov-cell cell_left_txt="GitHub"
                       cell_right_txt="Star Me"
                       :cell_use_arrow="false"
-                      cell_height="100"
                       :cell_right_src="arrow_img_src"
                       :cell_left_src="git_img_src"
                       cell_border_width="2"
@@ -28,7 +26,6 @@
             <wov-cell cell_left_txt="Blog"
                       cell_right_txt="Welcome"
                       :cell_use_arrow="false"
-                      cell_height="100"
                       :cell_right_src="arrow_img_src"
                       :cell_left_src="blog_img_src"
                       cell_border_width="0"
@@ -104,7 +101,6 @@
         color: #999;
     }
     .main-wrap{
-        background-color: #fff;
         border-top-color: #ddd;
         border-top-width: 2px;
         border-top-style: solid;

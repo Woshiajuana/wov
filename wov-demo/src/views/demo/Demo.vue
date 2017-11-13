@@ -73,7 +73,8 @@
     .demo-item{
         width: 250px;
         height: 250px;
-        border-color: #DEDEDE;
+        background-color: #fff;
+        border-color: #f2f2f2;
         border-style: solid;
         justify-content: center;
         align-items: center;

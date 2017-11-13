@@ -1,27 +1,23 @@
 <template>
     <wov-view class="about-view"
-              view_header_background_color="#fbf9fe"
               :view_header_left_src="left_item_img_src"
               view_header_center_txt="友情链接">
         <div class="container-inner">
             <wov-cell cell_left_txt="Weex"
                       :cell_use_arrow="false"
                       :cell_right_src="arrow_img_src"
-                      cell_height="100"
                       @onPress="onPressHandle('Weex')"
                       cell_border_width="2">
             </wov-cell>
             <wov-cell cell_left_txt="Vue"
                       :cell_use_arrow="false"
                       :cell_right_src="arrow_img_src"
-                      cell_height="100"
                       @onPress="onPressHandle('Vue')"
                       cell_border_width="2">
             </wov-cell>
             <wov-cell cell_left_txt="Owulia"
                       :cell_use_arrow="false"
                       :cell_right_src="arrow_img_src"
-                      cell_height="100"
                       @onPress="onPressHandle('Owulia')"
                       cell_border_width="0">
             </wov-cell>

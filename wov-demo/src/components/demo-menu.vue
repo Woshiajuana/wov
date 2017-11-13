@@ -5,7 +5,6 @@
         <div class="main-wrap">
             <wov-cell v-for="(item, index) in demo_arr"
                       :key="index"
-                      cell_height="100"
                       :cell_left_txt="item.left_text"
                       :cell_border_width="index == demo_arr.length - 1 ? 0 : 2"
                       :cell_left_src_size="[60,60]"
