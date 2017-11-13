@@ -160,12 +160,12 @@
 <style>
     .cell-wrap{
         flex-direction: row;
-        align-cells: center;
+        align-items: center;
     }
     .cell-inner{
         flex: 1;
         flex-direction: row;
-        align-cells: center;
+        align-items: center;
     }
     .cell-right{
         flex: 1;

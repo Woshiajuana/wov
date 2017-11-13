@@ -5,8 +5,8 @@
              :class="[nav_position ? 'top' : 'bottom']"
              :style="{ height: nav_height,
              backgroundColor: nav_background_color }">
-            <slot v-if="!nav_use_menu" name="menu"></slot>
-            <div v-if="nav_use_menu"
+            <!--<slot v-if="!nav_use_menu" name="menu"></slot>-->
+            <div
                  :style="{ height: nav_height,
                  borderTopWidth: item.img_src ? (nav_position ? 0 : nav_border_width) : (nav_position ? 0 : nav_border_width),
                  borderBottomWidth: item.img_src ? (nav_position ? nav_border_width : 0) : (nav_position ? nav_border_width : 0),
