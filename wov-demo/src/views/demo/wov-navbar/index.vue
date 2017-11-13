@@ -10,9 +10,9 @@
         data () {
             return {
                 demo_arr: [
-                    { left_text: '居顶的TAB切换', page_name: 'switch_top' },
-                    { left_text: '居底的TAB切换', page_name: 'switch_bottom' },
-                    { left_text: '菜单导航条切换', page_name: 'switch_menu' },
+                    { left_text: '居顶的TAB切换', page_name: 'navbar_top' },
+                    { left_text: '居底的TAB切换', page_name: 'navbar_bottom' },
+                    { left_text: '菜单导航条切换', page_name: 'navbar_menu' },
                 ]
             }
         },

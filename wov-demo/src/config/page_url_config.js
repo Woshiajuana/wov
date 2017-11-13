@@ -7,10 +7,10 @@ export default {
     'webview': CONFIG.BASE_URL + 'webview/webview.js',
     'register': CONFIG.BASE_URL + 'register.js',
 
-    'switch': CONFIG.BASE_URL + 'demo/wov-navbar/index.js',
-    'switch_top': CONFIG.BASE_URL + 'demo/wov-navbar/children/switch-top.js',
-    'switch_bottom': CONFIG.BASE_URL + 'demo/wov-navbar/children/switch-bottom.js',
-    'switch_menu': CONFIG.BASE_URL + 'demo/wov-navbar/children/switch-menu.js',
+    'navbar': CONFIG.BASE_URL + 'demo/wov-navbar/index.js',
+    'navbar_top': CONFIG.BASE_URL + 'demo/wov-navbar/children/navbar-top.js',
+    'navbar_bottom': CONFIG.BASE_URL + 'demo/wov-navbar/children/navbar-bottom.js',
+    'navbar_menu': CONFIG.BASE_URL + 'demo/wov-navbar/children/navbar-menu.js',
 
 
 }
