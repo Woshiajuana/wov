@@ -3,9 +3,9 @@
 </template>
 
 <script>
-    import DemoMenu from '../../components/demo-menu.vue'
-    import PageUrl from '../../config/page_url_config'
-    import navigator from '../../module/navigator/navigator'
+    import DemoMenu from '../../../components/demo-menu.vue'
+    import PageUrl from '../../../config/page_url_config'
+    import navigator from '../../../module/navigator/navigator'
     export default {
         data () {
             return {

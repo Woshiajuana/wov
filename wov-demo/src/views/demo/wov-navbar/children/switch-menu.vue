@@ -1,33 +1,33 @@
 <template>
-    <wov-view background_color="#fbf9fe" center_item_title="菜单导航条切换" :left_item_img_src="left_item_img_src">
-        <wov-switch :switch_page_arr="switch_page_arr"></wov-switch>
+    <wov-view view_background_color="#fbf9fe"
+              view_header_center_txt="菜单导航条切换"
+              :view_header_left_src="left_item_img_src">
+        <wov-navbar :nav_arr="nav_arr"></wov-navbar>
     </wov-view>
 </template>
 
 <script>
-    import { WovSwitch, WovView } from 'wov'
-    import source from '../../../assets/lib/source'
+    import WovView from '../../../../components/wov/packages/wov-view'
+    import WovNavbar from '../../../../components/wov/packages/wov-navbar'
+    import source from '../../../../assets/lib/source'
     export default {
         data () {
             return {
                 left_item_img_src: source('return-icon.png'),
-                switch_page_arr: [{
+                nav_arr: [{
                     txt: 'HOME',
                     img_src: source('home-icon.png'),
                     img_checked_src: source('home-checked-icon.png'),
-                    visibility: 'visible',
                     checked: true
                 },
                 {
                     txt: 'DEMO',
-                    visibility: 'hidden',
                     img_src: source('demo-icon.png'),
                     img_checked_src: source('demo-checked-icon.png'),
                     checked: false
                 },
                 {
                     txt: 'ABOUT',
-                    visibility: 'hidden',
                     img_src: source('about-icon.png'),
                     img_checked_src: source('about-checked-icon.png'),
                     checked: false
@@ -36,7 +36,7 @@
         },
         components: {
             WovView,
-            WovSwitch
+            WovNavbar
         }
     }
 </script>
