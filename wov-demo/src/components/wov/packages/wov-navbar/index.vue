@@ -2,14 +2,13 @@
     <div class="nav-bar-wrap">
         <!--导航条-->
         <div class="nav-wrap"
-             :class="[nav_position ? 'top' : 'bottom']"
+             :class="[nav_position == 'top' ? 'top' : 'bottom']"
              :style="{ height: nav_height,
              backgroundColor: nav_background_color }">
-            <!--<slot v-if="!nav_use_menu" name="menu"></slot>-->
-            <div
-                 :style="{ height: nav_height,
-                 borderTopWidth: item.img_src ? (nav_position ? 0 : nav_border_width) : (nav_position ? 0 : nav_border_width),
-                 borderBottomWidth: item.img_src ? (nav_position ? nav_border_width : 0) : (nav_position ? nav_border_width : 0),
+            <slot v-if="!nav_use_menu" name="menu"></slot>
+            <div :style="{ height: nav_height,
+                 borderTopWidth: item.img_src ? (nav_position == 'top' ? 0 : nav_border_width) : (nav_position == 'top' ? 0 : nav_border_width),
+                 borderBottomWidth: item.img_src ? (nav_position == 'top' ? nav_border_width : 0) : (nav_position == 'top' ? nav_border_width : 0),
                  borderTopColor: item.img_src ? nav_border_color : (item.checked ? nav_checked_color : nav_border_color),
                  borderBottomColor: item.img_src ? nav_border_color : (item.checked ? nav_checked_color : nav_border_color)}"
                  class="nav-item"

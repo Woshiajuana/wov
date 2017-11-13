@@ -105,6 +105,7 @@
         color: #999;
     }
     .main-wrap{
+        background-color: #fff;
         border-top-color: #ddd;
         border-top-width: 2px;
         border-top-style: solid;
