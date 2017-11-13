@@ -6,19 +6,19 @@
             <wov-cell cell_left_txt="Weex"
                       :cell_use_arrow="false"
                       :cell_right_src="arrow_img_src"
-                      @onPress="onPressHandle('Weex')"
+                      @click.native="onPressHandle('Weex')"
                       cell_border_width="2">
             </wov-cell>
             <wov-cell cell_left_txt="Vue"
                       :cell_use_arrow="false"
                       :cell_right_src="arrow_img_src"
-                      @onPress="onPressHandle('Vue')"
+                      @click.native="onPressHandle('Vue')"
                       cell_border_width="2">
             </wov-cell>
             <wov-cell cell_left_txt="Owulia"
                       :cell_use_arrow="false"
                       :cell_right_src="arrow_img_src"
-                      @onPress="onPressHandle('Owulia')"
+                      @click.native="onPressHandle('Owulia')"
                       cell_border_width="0">
             </wov-cell>
         </div>
@@ -30,7 +30,6 @@
     import WovCell from '../../components/wov/packages/wov-cell'
     import source from '../../assets/lib/source'
     import navigator from '../../module/navigator/navigator'
-    import PageUrl from '../../config/page_url_config'
     export default {
         data () {
             return {

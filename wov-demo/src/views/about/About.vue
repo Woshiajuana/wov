@@ -50,7 +50,7 @@
         },
         methods: {
             onPressHandle () {
-                navigator.push({ url: PageUrl['link'] });
+                navigator.push('link');
             }
         },
         components: {
