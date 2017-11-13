@@ -9,6 +9,7 @@
 <script>
     import WovView from '../../../../components/wov/packages/wov-view'
     import WovNavbar from '../../../../components/wov/packages/wov-navbar'
+    import PageUrl from '../../../../config/page_url_config'
     import source from '../../../../assets/lib/source'
     export default {
         data () {
@@ -16,14 +17,17 @@
                 left_item_img_src: source('return-icon.png'),
                 nav_arr: [{
                     txt: 'A页面',
+                    src: PageUrl['navbar_a'],
                     checked: true
                 },
                 {
                     txt: 'B页面',
+                    src: PageUrl['navbar_b'],
                     checked: false
                 },
                 {
                     txt: 'C页面',
+                    src: PageUrl['navbar_c'],
                     checked: false
                 }]
             }
