@@ -1,6 +1,5 @@
 <template>
-    <wov-view view_background_color="#fbf9fe"
-              :view_use_header="false">
+    <wov-view :view_use_header="false">
         <div class="logo-wrap">
             <image class="logo-icon" :src="logo_src"></image>
             <text class="version-text">v0.0.14</text>

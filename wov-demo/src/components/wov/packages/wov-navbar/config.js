@@ -13,7 +13,7 @@ export default {
     nav_height: 100,
 
     /**导航条颜色*/
-    nav_background_color: '#F7F7FA',
+    nav_background_color: '#fff',
 
     /**内容*/
     nav_arr: [],

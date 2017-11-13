@@ -9,11 +9,11 @@ export default {
     /**头部*/
     view_use_header: true,
     view_header_height: 90,
-    view_header_border_width: 0,
-    view_header_border_color: '#ddd',
+    view_header_border_width: 2,
+    view_header_border_color: '#f2f2f2',
 
     /**主体背景颜色*/
-    view_background_color: '#fff',
+    view_background_color: '#f2f2f2',
 
     /**是否支持下拉刷新*/
     view_use_refresh: false,
