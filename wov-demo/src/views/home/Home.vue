@@ -1,45 +1,41 @@
 <template>
-    <wov-view
-        :is_header="false"
-        backgroundColor="#fbf9fe">
+    <wov-view view_background_color="#fbf9fe"
+              :view_use_header="false">
         <div class="logo-wrap">
             <image class="logo-icon" :src="logo_src"></image>
             <text class="version-text">v0.0.14</text>
         </div>
         <div class="main-wrap">
-            <wov-item
-                left_text="Official"
-                right_text="Enter"
-                :is_arrow="false"
-                height="100"
-                :right_img_src="arrow_img_src"
-                :left_img_src="official_img_src"
-                border_bottom_width="2"
-                :left_img_width_and_height="[60,60]"
-                @onPress="onPressHandle('Official')">
-            </wov-item>
-            <wov-item
-                left_text="GitHub"
-                right_text="Star Me"
-                :is_arrow="false"
-                height="100"
-                :right_img_src="arrow_img_src"
-                :left_img_src="git_img_src"
-                border_bottom_width="2"
-                :left_img_width_and_height="[60,60]"
-                @onPress="onPressHandle('GitHub')">
-            </wov-item>
-            <wov-item
-                left_text="Blog"
-                right_text="Welcome"
-                :is_arrow="false"
-                height="100"
-                :right_img_src="arrow_img_src"
-                :left_img_src="blog_img_src"
-                border_bottom_width="0"
-                :left_img_width_and_height="[60,60]"
-                @onPress="onPressHandle('Blog')">
-            </wov-item>
+            <wov-cell cell_left_txt="Official"
+                      cell_right_txt="Enter"
+                      :cell_use_arrow="false"
+                      cell_height="100"
+                      :cell_right_src="arrow_img_src"
+                      :cell_left_src="official_img_src"
+                      cell_border_width="2"
+                      :cell_left_src_size="[60,60]"
+                      @click.native="onPressHandle('Official')">
+            </wov-cell>
+            <wov-cell cell_left_txt="GitHub"
+                      cell_right_txt="Star Me"
+                      :cell_use_arrow="false"
+                      cell_height="100"
+                      :cell_right_src="arrow_img_src"
+                      :cell_left_src="git_img_src"
+                      cell_border_width="2"
+                      :cell_left_src_size="[60,60]"
+                      @click.native="onPressHandle('GitHub')">
+            </wov-cell>
+            <wov-cell cell_left_txt="Blog"
+                      cell_right_txt="Welcome"
+                      :cell_use_arrow="false"
+                      cell_height="100"
+                      :cell_right_src="arrow_img_src"
+                      :cell_left_src="blog_img_src"
+                      cell_border_width="0"
+                      :cell_left_src_size="[60,60]"
+                      @click.native="onPressHandle('Blog')">
+            </wov-cell>
         </div>
         <div class="reminder-wrap">
             <text class="reminder-text">©2017 Woshiajuana o(∩_∩)o </text>
@@ -48,7 +44,8 @@
 </template>
 
 <script>
-    import { WovView, WovItem } from 'wov'
+    import WovView from '../../components/wov/packages/wov-view'
+    import WovCell from '../../components/wov/packages/wov-cell'
     import source from '../../assets/lib/source'
     import navigator from '../../module/navigator/navigator'
     import PageUrl from '../../config/page_url_config'
@@ -85,7 +82,7 @@
         },
         components: {
             WovView,
-            WovItem
+            WovCell
         }
     }
 </script>

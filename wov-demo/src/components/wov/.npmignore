@@ -1,0 +1,17 @@
+.idea/
+dist/
+hooks/
+platforms/
+tools/
+web/
+plugins/
+node_modules/
+temp/
+android.config.json
+start.bat
+start
+ios.config.json
+config.xml
+.babelrc
+webpack.config.js
+webpack.dev.js

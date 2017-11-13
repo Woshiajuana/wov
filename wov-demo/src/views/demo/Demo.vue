@@ -1,7 +1,6 @@
 <template>
-    <wov-view
-        class="demo-view"
-        :is_header="false">
+    <wov-view class="demo-view"
+              :view_use_header="false">
         <div class="view-inner">
             <div class="demo-item border-bottom"
                  :class="[((index + 1) % 3 != 0) && 'border-right']"
@@ -18,7 +17,7 @@
 </template>
 
 <script>
-    import { WovView } from 'wov'
+    import WovView from '../../components/wov/packages/wov-view'
     import source from '../../assets/lib/source'
     import navigator from '../../module/navigator/navigator'
     import PageUrl from '../../config/page_url_config'
