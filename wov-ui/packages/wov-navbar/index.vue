@@ -105,6 +105,9 @@
         border-bottom-style: solid;
         border-top-style: solid;
     }
+    .nav-item:active {
+        background-color: #ddd;
+    }
     .nav-item-txt {
         justify-content: center;
         align-items: center;
