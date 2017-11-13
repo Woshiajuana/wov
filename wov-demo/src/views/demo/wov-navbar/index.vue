@@ -1,5 +1,5 @@
 <template>
-    <demo-menu :menu_arr="menu_arr" @onPress="onPressHandle"></demo-menu>
+    <demo-menu demo_title="WovNavBar" :demo_arr="demo_arr" @onPress="onPressHandle"></demo-menu>
 </template>
 
 <script>
@@ -9,7 +9,7 @@
     export default {
         data () {
             return {
-                menu_arr: [
+                demo_arr: [
                     { left_text: '居顶的TAB切换', page_name: 'switch_top' },
                     { left_text: '居底的TAB切换', page_name: 'switch_bottom' },
                     { left_text: '菜单导航条切换', page_name: 'switch_menu' },

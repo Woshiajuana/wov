@@ -1,40 +1,37 @@
 <template>
-    <wov-view
-        class="about-view"
-        nav_background_color="#fbf9fe"
-        :left_item_img_src="left_item_img_src"
-        center_item_title="友情链接">
+    <wov-view class="about-view"
+              view_header_background_color="#fbf9fe"
+              :view_header_left_src="left_item_img_src"
+              view_header_center_txt="友情链接">
         <div class="container-inner">
-            <wov-item
-                left_text="Weex"
-                :is_arrow="false"
-                :right_img_src="arrow_img_src"
-                height="100"
-                @onPress="onPressHandle('Weex')"
-                border_bottom_width="2">
-            </wov-item>
-            <wov-item
-                left_text="Vue"
-                :is_arrow="false"
-                :right_img_src="arrow_img_src"
-                height="100"
-                @onPress="onPressHandle('Vue')"
-                border_bottom_width="2">
-            </wov-item>
-            <wov-item
-                left_text="Owulia"
-                :is_arrow="false"
-                :right_img_src="arrow_img_src"
-                height="100"
-                @onPress="onPressHandle('Owulia')"
-                border_bottom_width="0">
-            </wov-item>
+            <wov-cell cell_left_txt="Weex"
+                      :cell_use_arrow="false"
+                      :cell_right_src="arrow_img_src"
+                      cell_height="100"
+                      @onPress="onPressHandle('Weex')"
+                      cell_border_width="2">
+            </wov-cell>
+            <wov-cell cell_left_txt="Vue"
+                      :cell_use_arrow="false"
+                      :cell_right_src="arrow_img_src"
+                      cell_height="100"
+                      @onPress="onPressHandle('Vue')"
+                      cell_border_width="2">
+            </wov-cell>
+            <wov-cell cell_left_txt="Owulia"
+                      :cell_use_arrow="false"
+                      :cell_right_src="arrow_img_src"
+                      cell_height="100"
+                      @onPress="onPressHandle('Owulia')"
+                      cell_border_width="0">
+            </wov-cell>
         </div>
     </wov-view>
 </template>
 
 <script>
-    import { WovView, WovItem } from 'wov'
+    import WovView from '../../components/wov/packages/wov-view'
+    import WovCell from '../../components/wov/packages/wov-cell'
     import source from '../../assets/lib/source'
     import navigator from '../../module/navigator/navigator'
     import PageUrl from '../../config/page_url_config'
@@ -68,7 +65,7 @@
         },
         components: {
             WovView,
-            WovItem
+            WovCell
         }
     }
 </script>
