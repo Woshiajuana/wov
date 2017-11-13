@@ -7,7 +7,7 @@
                       :key="index"
                       cell_height="100"
                       :cell_left_txt="item.left_text"
-                      :cell_border_width="index == menu_arr.length - 1 ? 0 : 2"
+                      :cell_border_width="index == demo_arr.length - 1 ? 0 : 2"
                       :cell_left_src_size="[60,60]"
                       @click.native="onPressHandle(item)">
             </wov-cell>
@@ -56,6 +56,7 @@
         border-bottom-color: #ddd;
         border-bottom-width: 2px;
         border-bottom-style: solid;
+        background-color: #fff;
     }
     .reminder-wrap{
         margin-top: 120px;

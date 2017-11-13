@@ -1,5 +1,5 @@
 <template>
-    <demo-menu demo_title="WovNavBar" :demo_arr="demo_arr" @onPress="onPressHandle"></demo-menu>
+    <demo-menu demo_title="WovNavbar" :demo_arr="demo_arr" @onPress="onPressHandle"></demo-menu>
 </template>
 
 <script>

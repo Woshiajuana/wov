@@ -2,7 +2,7 @@
     <wov-view view_background_color="#fbf9fe"
               view_header_center_txt="居底的TAB切换"
               :view_header_left_src="left_item_img_src">
-        <wov-navbar :nav_arr="switch_page_arr"></wov-navbar>
+        <wov-navbar :nav_arr="nav_arr"></wov-navbar>
     </wov-view>
 </template>
 
