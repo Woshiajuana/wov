@@ -79,6 +79,9 @@
         justify-content: center;
         align-items: center;
     }
+    .demo-item:active{
+        background-color: #ddd;
+    }
     .border-bottom{
         border-bottom-width: 2px;
     }
