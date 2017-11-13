@@ -4,48 +4,41 @@
               view_header_left_src=""
               view_header_center_txt="关于">
         <div class="container-inner">
-            <wov-cell
-                left_text="Name"
-                right_text="wov"
-                :is_arrow="false"
-                height="100"
-                border_bottom_width="2">
+            <wov-cell cell_left_txt="Name"
+                      cell_right_txt="wov"
+                      :cell_use_arrow="false"
+                      cell_height="100"
+                      cell_border_width="2">
             </wov-cell>
-            <wov-cell
-                left_text="Version"
-                right_text="0.0.14"
-                :is_arrow="false"
-                height="100"
-                border_bottom_width="2">
+            <wov-cell cell_left_txt="Version"
+                      cell_right_txt="0.0.14"
+                      :cell_use_arrow="false"
+                      cell_height="100"
+                      cell_border_width="2">
             </wov-cell>
-            <wov-cell
-                left_text="Introduction"
-                right_text="A Weex UI"
-                :is_arrow="false"
-                left_width="180"
-                height="100"
-                border_bottom_width="2">
+            <wov-cell cell_left_txt="Introduction"
+                      cell_right_txt="A Weex UI"
+                      :cell_use_arrow="false"
+                      cell_height="100"
+                      cell_border_width="2">
             </wov-cell>
-            <wov-cell
-                left_text="Author"
-                right_text="Woshiajuana"
-                :is_arrow="false"
-                height="100"
-                border_bottom_width="2">
+            <wov-cell cell_left_txt="Author"
+                      cell_right_txt="Woshiajuana"
+                      :cell_use_arrow="false"
+                      cell_height="100"
+                      cell_border_width="2">
             </wov-cell>
-            <wov-cell
-                left_text="E-Mail"
-                right_text="zhigang.chen@owulia.com"
-                :is_arrow="false"
-                height="100"
-                border_bottom_width="2">
+            <wov-cell cell_left_txt="E-Mail"
+                      cell_right_txt="zhigang.chen@owulia.com"
+                      :cell_use_arrow="false"
+                      cell_height="100"
+                      cell_border_width="2">
             </wov-cell>
-            <wov-cell
-                left_text="Links"
-                right_text=""
-                height="100"
-                @onPress="onPressHandle"
-                border_bottom_width="0">
+            <wov-cell cell_left_txt="Links"
+                      cell_right_txt=""
+                      cell_height="100"
+                      @click.native="onPressHandle"
+                      cell_border_width="0">
             </wov-cell>
         </div>
     </wov-view>
