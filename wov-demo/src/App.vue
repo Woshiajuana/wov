@@ -1,10 +1,5 @@
 <template>
-    <wov-switch
-        :switch_page_arr="switch_page_arr">
-    </wov-switch>
-    <wov-navbar :nav_arr="nav_arr">
-
-    </wov-navbar>
+    <wov-navbar :nav_arr="nav_arr"></wov-navbar>
 </template>
 
 <script>

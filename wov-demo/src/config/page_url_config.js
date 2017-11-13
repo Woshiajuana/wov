@@ -1,16 +1,16 @@
 import CONFIG from './config'
 export default {
-    'home': CONFIG.BASE_URL + 'home/Home.js',
-    'demo': CONFIG.BASE_URL + 'demo/Demo.js',
-    'about': CONFIG.BASE_URL + 'about/About.js',
-    'link': CONFIG.BASE_URL + 'link/Link.js',
-    'webview': CONFIG.BASE_URL + 'webview/Webview.js',
+    'home': CONFIG.BASE_URL + 'home/home.js',
+    'demo': CONFIG.BASE_URL + 'demo/demo.js',
+    'about': CONFIG.BASE_URL + 'about/about.js',
+    'link': CONFIG.BASE_URL + 'link/link.js',
+    'webview': CONFIG.BASE_URL + 'webview/webview.js',
     'register': CONFIG.BASE_URL + 'register.js',
 
-    'switch': CONFIG.BASE_URL + 'switch/index.js',
-    'switch_top': CONFIG.BASE_URL + 'switch/children/switch-top.js',
-    'switch_bottom': CONFIG.BASE_URL + 'switch/children/switch-bottom.js',
-    'switch_menu': CONFIG.BASE_URL + 'switch/children/switch-menu.js',
+    'switch': CONFIG.BASE_URL + 'demo/wov-navbar/index.js',
+    'switch_top': CONFIG.BASE_URL + 'demo/wov-navbar/children/switch-top.js',
+    'switch_bottom': CONFIG.BASE_URL + 'demo/wov-navbar/children/switch-bottom.js',
+    'switch_menu': CONFIG.BASE_URL + 'demo/wov-navbar/children/switch-menu.js',
 
 
 }
