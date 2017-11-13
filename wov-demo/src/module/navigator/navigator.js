@@ -1,8 +1,14 @@
 var navigator = weex.requireModule('navigator');
+import Defer from '../../assets/lib/defer'
+import PageUrl from '../../config/page_url_config'
+const defer = new Defer(1000);
 export default {
     /**压入*/
-    push: ( { url, animated = 'true', close = '' }, params ) => {
-        close && (close = 'true');
+    push: ( options, params ) => {
+        if ( !defer.do(options + JSON.stringify(params)) ) return null; // 过滤连续点击
+        var url = options.url ? PageUrl[options.url] : PageUrl[options],
+            animated = options.animated || 'true',
+            close = options.close || 'false';
         url = params ? url + '?params=' + encodeURIComponent(JSON.stringify(params)) : url;
         navigator.push({ url: url, animated: animated, close: close }, e => {});
     },
