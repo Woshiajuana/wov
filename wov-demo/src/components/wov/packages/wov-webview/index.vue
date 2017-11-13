@@ -1,7 +1,6 @@
 <template>
-    <wov-view
-            :view_use_header="web_use_header"
-            :view_header_center_txt="web_header_title">
+    <wov-view :view_use_header="web_use_header"
+              :view_header_center_txt="web_header_title">
         <web class="webview-inner"
              ref="webview"
              :src="web_src"
@@ -9,7 +8,8 @@
              @pagefinish="pageFinishHandle"
              @error="pageErrorHandle">
         </web>
-        <div class="webview-menu">
+        <div class="webview-menu"
+             v-if="web_use_menu">
             <div class="webview-menu-item" @click="leftMenuClickHandle">
                 <image class="webview-menu-item-icon" :src="web_menu_left_src"></image>
             </div>
@@ -36,24 +36,24 @@
         },
         props: {
             /**webview内容资源*/
-            web_src: config.web_src,
+            web_src: { default: config.web_src },
 
             /**是否使用头部*/
-            web_use_header: config.web_use_header,
-            web_header_title: config.web_header_title,
+            web_use_header: { default: config.web_use_header },
+            web_header_title: { default: config.web_header_title },
 
             /**是否使用菜单*/
-            web_use_menu: config.web_use_menu,
+            web_use_menu: { default: config.web_use_menu },
 
             /**菜单资源*/
-            web_menu_left_src: config.web_menu_left_src,
-            web_menu_center_src: config.web_menu_center_src,
-            web_menu_right_src: config.web_menu_right_src,
+            web_menu_left_src: { default: config.web_menu_left_src },
+            web_menu_center_src: { default: config.web_menu_center_src },
+            web_menu_right_src: { default: config.web_menu_right_src },
 
             /**是否使用点击事件*/
-            web_use_left_event: config.web_use_left_event,
-            web_use_center_event: config.web_use_center_event,
-            web_use_right_event: config.web_use_right_event,
+            web_use_left_event: { default: config.web_use_left_event },
+            web_use_center_event: { default: config.web_use_center_event },
+            web_use_right_event: { default: config.web_use_right_event },
         },
         methods: {
             /**页面开始加载触发*/
@@ -97,17 +97,9 @@
 
 <style>
     .webview-inner {
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 98px;
+        flex: 1;
     }
     .webview-menu {
-        position: absolute;
-        left: 0;
-        right: 0;
-        bottom: 0;
         height: 98px;
         width: 750px;
         flex-direction: row;

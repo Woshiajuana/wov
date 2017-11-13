@@ -1,14 +1,13 @@
 <template>
-    <wov-web
-        :left_menu_src="left_menu_src"
-        :center_menu_src="center_menu_src"
-        :right_menu_src="right_menu_src"
-        :web_src="webviewSrcCom">
-    </wov-web>
+    <wov-wev-view :web_menu_center_src="center_menu_src"
+                  :web_menu_left_src="left_menu_src"
+                  :web_menu_right_src="right_menu_src"
+                  :web_src="webviewSrcCom">
+    </wov-wev-view>
 </template>
 
 <script>
-    import { WovWeb } from 'wov'
+    import WovWevView from '../../components/wov/packages/wov-webview'
     import navigator from '../../module/navigator/navigator'
     import source from '../../assets/lib/source'
     export default {
@@ -54,7 +53,7 @@
             }
         },
         components: {
-            WovWeb
+            WovWevView
         }
     };
 </script>
