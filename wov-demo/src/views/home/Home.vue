@@ -59,17 +59,17 @@
             onPressHandle ( page_name ) {
                 switch (page_name) {
                     case 'Official':
-                        navigator.push({ url: PageUrl['webview'] },{
+                        navigator.push('webview', {
                             link: 'https://github.com/Woshiajuana/wov/'
                         });
                         break;
                     case 'GitHub':
-                        navigator.push({ url: PageUrl['webview'] },{
+                        navigator.push('webview', {
                             link: 'https://github.com/Woshiajuana/wov/'
                         });
                         break;
                     case 'Blog':
-                        navigator.push({ url: PageUrl['webview'] },{
+                        navigator.push('webview', {
                             link: 'http://www.owulia.com/ajuan/'
                         });
                         break;

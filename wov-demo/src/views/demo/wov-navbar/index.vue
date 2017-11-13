@@ -18,7 +18,7 @@
         },
         methods: {
             onPressHandle ({ page_name }) {
-                navigator.push({ url: PageUrl[page_name] });
+                navigator.push(page_name);
             }
         },
         components: {

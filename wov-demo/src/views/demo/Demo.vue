@@ -53,7 +53,7 @@
         },
         methods: {
             onPressHandle (src_name) {
-                navigator.push({ url: PageUrl[src_name] });
+                navigator.push(src_name);
             }
         },
         components: {

@@ -42,17 +42,17 @@
             onPressHandle ( page_name ) {
                 switch (page_name) {
                     case 'Weex':
-                        navigator.push({ url: PageUrl['webview'] },{
+                        navigator.push('webview', {
                             link: 'https://weex.apache.org/cn/'
                         });
                         break;
                     case 'Vue':
-                        navigator.push({ url: PageUrl['webview'] },{
+                        navigator.push('webview', {
                             link: 'https://cn.vuejs.org/v2/guide/'
                         });
                         break;
                     case 'Owulia':
-                        navigator.push({ url: PageUrl['webview'] },{
+                        navigator.push('webview', {
                             link: 'http://www.owulia.com/'
                         });
                         break;

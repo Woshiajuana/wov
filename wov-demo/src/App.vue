@@ -32,7 +32,6 @@
                 }]
             }
         },
-        methods: {},
         components: {
             WovNavbar
         }
