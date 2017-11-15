@@ -40,7 +40,7 @@
 <script>
     import WovView from '../../components/wov/packages/wov-view'
     import WovCell from '../../components/wov/packages/wov-cell'
-    import navigator from '../../module/navigator/navigator'
+    import navigator from '../../module/navigator'
     import PageUrl from '../../config/page_url_config'
     export default {
         data () {

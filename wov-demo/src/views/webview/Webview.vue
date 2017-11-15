@@ -8,7 +8,7 @@
 
 <script>
     import WovWevView from '../../components/wov/packages/wov-webview'
-    import navigator from '../../module/navigator/navigator'
+    import navigator from '../../module/navigator'
     import source from '../../assets/lib/source'
     export default {
         data () {

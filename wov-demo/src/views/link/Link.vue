@@ -29,7 +29,7 @@
     import WovView from '../../components/wov/packages/wov-view'
     import WovCell from '../../components/wov/packages/wov-cell'
     import source from '../../assets/lib/source'
-    import navigator from '../../module/navigator/navigator'
+    import navigator from '../../module/navigator'
     export default {
         data () {
             return {

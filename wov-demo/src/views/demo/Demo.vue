@@ -19,7 +19,7 @@
 <script>
     import WovView from '../../components/wov/packages/wov-view'
     import source from '../../assets/lib/source'
-    import navigator from '../../module/navigator/navigator'
+    import navigator from '../../module/navigator'
     import PageUrl from '../../config/page_url_config'
     export default {
         data () {
