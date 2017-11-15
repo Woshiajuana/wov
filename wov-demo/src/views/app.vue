@@ -3,9 +3,9 @@
 </template>
 
 <script>
-    import WovNavbar from './components/wov/packages/wov-navbar'
-    import source from './assets/lib/source'
-    import PageUrlConfig from './config/page_url_config'
+    import WovNavbar from '../components/wov/packages/wov-navbar/index'
+    import source from '../assets/lib/source'
+    import PageUrlConfig from '../config/page_url_config'
     export default {
         data () {
             return {
