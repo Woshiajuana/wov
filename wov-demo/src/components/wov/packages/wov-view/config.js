@@ -1,6 +1,7 @@
 /**
  * Created by Administrator on 2017/11/8.
  */
+import source from '../../../../assets/lib/source'
 export default {
 
     /**是否不启用默认点击事件*/
@@ -38,7 +39,7 @@ export default {
     view_header_background_image: '',
 
     /**头部左边图片样式定义*/
-    view_header_left_src: '',
+    view_header_left_src: source('return-icon.png'),
     view_header_left_src_size: [40, 40],
     view_header_left_src_mar_left: 25,
     view_header_left_src_mar_right: 0,

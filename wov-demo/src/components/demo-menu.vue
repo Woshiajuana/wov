@@ -1,7 +1,6 @@
 <template>
     <wov-view class="view"
-              :view_header_center_txt="demo_title"
-              :view_header_left_src="left_item_img_src">
+              :view_header_center_txt="demo_title">
         <div class="main-wrap">
             <wov-cell v-for="(item, index) in demo_arr"
                       :key="index"
@@ -20,13 +19,7 @@
 <script>
     import WovView from '../components/wov/packages/wov-view'
     import WovCell from '../components/wov/packages/wov-cell'
-    import source from '../assets/lib/source'
     export default {
-        data () {
-            return {
-                left_item_img_src: source('return-icon.png')
-            }
-        },
         props: {
             demo_arr: { default: '' },
             demo_title: { default: ''}

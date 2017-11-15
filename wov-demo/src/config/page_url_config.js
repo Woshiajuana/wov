@@ -8,12 +8,15 @@ export default {
     'register': CONFIG.BASE_URL + 'register.js',
 
     'navbar': CONFIG.BASE_URL + 'demo/wov-navbar/index.js',
-    'navbar_top': CONFIG.BASE_URL + 'demo/wov-navbar/children/navbar-top.js',
-    'navbar_bottom': CONFIG.BASE_URL + 'demo/wov-navbar/children/navbar-bottom.js',
-    'navbar_menu': CONFIG.BASE_URL + 'demo/wov-navbar/children/navbar-menu.js',
-    'navbar_a': CONFIG.BASE_URL + 'demo/wov-navbar/children/a.js',
-    'navbar_b': CONFIG.BASE_URL + 'demo/wov-navbar/children/b.js',
-    'navbar_c': CONFIG.BASE_URL + 'demo/wov-navbar/children/c.js',
+    'navbar-top': CONFIG.BASE_URL + 'demo/wov-navbar/children/navbar-top.js',
+    'navbar-bottom': CONFIG.BASE_URL + 'demo/wov-navbar/children/navbar-bottom.js',
+    'navbar-menu': CONFIG.BASE_URL + 'demo/wov-navbar/children/navbar-menu.js',
+    'navbar-a': CONFIG.BASE_URL + 'demo/wov-navbar/children/a.js',
+    'navbar-b': CONFIG.BASE_URL + 'demo/wov-navbar/children/b.js',
+    'navbar-c': CONFIG.BASE_URL + 'demo/wov-navbar/children/c.js',
 
+    'view': CONFIG.BASE_URL + 'demo/wov-view/index.js',
+    'view-global': CONFIG.BASE_URL + 'demo/wov-view/children/view-global.js',
+    'view-refresh-load': CONFIG.BASE_URL + 'demo/wov-view/children/view-refresh-load.js',
 
 }

@@ -1,5 +1,5 @@
 <template>
-    <demo-menu demo_title="WovNavbar" :demo_arr="demo_arr" @onPress="onPressHandle"></demo-menu>
+    <demo-menu demo_title="WovView" :demo_arr="demo_arr" @onPress="onPressHandle"></demo-menu>
 </template>
 
 <script>
@@ -10,9 +10,8 @@
         data () {
             return {
                 demo_arr: [
-                    { left_text: '居顶的TAB切换', page_name: 'navbar-top' },
-                    { left_text: '居底的TAB切换', page_name: 'navbar-bottom' },
-                    { left_text: '菜单导航条切换', page_name: 'navbar-menu' },
+                    { left_text: '全局可设置', page_name: 'view-global' },
+                    { left_text: '上拉刷新，下拉加载', page_name: 'view-refresh-load' }
                 ]
             }
         },
