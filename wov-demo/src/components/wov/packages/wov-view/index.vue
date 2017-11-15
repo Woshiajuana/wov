@@ -1,5 +1,5 @@
 <template>
-    <div class="view-wrap">
+    <div class="view-wrap" :style="{height: viewHeightCom}">
         <!--头部-->
         <div class="view-header"
              v-if="view_use_header"
@@ -72,7 +72,7 @@
         </div>
         <!--/头部-->
         <scroller class="view-inner"
-            :style="{ top: view_use_header ? view_header_height : 0.1,
+                  :style="{ top: view_use_header ? view_header_height : 0.1,
             backgroundColor: view_background_color}">
             <!--上拉刷新-->
             <refresh class="view-refresh"
@@ -201,6 +201,9 @@
             view_header_right_color: { default: config.view_header_right_color },
             view_header_right_txt_mar_left: { default: config.view_header_right_txt_mar_left },
             view_header_right_txt_mar_right: { default: config.view_header_right_txt_mar_right },
+        },
+        computed: {
+            viewHeightCom: () => 750 / weex.config.env.deviceWidth * weex.config.env.deviceHeight
         },
         methods: {
             /**右边按钮点击事件*/
