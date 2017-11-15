@@ -11,7 +11,7 @@
             </div>
         </div>
         <div class="prompt-wrap">
-            <text class="prompt-text">没有啦~~~</text>
+            <text class="prompt-text">~~~ No More ~~~</text>
         </div>
     </wov-view>
 </template>
@@ -107,7 +107,7 @@
     }
     .prompt-text{
         text-align: center;
-        font-size: 32px;
+        font-size: 24px;
         color: #999;
     }
 </style>

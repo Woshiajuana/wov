@@ -108,7 +108,7 @@
         border-bottom-style: solid;
     }
     .reminder-wrap{
-        margin-top: 120px;
+        margin-top: 300px;
         height: 100px;
         justify-content: center;
         align-items: center;

@@ -1,5 +1,5 @@
 <template>
-    <div class="view-wrap" :style="{height: viewHeightCom}">
+    <div class="view-wrap">
         <!--头部-->
         <div class="view-header"
              v-if="view_use_header"
