@@ -12,7 +12,7 @@
                 demo_arr: [
                     { left_text: '单行设置', page_name: 'cell-single' },
                     { left_text: '双行设置', page_name: 'cell-double' },
-                    { left_text: 'ICON设置', page_name: 'cell-icon' }
+                    { left_text: '带输入框设置', page_name: 'cell-input' }
                 ]
             }
         },

@@ -27,7 +27,7 @@
                 demo_arr: [
                     { img_src: source('navbar-icon.png'), name: 'WovNavbar', src_name: 'navbar' },
                     { img_src: source('view-icon.png'), name: 'WovView', src_name: 'view' },
-                    { img_src: source('item-icon.png'), name: 'WovCell', src_name: 'cell' },
+                    { img_src: source('cell-icon.png'), name: 'WovCell', src_name: 'cell' },
                     { img_src: source('btn-icon.png'), name: 'WovBtn', src_name: 'btn' },
                     { img_src: source('web-icon.png'), name: 'WovWebview', src_name: 'web' },
                 ]
