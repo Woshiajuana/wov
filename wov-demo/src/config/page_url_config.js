@@ -1,4 +1,4 @@
-import CONFIG from './config'
+import CONFIG from './env_config'
 export default {
     'home': CONFIG.BASE_URL + 'home/home.js',
     'demo': CONFIG.BASE_URL + 'demo/demo.js',

@@ -6,7 +6,7 @@
   "scripts": {
     "build": "webpack",
     "build_plugin": "webpack --config ./tools/webpack.config.plugin.js --color",
-    "dev": "weex-builder src/views dist -w",
+    "dev": "set NODE_ENV=BD&&node tools/env_command.js&&weex-builder src/views dist -w",
     "server": "webpack-dev-server --config webpack.dev.js -p --open",
     "serve": "serve -p 13140"
   },
