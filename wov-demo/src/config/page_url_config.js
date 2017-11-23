@@ -24,4 +24,6 @@ export default {
     'cell-double': CONFIG.BASE_URL + 'demo/wov-cell/children/cell-double.js',
     'cell-input': CONFIG.BASE_URL + 'demo/wov-cell/children/cell-input.js',
 
+    'button': CONFIG.BASE_URL + 'demo/wov-button/index.js',
+    'button-single': CONFIG.BASE_URL + 'demo/wov-button/children/button-single.js',
 }
