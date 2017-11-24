@@ -9,7 +9,7 @@
                       cell_border_width="2">
             </wov-cell>
             <wov-cell cell_left_txt="Version"
-                      cell_right_txt="0.0.14"
+                      cell_right_txt="0.0.19"
                       :cell_use_arrow="false"
                       cell_border_width="2">
             </wov-cell>

@@ -2,7 +2,7 @@
     <wov-view :view_use_header="false">
         <div class="logo-wrap">
             <image class="logo-icon" :src="logo_src"></image>
-            <text class="version-text">v0.0.14</text>
+            <text class="version-text">v0.0.19</text>
         </div>
         <div class="main-wrap">
             <wov-cell cell_left_txt="Official"
